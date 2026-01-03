@@ -1,0 +1,73 @@
+PRODUCT MANUAL - LAPTOP PRO SERIES
+
+INTRODUCTION
+Welcome to your new Laptop Pro! This comprehensive manual will guide you through setup, usage, and maintenance of your device.
+
+SPECIFICATIONS
+- Processor: Intel Core i7-12700H
+- Memory: 16GB DDR4 RAM
+- Storage: 512GB NVMe SSD
+- Display: 15.6" 4K IPS Display
+- Graphics: NVIDIA RTX 3060
+- Battery: 80Wh Lithium-ion
+- Weight: 4.2 lbs
+- Dimensions: 14.1" x 9.8" x 0.8"
+
+SETUP INSTRUCTIONS
+1. Remove the laptop from packaging carefully
+2. Connect the power adapter to charge the battery
+3. Press the power button to start initial setup
+4. Follow the on-screen setup wizard
+5. Create your user account and password
+6. Connect to Wi-Fi network
+7. Install any pending system updates
+
+FEATURES AND USAGE
+The Laptop Pro comes with several advanced features:
+
+Performance Mode: Press Fn+F5 to toggle between power saving and performance modes. Performance mode increases CPU and GPU performance for demanding tasks.
+
+Cooling System: The laptop features an advanced cooling system with dual fans and heat pipes. The system automatically adjusts fan speed based on temperature.
+
+Connectivity: Multiple ports including USB-C, USB-A, HDMI, and audio jack. The USB-C ports support charging, data transfer, and display output.
+
+Security: Built-in fingerprint reader and TPM 2.0 chip for enhanced security. Windows Hello facial recognition is also supported.
+
+TROUBLESHOOTING
+Common issues and solutions:
+
+Laptop won't turn on:
+- Check if battery is charged
+- Try holding power button for 10 seconds
+- Connect power adapter and try again
+
+Slow performance:
+- Check for background applications
+- Run disk cleanup utility
+- Ensure adequate ventilation
+- Update device drivers
+
+Wi-Fi connectivity issues:
+- Restart network adapter in Device Manager
+- Forget and reconnect to network
+- Update Wi-Fi drivers
+- Check router settings
+
+MAINTENANCE
+Regular maintenance ensures optimal performance:
+- Clean screen with microfiber cloth
+- Use compressed air to clean vents monthly
+- Keep software updated
+- Run antivirus scans regularly
+- Backup important data
+
+WARRANTY
+Your Laptop Pro includes a 2-year limited warranty covering manufacturing defects. Extended warranty options are available for purchase.
+
+SUPPORT
+For technical support, visit our website or contact:
+- Phone: 1-800-TECH-HELP
+- Email: support@laptoppro.com
+- Live Chat: Available 24/7 on our website
+
+Thank you for choosing Laptop Pro!

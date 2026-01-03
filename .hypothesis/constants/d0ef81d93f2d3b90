@@ -1,0 +1,4 @@
+# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/directory_manager.py
+# hypothesis_version: 6.148.9
+
+[3600, '*', 'cache', 'cache/embeddings', 'cache/query_cache', 'chromadb', 'data', 'data/duckdb', 'data/raw', 'data/structured', 'duckdb', 'error', 'exists', 'file_count', 'json', 'logs', 'metadata', 'path', 'raw', 'size_bytes', 'structured', 'temp', 'unstructured']

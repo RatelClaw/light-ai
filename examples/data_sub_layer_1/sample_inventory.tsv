@@ -1,0 +1,9 @@
+product_id	product_name	category	quantity_in_stock	reorder_level	supplier	last_restocked
+P001	Wireless Headphones	Electronics	150	50	TechSupply Co	2024-01-10
+P002	Smart Watch	Electronics	25	30	TechSupply Co	2024-01-08
+P003	Coffee Maker	Home & Kitchen	75	20	HomeGoods Inc	2024-01-12
+P004	Bluetooth Speaker	Electronics	200	40	TechSupply Co	2024-01-09
+P005	Kitchen Scale	Home & Kitchen	60	15	HomeGoods Inc	2024-01-11
+P006	Fitness Tracker	Electronics	80	25	TechSupply Co	2024-01-07
+P007	Blender	Home & Kitchen	45	10	HomeGoods Inc	2024-01-13
+P008	Wireless Mouse	Electronics	120	35	TechSupply Co	2024-01-06

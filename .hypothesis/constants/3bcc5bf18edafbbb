@@ -1,0 +1,4 @@
+# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_1/file_upload.py
+# hypothesis_version: 6.148.9
+
+[1024, 8192, '.csv', '.docx', '.htm', '.html', '.json', '.jsonl', '.markdown', '.md', '.parquet', '.pdf', '.tsv', '.txt', '.xls', '.xlsx', 'File is empty', 'application/csv', 'application/json', 'application/jsonl', 'application/pdf', 'json', 'rb', 'sha256', 'structured', 'text/csv', 'text/html', 'text/json', 'text/markdown', 'text/plain', 'unstructured', 'uploaded']

@@ -1,0 +1,4 @@
+# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/config.py
+# hypothesis_version: 6.148.9
+
+[500, 512, 10000, '.', 'CRITICAL', 'Config', 'DEBUG', 'ERROR', 'INFO', 'LIGHT_AI_BASE_DIR', 'LIGHT_AI_LOG_LEVEL', 'OPENROUTER_API_KEY', 'OPENROUTER_BASE_URL', 'WARNING', 'api_key', 'base_directory', 'base_url', 'cache', 'cache_ttl_minutes', 'chunk_overlap_tokens', 'chunk_size_tokens', 'console_enabled', 'data/duckdb/main.db', 'data/json', 'data/raw', 'data/structured', 'data/unstructured', 'default_model', 'embedding_model', 'file_enabled', 'level', 'logging', 'logs', 'max_file_size_mb', 'max_parallel_workers', 'metadata', 'metadata/registry.db', 'openrouter', 'processing', 'r', 'storage', 'timeout_seconds']

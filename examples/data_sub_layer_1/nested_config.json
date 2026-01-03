@@ -1,0 +1,58 @@
+{
+  "Application Settings": {
+    "Database Configuration": {
+      "Primary DB": {
+        "host": "db-primary.internal",
+        "port": 5432,
+        "database": "main_db",
+        "connection_pool": {
+          "min_connections": 5,
+          "max_connections": 100,
+          "timeout": 30
+        }
+      },
+      "Read Replica": {
+        "host": "db-replica.internal",
+        "port": 5432,
+        "database": "main_db",
+        "connection_pool": null
+      }
+    },
+    "Cache Settings": {
+      "Redis Cluster": {
+        "nodes": [
+          {"host": "redis-1.internal", "port": 6379},
+          {"host": "redis-2.internal", "port": 6379}
+        ],
+        "ttl_seconds": 3600,
+        "max_memory": "2GB"
+      }
+    },
+    "API Configuration": {
+      "rate_limiting": {
+        "requests_per_hour": 1000,
+        "burst_limit": 50
+      },
+      "security": {
+        "jwt_secret": "secret-key",
+        "token_expiry": "24h",
+        "cors_origins": ["https://app.example.com", "https://admin.example.com"]
+      }
+    }
+  },
+  "Feature Flags": {
+    "new_ui_enabled": true,
+    "beta_features": false,
+    "analytics_tracking": true,
+    "maintenance_mode": null
+  },
+  "Logging": {
+    "level": "INFO",
+    "outputs": ["console", "file"],
+    "file_config": {
+      "path": "/var/log/app.log",
+      "max_size": "100MB",
+      "rotation": "daily"
+    }
+  }
+}

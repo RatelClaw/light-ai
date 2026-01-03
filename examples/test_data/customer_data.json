@@ -1,0 +1,73 @@
+{
+  "customers": [
+    {
+      "customer_id": "C001",
+      "name": "John Smith",
+      "email": "john.smith@email.com",
+      "age": 35,
+      "location": {
+        "city": "New York",
+        "state": "NY",
+        "country": "USA"
+      },
+      "preferences": {
+        "categories": ["Electronics", "Furniture"],
+        "price_range": "high",
+        "communication": "email"
+      },
+      "purchase_history": {
+        "total_orders": 15,
+        "total_spent": 2499.85,
+        "last_purchase": "2024-01-18"
+      }
+    },
+    {
+      "customer_id": "C002",
+      "name": "Sarah Johnson",
+      "email": "sarah.j@email.com",
+      "age": 28,
+      "location": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "country": "USA"
+      },
+      "preferences": {
+        "categories": ["Electronics"],
+        "price_range": "medium",
+        "communication": "sms"
+      },
+      "purchase_history": {
+        "total_orders": 8,
+        "total_spent": 1299.92,
+        "last_purchase": "2024-01-20"
+      }
+    },
+    {
+      "customer_id": "C003",
+      "name": "Mike Davis",
+      "email": "mike.davis@email.com",
+      "age": 42,
+      "location": {
+        "city": "Chicago",
+        "state": "IL",
+        "country": "USA"
+      },
+      "preferences": {
+        "categories": ["Furniture", "Electronics"],
+        "price_range": "high",
+        "communication": "phone"
+      },
+      "purchase_history": {
+        "total_orders": 12,
+        "total_spent": 3599.88,
+        "last_purchase": "2024-01-22"
+      }
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "created_date": "2024-01-01",
+    "total_customers": 3,
+    "data_source": "CRM System"
+  }
+}

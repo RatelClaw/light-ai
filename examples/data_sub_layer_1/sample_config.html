@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Configuration</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .config-section { margin-bottom: 30px; }
+        .config-item { margin: 10px 0; }
+        .value { font-weight: bold; color: #2c3e50; }
+    </style>
+</head>
+<body>
+    <h1>System Configuration Dashboard</h1>
+    
+    <div class="config-section">
+        <h2>Database Settings</h2>
+        <div class="config-item">Host: <span class="value">localhost</span></div>
+        <div class="config-item">Port: <span class="value">5432</span></div>
+        <div class="config-item">Database: <span class="value">ecommerce_db</span></div>
+        <div class="config-item">Max Connections: <span class="value">100</span></div>
+    </div>
+    
+    <div class="config-section">
+        <h2>Cache Configuration</h2>
+        <div class="config-item">Redis Host: <span class="value">redis-cluster.internal</span></div>
+        <div class="config-item">Redis Port: <span class="value">6379</span></div>
+        <div class="config-item">TTL: <span class="value">3600 seconds</span></div>
+    </div>
+    
+    <div class="config-section">
+        <h2>API Limits</h2>
+        <div class="config-item">Rate Limit: <span class="value">1000 requests/hour</span></div>
+        <div class="config-item">Max File Size: <span class="value">10MB</span></div>
+        <div class="config-item">Timeout: <span class="value">30 seconds</span></div>
+    </div>
+    
+    <div class="config-section">
+        <h2>Feature Flags</h2>
+        <div class="config-item">New UI: <span class="value">Enabled</span></div>
+        <div class="config-item">Beta Features: <span class="value">Disabled</span></div>
+        <div class="config-item">Analytics: <span class="value">Enabled</span></div>
+    </div>
+</body>
+</html>

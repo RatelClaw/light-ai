@@ -1,0 +1,4 @@
+# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py
+# hypothesis_version: 6.148.9
+
+[0.0, 100.0, 'DataHierarchy', 'ResourceMetadata', 'SchemaInfo', 'admin', 'chunk_count', 'client_id', 'column_count', 'completed', 'content_preview', 'created_at', 'csv', 'data', 'data_type', 'docx', 'error_message', 'excel', 'expected_client_id', 'expected_user_id', 'failed', 'file_hash', 'file_size_bytes', 'html', 'is_deleted', 'json', 'jsonl', 'manager', 'markdown', 'original_filename', 'parquet', 'pdf', 'pending', 'processing_status', 'requesting_client_id', 'requesting_user_id', 'resource_id', 'resource_type', 'row_count', 'schema_id', 'storage_path', 'structured', 'tsv', 'txt', 'unstructured', 'updated_at', 'uploading', 'user', 'user_id', 'validation', 'version']

@@ -1,0 +1,4 @@
+# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_router.py
+# hypothesis_version: 6.148.9
+
+[0.0, 100, ' WHERE ', ')', '.csv', '.parquet', '.tsv', '.xls', '.xlsx', 'ANALYZE', 'CHECKPOINT', 'Resource updated', 'VACUUM', 'WHERE', 'chromadb', 'chromadb_initialized', 'client_id', 'completed', 'created_at', 'created_by', 'database_health', 'distance', 'distances', 'document', 'documents', 'duckdb', 'duckdb_initialized', 'error', 'failed', 'file_path', 'file_size_bytes', 'id', 'ids', 'metadata', 'metadatas', 'operation', 'operation_details', 'optimized', 'resource_id', 'resource_type', 'sqlite', 'sqlite_initialized', 'storage_systems', 'structured_data', 'unstructured', 'user_id', 'version']

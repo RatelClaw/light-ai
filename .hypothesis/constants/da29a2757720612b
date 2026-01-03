@@ -1,0 +1,4 @@
+# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/metadata_registry.py
+# hypothesis_version: 6.148.9
+
+[100, 'chunk_count', 'client_id', 'client_id = ?', 'column_count', 'content_preview', 'count', 'created_at', 'data_type', 'detected_at', 'error_message', 'file_hash', 'file_size_bytes', 'filename', 'is_deleted', 'is_deleted = 0', 'message', 'original_filename', 'processing_status', 'recent_uploads', 'resource_id', 'resource_type', 'resources_by_type', 'row_count', 'schema_id', 'schema_json', 'stage', 'started_at', 'statistics_json', 'status', 'storage_path', 'total', 'total_bytes', 'total_resources', 'total_size', 'total_size_bytes', 'updated_at', 'uploaded_bytes', 'user_id', 'user_id = ?', 'version']

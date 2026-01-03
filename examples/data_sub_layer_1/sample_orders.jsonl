@@ -1,0 +1,5 @@
+{"order_id": "ORD001", "customer_id": 1, "product_ids": ["P001"], "total": 99.99, "order_date": "2024-01-10", "status": "shipped"}
+{"order_id": "ORD002", "customer_id": 2, "product_ids": ["P002", "P003"], "total": 449.98, "order_date": "2024-01-11", "status": "processing"}
+{"order_id": "ORD003", "customer_id": 3, "product_ids": ["P001", "P003"], "total": 249.98, "order_date": "2024-01-12", "status": "delivered"}
+{"order_id": "ORD004", "customer_id": 4, "product_ids": ["P002"], "total": 299.99, "order_date": "2024-01-13", "status": "cancelled"}
+{"order_id": "ORD005", "customer_id": 5, "product_ids": ["P001", "P002", "P003"], "total": 549.97, "order_date": "2024-01-14", "status": "shipped"}

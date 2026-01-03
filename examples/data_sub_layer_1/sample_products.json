@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "product_id": "P001",
+      "name": "Wireless Headphones",
+      "category": "Electronics",
+      "price": 99.99,
+      "in_stock": true,
+      "specifications": {
+        "battery_life": "20 hours",
+        "connectivity": "Bluetooth 5.0",
+        "weight": "250g"
+      },
+      "tags": ["wireless", "audio", "portable"]
+    },
+    {
+      "product_id": "P002",
+      "name": "Smart Watch",
+      "category": "Electronics",
+      "price": 299.99,
+      "in_stock": false,
+      "specifications": {
+        "display": "1.4 inch OLED",
+        "battery_life": "7 days",
+        "water_resistance": "IP68"
+      },
+      "tags": ["smart", "fitness", "wearable"]
+    },
+    {
+      "product_id": "P003",
+      "name": "Coffee Maker",
+      "category": "Home & Kitchen",
+      "price": 149.99,
+      "in_stock": true,
+      "specifications": {
+        "capacity": "12 cups",
+        "features": ["programmable", "auto-shutoff"],
+        "dimensions": "14x10x12 inches"
+      },
+      "tags": ["coffee", "kitchen", "appliance"]
+    }
+  ],
+  "metadata": {
+    "total_products": 3,
+    "last_updated": "2024-01-15T10:30:00Z",
+    "version": "1.0"
+  }
+}
