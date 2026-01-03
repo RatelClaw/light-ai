@@ -770,7 +770,15 @@ class DataCleaningEngine:
             else:
                 raise ValueError(f"For {data_type.value}, either text content or file_path must be provided")
             
-            return self.unstructured_cleaner.clean_text(text, data_type)
+            # Get the 3-tuple from unstructured cleaner
+            cleaned_text, chunks, stats = self.unstructured_cleaner.clean_text(text, data_type)
+            
+            # Return consistent 2-tuple format: (cleaned_data_dict, stats)
+            cleaned_data = {
+                "text": cleaned_text,
+                "chunks": chunks
+            }
+            return cleaned_data, stats
         
         else:
             raise ValueError(f"Unsupported data type for cleaning: {data_type}")

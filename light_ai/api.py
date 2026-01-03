@@ -232,9 +232,8 @@ class UniversalDataHandler:
                 # TODO: Implement proper unstructured data storage with embeddings
             
             # Register metadata (only once, not done by storage router for file uploads)
-            # Note: For JSON files, storage router already creates metadata, so skip this
-            if metadata.resource_type != ResourceType.JSON:
-                self.metadata_registry.create_resource_metadata(metadata)
+            # Note: Storage router already creates metadata for all types, so skip this
+            # self.metadata_registry.create_resource_metadata(metadata)
             
             return APIResponse(
                 success=True,
@@ -413,7 +412,8 @@ class UniversalDataHandler:
                     self.logger.info(f"Would store unstructured data for {metadata.resource_id}")
                 
                 # Register metadata (only for bulk uploads where storage router doesn't handle it)
-                self.metadata_registry.create_resource_metadata(metadata)
+                # Note: Storage router already handles metadata creation, so skip this
+                # self.metadata_registry.create_resource_metadata(metadata)
                 
                 # Add to response data
                 resource_ids.append(metadata.resource_id)
@@ -623,7 +623,7 @@ class UniversalDataHandler:
                     "results": formatted_data,
                     "row_count": result.row_count,
                     "execution_time_ms": result.execution_time_ms,
-                    "query_plan": result.query_plan.to_dict() if result.query_plan else None
+                    "query_plan": result.query_plan.to_dict() if hasattr(result.query_plan, 'to_dict') else str(result.query_plan)
                 },
                 metadata={"operation": "query_structured", "output_format": output_format}
             )
@@ -650,7 +650,7 @@ class UniversalDataHandler:
                 return APIResponse(success=False, error="Invalid client_id or user_id")
             
             # Process natural language query
-            result = self.nl_processor.process_query(question, client_id, user_id)
+            result = self.nl_processor.process_natural_query(question, client_id, user_id)
             
             # Format output if data is available
             formatted_data = None
@@ -664,7 +664,7 @@ class UniversalDataHandler:
                     "generated_sql": result.generated_sql,
                     "explanation": result.explanation,
                     "results": formatted_data,
-                    "confidence": result.confidence,
+                    "confidence": result.confidence_score,
                     "query_type": result.query_type.value if result.query_type else None
                 },
                 metadata={"operation": "query_natural", "output_format": output_format}
@@ -692,13 +692,20 @@ class UniversalDataHandler:
             if not self._validate_access(client_id, user_id):
                 return APIResponse(success=False, error="Invalid client_id or user_id")
             
+            # Convert string strategy to enum
+            from .sub_layer_2.semantic_search_engine import SearchStrategy
+            try:
+                strategy_enum = SearchStrategy(strategy)
+            except ValueError:
+                return APIResponse(success=False, error=f"Invalid search strategy: {strategy}")
+            
             # Perform semantic search
             results = self.search_engine.search(
                 query=query,
                 client_id=client_id,
                 user_id=user_id,
-                strategy=strategy,
-                limit=limit
+                strategy=strategy_enum,
+                n_results=limit
             )
             
             # Format results
@@ -706,9 +713,9 @@ class UniversalDataHandler:
             for result in results.results:
                 formatted_results.append({
                     "resource_id": result.resource_id,
-                    "chunk_id": result.chunk_id,
-                    "content": result.content,
-                    "score": result.score,
+                    "chunk_id": result.chunk_index,
+                    "content": result.document,
+                    "score": result.relevance_score,
                     "metadata": result.metadata
                 })
             
@@ -719,7 +726,7 @@ class UniversalDataHandler:
                     "strategy": strategy,
                     "results": formatted_results,
                     "total_results": len(formatted_results),
-                    "search_time_ms": results.search_time_ms
+                    "search_time_ms": results.execution_time_ms
                 },
                 metadata={"operation": "search_unstructured", "limit": limit}
             )
@@ -746,11 +753,10 @@ class UniversalDataHandler:
                 return APIResponse(success=False, error="Invalid client_id or user_id")
             
             # Get analysis from AI data analyst
-            report = self.ai_analyst.analyze(
+            report = self.ai_analyst.analyze_data(
                 question=question,
                 client_id=client_id,
-                user_id=user_id,
-                include_visualizations=include_visualizations
+                user_id=user_id
             )
             
             return APIResponse(
@@ -758,13 +764,13 @@ class UniversalDataHandler:
                 data={
                     "question": question,
                     "analysis_type": report.analysis_type.value,
-                    "summary": report.summary,
-                    "insights": [insight.to_dict() for insight in report.insights],
-                    "data_sources": [source.to_dict() for source in report.data_sources],
-                    "reasoning": report.reasoning,
+                    "summary": report.executive_summary,
+                    "insights": [insight.to_dict() for insight in report.key_insights],
+                    "data_sources": [source.to_dict() for source in report.data_sources_used],
+                    "reasoning": report.methodology,
                     "recommendations": report.recommendations,
                     "visualizations": report.visualizations,
-                    "confidence": report.confidence
+                    "confidence": report.confidence_score
                 },
                 metadata={"operation": "ask_data_analyst", "include_visualizations": include_visualizations}
             )

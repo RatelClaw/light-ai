@@ -1833,3 +1833,559 @@ ValueError: Resource 6c4bfc3e-aaf5-4181-b88a-056637d3cda2 already exists
 2026-01-03 22:55:44 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 39ebe0b4-c9dd-41d2-b87e-5ce2e7490a42
 2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_39ebe0b4_c9dd_41d2_b87e_5ce2e7490a42
 2026-01-03 22:55:44 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_39ebe0b4_c9dd_41d2_b87e_5ce2e7490a42
+2026-01-03 22:57:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp_kbzaf82.json (resource_id: 891d1ddb-c73f-43cd-a1a8-12897386fe8d)
+2026-01-03 22:57:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp_kbzaf82.json (json, 0.0MB)
+2026-01-03 22:57:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 2d6362fa... (would query metadata registry)
+2026-01-03 22:57:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp_kbzaf82.json -> 891d1ddb-c73f-43cd-a1a8-12897386fe8d
+2026-01-03 22:57:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:57:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:57:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:57:00 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 891d1ddb-c73f-43cd-a1a8-12897386fe8d
+2026-01-03 22:57:00 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 891d1ddb-c73f-43cd-a1a8-12897386fe8d
+2026-01-03 22:57:00 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_891d1ddb_c73f_43cd_a1a8_12897386fe8d
+2026-01-03 22:57:00 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_891d1ddb_c73f_43cd_a1a8_12897386fe8d
+2026-01-03 22:58:27 - universal_data_handler - ERROR - api.py:128 - Error in ask_data_analyst: 'AIDataAnalyst' object has no attribute 'analyze'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 749, in ask_data_analyst
+    report = self.ai_analyst.analyze(
+AttributeError: 'AIDataAnalyst' object has no attribute 'analyze'
+2026-01-03 22:58:34 - universal_data_handler - ERROR - api.py:128 - Error in query_natural: 'NaturalLanguageProcessor' object has no attribute 'process_query'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 653, in query_natural
+    result = self.nl_processor.process_query(question, client_id, user_id)
+AttributeError: 'NaturalLanguageProcessor' object has no attribute 'process_query'
+2026-01-03 22:59:50 - universal_data_handler - ERROR - api.py:128 - Error in query_natural: 'NaturalLanguageProcessor' object has no attribute 'process_query'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 653, in query_natural
+    result = self.nl_processor.process_query(question, client_id, user_id)
+AttributeError: 'NaturalLanguageProcessor' object has no attribute 'process_query'
+2026-01-03 23:01:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpg1hlpxb8.csv (resource_id: 4fea3720-37ae-4b9e-9fa1-0d50d3b9a90a)
+2026-01-03 23:01:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpg1hlpxb8.csv (csv, 0.0MB)
+2026-01-03 23:01:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash cbc9b58d... (would query metadata registry)
+2026-01-03 23:01:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpg1hlpxb8.csv -> 4fea3720-37ae-4b9e-9fa1-0d50d3b9a90a
+2026-01-03 23:01:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: csv
+2026-01-03 23:01:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:108 - Starting structured data cleaning: 9 rows, 7 columns
+2026-01-03 23:01:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:141 - Structured data cleaning completed: 9 rows, 7 columns (0 rows, 0 columns removed)
+2026-01-03 23:01:00 - light_ai.storage.storage_utils - INFO - storage_utils.py:225 - Stored file: data/structured/client-717c4c4d/user-8f4732f3/4fea3720-37ae-4b9e-9fa1-0d50d3b9a90a/v1_tmpg1hlpxb8.csv
+2026-01-03 23:01:00 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 4fea3720-37ae-4b9e-9fa1-0d50d3b9a90a
+2026-01-03 23:01:00 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 4fea3720-37ae-4b9e-9fa1-0d50d3b9a90a
+2026-01-03 23:01:00 - light_ai.storage.database_managers - INFO - database_managers.py:165 - Created virtual table: structured_data.resource_4fea3720_37ae_4b9e_9fa1_0d50d3b9a90a
+2026-01-03 23:01:00 - light_ai.storage.storage_router - INFO - storage_router.py:120 - Stored structured data: resource_4fea3720_37ae_4b9e_9fa1_0d50d3b9a90a
+2026-01-03 23:01:00 - universal_data_handler - ERROR - api.py:128 - Error in upload_file: Resource 4fea3720-37ae-4b9e-9fa1-0d50d3b9a90a already exists
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 237, in upload_file
+    self.metadata_registry.create_resource_metadata(metadata)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/storage/metadata_registry.py", line 62, in create_resource_metadata
+    raise ValueError(f"Resource {metadata.resource_id} already exists")
+ValueError: Resource 4fea3720-37ae-4b9e-9fa1-0d50d3b9a90a already exists
+2026-01-03 23:01:09 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp9ol2rraa.csv (resource_id: 40bc6a85-5c22-48f5-86be-df1f670551ac)
+2026-01-03 23:01:09 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp9ol2rraa.csv (csv, 0.0MB)
+2026-01-03 23:01:09 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash da74f4d5... (would query metadata registry)
+2026-01-03 23:01:09 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp9ol2rraa.csv -> 40bc6a85-5c22-48f5-86be-df1f670551ac
+2026-01-03 23:01:09 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: csv
+2026-01-03 23:01:09 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:108 - Starting structured data cleaning: 30 rows, 9 columns
+2026-01-03 23:01:09 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:141 - Structured data cleaning completed: 30 rows, 9 columns (0 rows, 0 columns removed)
+2026-01-03 23:01:09 - light_ai.storage.storage_utils - INFO - storage_utils.py:225 - Stored file: data/structured/client-717c4c4d/user-8f4732f3/40bc6a85-5c22-48f5-86be-df1f670551ac/v1_tmp9ol2rraa.csv
+2026-01-03 23:01:09 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 40bc6a85-5c22-48f5-86be-df1f670551ac
+2026-01-03 23:01:09 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 40bc6a85-5c22-48f5-86be-df1f670551ac
+2026-01-03 23:01:09 - light_ai.storage.database_managers - INFO - database_managers.py:165 - Created virtual table: structured_data.resource_40bc6a85_5c22_48f5_86be_df1f670551ac
+2026-01-03 23:01:09 - light_ai.storage.storage_router - INFO - storage_router.py:120 - Stored structured data: resource_40bc6a85_5c22_48f5_86be_df1f670551ac
+2026-01-03 23:01:09 - universal_data_handler - ERROR - api.py:128 - Error in upload_file: Resource 40bc6a85-5c22-48f5-86be-df1f670551ac already exists
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 237, in upload_file
+    self.metadata_registry.create_resource_metadata(metadata)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/storage/metadata_registry.py", line 62, in create_resource_metadata
+    raise ValueError(f"Resource {metadata.resource_id} already exists")
+ValueError: Resource 40bc6a85-5c22-48f5-86be-df1f670551ac already exists
+2026-01-03 23:01:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpak2yznp6.pdf (resource_id: d92162fb-36c5-4818-b77b-2dc93fdcd29f)
+2026-01-03 23:01:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpak2yznp6.pdf (pdf, 0.0MB)
+2026-01-03 23:01:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 33bf5283... (would query metadata registry)
+2026-01-03 23:01:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpak2yznp6.pdf -> d92162fb-36c5-4818-b77b-2dc93fdcd29f
+2026-01-03 23:01:38 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: pdf
+2026-01-03 23:01:38 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:528 - Starting unstructured data cleaning: pdf, 2668 characters
+2026-01-03 23:01:38 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:541 - Unstructured data cleaning completed: 2625 characters, 1 chunks created
+2026-01-03 23:01:38 - universal_data_handler - ERROR - api.py:128 - Error in upload_file: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 218, in upload_file
+    cleaned_data, stats = self.cleaning_engine.clean_data(
+ValueError: too many values to unpack (expected 2)
+2026-01-03 23:06:17 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 23:06:17 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:17 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 23:06:35 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:06:50 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp9kcjrk7o.pdf (resource_id: 790e45d6-ae79-4f47-a6c3-eb047a015401)
+2026-01-03 23:06:50 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp9kcjrk7o.pdf (pdf, 0.0MB)
+2026-01-03 23:06:50 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 33bf5283... (would query metadata registry)
+2026-01-03 23:06:50 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp9kcjrk7o.pdf -> 790e45d6-ae79-4f47-a6c3-eb047a015401
+2026-01-03 23:06:50 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: pdf
+2026-01-03 23:06:50 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:528 - Starting unstructured data cleaning: pdf, 2668 characters
+2026-01-03 23:06:50 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:541 - Unstructured data cleaning completed: 2625 characters, 1 chunks created
+2026-01-03 23:06:50 - universal_data_handler - ERROR - api.py:128 - Error in upload_file: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 224, in upload_file
+    cleaned_data, stats = result
+ValueError: too many values to unpack (expected 2)
+2026-01-03 23:12:09 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 23:12:09 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:09 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 23:12:26 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:33 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp4r1lavy8.pdf (resource_id: c4a75400-b608-46c8-ada1-c283b30a2577)
+2026-01-03 23:12:33 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp4r1lavy8.pdf (pdf, 0.0MB)
+2026-01-03 23:12:33 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 33bf5283... (would query metadata registry)
+2026-01-03 23:12:33 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp4r1lavy8.pdf -> c4a75400-b608-46c8-ada1-c283b30a2577
+2026-01-03 23:12:33 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: pdf
+2026-01-03 23:12:33 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:528 - Starting unstructured data cleaning: pdf, 2668 characters
+2026-01-03 23:12:33 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:541 - Unstructured data cleaning completed: 2625 characters, 1 chunks created
+2026-01-03 23:12:33 - universal_data_handler - INFO - api.py:231 - Would store unstructured data for c4a75400-b608-46c8-ada1-c283b30a2577
+2026-01-03 23:12:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpn85ofc1h.json (resource_id: 2ee14db3-8a56-45db-8cfd-c85dbbff6dc6)
+2026-01-03 23:12:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpn85ofc1h.json (json, 0.0MB)
+2026-01-03 23:12:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash ee699243... (would query metadata registry)
+2026-01-03 23:12:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpn85ofc1h.json -> 2ee14db3-8a56-45db-8cfd-c85dbbff6dc6
+2026-01-03 23:12:44 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 23:12:44 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 23:12:44 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 23:12:44 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 23:12:44 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 23:12:44 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:44 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 23:12:44 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:12:44 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 23:12:44 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:12:44 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 23:12:44 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 2ee14db3-8a56-45db-8cfd-c85dbbff6dc6
+2026-01-03 23:12:44 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 2ee14db3-8a56-45db-8cfd-c85dbbff6dc6
+2026-01-03 23:12:44 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_2ee14db3_8a56_45db_8cfd_c85dbbff6dc6
+2026-01-03 23:12:44 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_2ee14db3_8a56_45db_8cfd_c85dbbff6dc6
+2026-01-03 23:23:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp61uj1qpv.csv (resource_id: 511e99a5-daa5-49ef-abe4-c5a9dd749b93)
+2026-01-03 23:23:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp61uj1qpv.csv (csv, 0.0MB)
+2026-01-03 23:23:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash da74f4d5... (would query metadata registry)
+2026-01-03 23:23:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp61uj1qpv.csv -> 511e99a5-daa5-49ef-abe4-c5a9dd749b93
+2026-01-03 23:23:02 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: csv
+2026-01-03 23:23:02 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:108 - Starting structured data cleaning: 30 rows, 9 columns
+2026-01-03 23:23:02 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:141 - Structured data cleaning completed: 30 rows, 9 columns (0 rows, 0 columns removed)
+2026-01-03 23:23:02 - light_ai.storage.storage_utils - INFO - storage_utils.py:225 - Stored file: data/structured/client-3989c6f3/user-90885f7c/511e99a5-daa5-49ef-abe4-c5a9dd749b93/v1_tmp61uj1qpv.csv
+2026-01-03 23:23:02 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 511e99a5-daa5-49ef-abe4-c5a9dd749b93
+2026-01-03 23:23:02 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 511e99a5-daa5-49ef-abe4-c5a9dd749b93
+2026-01-03 23:23:02 - light_ai.storage.database_managers - INFO - database_managers.py:165 - Created virtual table: structured_data.resource_511e99a5_daa5_49ef_abe4_c5a9dd749b93
+2026-01-03 23:23:02 - light_ai.storage.storage_router - INFO - storage_router.py:120 - Stored structured data: resource_511e99a5_daa5_49ef_abe4_c5a9dd749b93
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:24:14 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:24:14 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 23:24:14 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:24:14 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 23:24:14 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:24:14 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-03 23:24:14 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:145 - Natural Language Processor initialized
+2026-01-03 23:24:22 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-03 23:24:22 - light_ai.sub_layer_2.sql_query_engine - ERROR - sql_query_engine.py:148 - Failed to execute SQL query: Access denied to table: transactions
+2026-01-03 23:24:22 - light_ai.sub_layer_2.natural_language_processor - ERROR - natural_language_processor.py:465 - Failed to process structured query: Query execution failed: Access denied to table: transactions
+2026-01-03 23:24:22 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:210 - Processed natural language query for user user-90885f7c: structured_data
+2026-01-03 23:24:22 - universal_data_handler - ERROR - api.py:128 - Error in query_natural: 'NLQueryResult' object has no attribute 'confidence'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 667, in query_natural
+    "confidence": result.confidence,
+AttributeError: 'NLQueryResult' object has no attribute 'confidence'
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-03 23:25:07 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:145 - Natural Language Processor initialized
+2026-01-03 23:25:07 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:515 - Initializing semantic search engine...
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 23:25:07 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 23:25:07 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:519 - Semantic search engine initialized successfully
+2026-01-03 23:25:07 - light_ai.sub_layer_2.ai_data_analyst - INFO - ai_data_analyst.py:211 - AI Data Analyst initialized
+2026-01-03 23:25:07 - universal_data_handler - ERROR - api.py:128 - Error in ask_data_analyst: 'AnalysisReport' object has no attribute 'summary'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 760, in ask_data_analyst
+    "summary": report.summary,
+AttributeError: 'AnalysisReport' object has no attribute 'summary'
+2026-01-03 23:26:11 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-03 23:26:11 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:145 - Natural Language Processor initialized
+2026-01-03 23:26:17 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:210 - Processed natural language query for user user-90885f7c: structured_data
+2026-01-03 23:26:17 - universal_data_handler - ERROR - api.py:128 - Error in query_natural: 'NLQueryResult' object has no attribute 'confidence'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 667, in query_natural
+    "confidence": result.confidence,
+AttributeError: 'NLQueryResult' object has no attribute 'confidence'
+2026-01-03 23:27:05 - universal_data_handler - ERROR - api.py:128 - Error in search_unstructured: SemanticSearchEngine.search() got an unexpected keyword argument 'limit'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 696, in search_unstructured
+    results = self.search_engine.search(
+TypeError: SemanticSearchEngine.search() got an unexpected keyword argument 'limit'
+2026-01-03 23:31:08 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: pdf
+2026-01-03 23:31:08 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:528 - Starting unstructured data cleaning: pdf, 1 characters
+2026-01-03 23:31:08 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:541 - Unstructured data cleaning completed: 1 characters, 0 chunks created
+2026-01-04 00:56:47 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-04 00:56:47 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:56:47 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-04 00:57:38 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-04 00:57:38 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:38 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-04 00:57:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpi4tzlgv6.csv (resource_id: 5bc21208-f0b7-413d-916a-04238a100b97)
+2026-01-04 00:57:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpi4tzlgv6.csv (csv, 0.0MB)
+2026-01-04 00:57:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 45fb9c13... (would query metadata registry)
+2026-01-04 00:57:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpi4tzlgv6.csv -> 5bc21208-f0b7-413d-916a-04238a100b97
+2026-01-04 00:57:38 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: csv
+2026-01-04 00:57:38 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:108 - Starting structured data cleaning: 3 rows, 3 columns
+2026-01-04 00:57:38 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:141 - Structured data cleaning completed: 3 rows, 3 columns (0 rows, 0 columns removed)
+2026-01-04 00:57:38 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.storage_utils - INFO - storage_utils.py:225 - Stored file: data/structured/3989c6f3-1234-5678-9abc-def012345678/90885f7c-1234-5678-9abc-def012345678/5bc21208-f0b7-413d-916a-04238a100b97/v1_tmpi4tzlgv6.csv
+2026-01-04 00:57:39 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 5bc21208-f0b7-413d-916a-04238a100b97
+2026-01-04 00:57:39 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 5bc21208-f0b7-413d-916a-04238a100b97
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:165 - Created virtual table: structured_data.resource_5bc21208_f0b7_413d_916a_04238a100b97
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:120 - Stored structured data: resource_5bc21208_f0b7_413d_916a_04238a100b97
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:57:39 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:145 - Natural Language Processor initialized
+2026-01-04 00:57:39 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:210 - Processed natural language query for user 90885f7c-1234-5678-9abc-def012345678: metadata_query
+2026-01-04 00:57:39 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:515 - Initializing semantic search engine...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:519 - Semantic search engine initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:57:39 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:145 - Natural Language Processor initialized
+2026-01-04 00:57:39 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:515 - Initializing semantic search engine...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:519 - Semantic search engine initialized successfully
+2026-01-04 00:57:39 - light_ai.sub_layer_2.ai_data_analyst - INFO - ai_data_analyst.py:211 - AI Data Analyst initialized
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:57:39 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:57:39 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:57:39 - light_ai.storage.database_managers - ERROR - database_managers.py:122 - DuckDB operation failed: Parser Error: syntax error at or near "WHERE"
+
+LINE 1: ...urce_5bc21208_f0b7_413d_916a_04238a100b97_enhanced LIMIT 5 WHERE client_id = '3989c6f3-1234-5678-9abc-def012345678...
+                                                                      ^
+2026-01-04 00:57:39 - light_ai.sub_layer_2.sql_query_engine - ERROR - sql_query_engine.py:148 - Failed to execute SQL query: Parser Error: syntax error at or near "WHERE"
+
+LINE 1: ...urce_5bc21208_f0b7_413d_916a_04238a100b97_enhanced LIMIT 5 WHERE client_id = '3989c6f3-1234-5678-9abc-def012345678...
+                                                                      ^
+2026-01-04 00:57:39 - universal_data_handler - ERROR - api.py:128 - Error in query_structured: Query execution failed: Parser Error: syntax error at or near "WHERE"
+
+LINE 1: ...urce_5bc21208_f0b7_413d_916a_04238a100b97_enhanced LIMIT 5 WHERE client_id = '3989c6f3-1234-5678-9abc-def012345678...
+                                                                      ^
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 136, in execute_query
+    result = self._execute_normal_query(
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 531, in _execute_normal_query
+    cursor = conn.execute(sql)
+_duckdb.ParserException: Parser Error: syntax error at or near "WHERE"
+
+LINE 1: ...urce_5bc21208_f0b7_413d_916a_04238a100b97_enhanced LIMIT 5 WHERE client_id = '3989c6f3-1234-5678-9abc-def012345678...
+                                                                      ^
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 614, in query_structured
+    result = self.sql_engine.execute_query(sql_query, client_id, user_id)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 149, in execute_query
+    raise RuntimeError(f"Query execution failed: {e}")
+RuntimeError: Query execution failed: Parser Error: syntax error at or near "WHERE"
+
+LINE 1: ...urce_5bc21208_f0b7_413d_916a_04238a100b97_enhanced LIMIT 5 WHERE client_id = '3989c6f3-1234-5678-9abc-def012345678...
+                                                                      ^
+2026-01-04 00:57:39 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:57:39 - light_ai.sub_layer_2.sql_query_engine - ERROR - sql_query_engine.py:148 - Failed to execute SQL query: Access denied to table: transactions
+2026-01-04 00:57:39 - universal_data_handler - ERROR - api.py:128 - Error in query_structured: Query execution failed: Access denied to table: transactions
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 111, in execute_query
+    query_plan = self._create_query_plan(sql, client_id, user_id, access_level)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 318, in _create_query_plan
+    raise ValueError(f"Access denied to table: {table_ref}")
+ValueError: Access denied to table: transactions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 614, in query_structured
+    result = self.sql_engine.execute_query(sql_query, client_id, user_id)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 149, in execute_query
+    raise RuntimeError(f"Query execution failed: {e}")
+RuntimeError: Query execution failed: Access denied to table: transactions
+2026-01-04 00:59:45 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-04 00:59:45 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:45 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-04 00:59:45 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp1as3_lwn.csv (resource_id: e79ef516-41cb-433e-8878-3189e618ab1e)
+2026-01-04 00:59:45 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp1as3_lwn.csv (csv, 0.0MB)
+2026-01-04 00:59:45 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 45fb9c13... (would query metadata registry)
+2026-01-04 00:59:45 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp1as3_lwn.csv -> e79ef516-41cb-433e-8878-3189e618ab1e
+2026-01-04 00:59:45 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: csv
+2026-01-04 00:59:45 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:108 - Starting structured data cleaning: 3 rows, 3 columns
+2026-01-04 00:59:45 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:141 - Structured data cleaning completed: 3 rows, 3 columns (0 rows, 0 columns removed)
+2026-01-04 00:59:45 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:45 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.storage_utils - INFO - storage_utils.py:225 - Stored file: data/structured/3989c6f3-1234-5678-9abc-def012345678/90885f7c-1234-5678-9abc-def012345678/e79ef516-41cb-433e-8878-3189e618ab1e/v1_tmp1as3_lwn.csv
+2026-01-04 00:59:46 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: e79ef516-41cb-433e-8878-3189e618ab1e
+2026-01-04 00:59:46 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource e79ef516-41cb-433e-8878-3189e618ab1e
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:165 - Created virtual table: structured_data.resource_e79ef516_41cb_433e_8878_3189e618ab1e
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:120 - Stored structured data: resource_e79ef516_41cb_433e_8878_3189e618ab1e
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:59:46 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:145 - Natural Language Processor initialized
+2026-01-04 00:59:46 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:210 - Processed natural language query for user 90885f7c-1234-5678-9abc-def012345678: metadata_query
+2026-01-04 00:59:46 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:515 - Initializing semantic search engine...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:519 - Semantic search engine initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:59:46 - light_ai.sub_layer_2.natural_language_processor - INFO - natural_language_processor.py:145 - Natural Language Processor initialized
+2026-01-04 00:59:46 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:515 - Initializing semantic search engine...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.sub_layer_2.semantic_search_engine - INFO - semantic_search_engine.py:519 - Semantic search engine initialized successfully
+2026-01-04 00:59:46 - light_ai.sub_layer_2.ai_data_analyst - INFO - ai_data_analyst.py:211 - AI Data Analyst initialized
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-04 00:59:46 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-04 00:59:46 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:59:46 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:144 - Executed SQL query for user 90885f7c-1234-5678-9abc-def012345678, returned 3 rows
+2026-01-04 00:59:46 - universal_data_handler - ERROR - api.py:128 - Error in query_structured: 'str' object has no attribute 'to_dict'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 626, in query_structured
+    "query_plan": result.query_plan.to_dict() if result.query_plan else None
+AttributeError: 'str' object has no attribute 'to_dict'
+2026-01-04 00:59:46 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-04 00:59:46 - light_ai.sub_layer_2.sql_query_engine - ERROR - sql_query_engine.py:148 - Failed to execute SQL query: Access denied to table: transactions
+2026-01-04 00:59:46 - universal_data_handler - ERROR - api.py:128 - Error in query_structured: Query execution failed: Access denied to table: transactions
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 111, in execute_query
+    query_plan = self._create_query_plan(sql, client_id, user_id, access_level)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 318, in _create_query_plan
+    raise ValueError(f"Access denied to table: {table_ref}")
+ValueError: Access denied to table: transactions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 614, in query_structured
+    result = self.sql_engine.execute_query(sql_query, client_id, user_id)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 149, in execute_query
+    raise RuntimeError(f"Query execution failed: {e}")
+RuntimeError: Query execution failed: Access denied to table: transactions

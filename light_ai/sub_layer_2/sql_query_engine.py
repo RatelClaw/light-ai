@@ -495,8 +495,20 @@ class SQLQueryEngine:
                 flags=re.IGNORECASE
             ) + ")"
         else:
-            # Add new WHERE clause
-            enhanced_sql += f" WHERE client_id = '{client_id}' AND {user_filter}"
+            # Find the position to insert WHERE clause (before ORDER BY, LIMIT, etc.)
+            # Split the query to find the right position
+            order_by_match = re.search(r'\b(ORDER\s+BY|LIMIT|OFFSET)\b', enhanced_sql, re.IGNORECASE)
+            if order_by_match:
+                # Insert WHERE clause before ORDER BY/LIMIT/OFFSET
+                insert_pos = order_by_match.start()
+                enhanced_sql = (
+                    enhanced_sql[:insert_pos] + 
+                    f" WHERE client_id = '{client_id}' AND {user_filter} " +
+                    enhanced_sql[insert_pos:]
+                )
+            else:
+                # Add WHERE clause at the end
+                enhanced_sql += f" WHERE client_id = '{client_id}' AND {user_filter}"
         
         return enhanced_sql
     
