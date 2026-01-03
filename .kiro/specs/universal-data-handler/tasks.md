@@ -6,20 +6,20 @@ This implementation plan breaks down the Universal Data Handler system into disc
 
 ## Tasks
 
-- [ ] 1. Set up project structure and core dependencies
+- [x] 1. Set up project structure and core dependencies
   - Create Python package structure with proper __init__.py files
   - Set up pyproject.toml with all required dependencies (duckdb, chromadb, sqlite3, pandas, openai, etc.)
   - Create configuration management system for OpenRouter API key and optional YAML config
   - Implement logging system with configurable levels and file output
   - _Requirements: 11.1, 11.3, 11.4, 11.8_
 
-- [ ] 1.1 Write unit tests for project setup
+- [x] 1.1 Write unit tests for project setup
   - Test package imports and dependency availability
   - Test configuration loading and validation
   - Test logging system functionality
   - _Requirements: 11.1, 11.3_
 
-- [ ] 2. Implement core data models and hierarchy system
+- [x] 2. Implement core data models and hierarchy system
   - Create DataHierarchy class with client_id, user_id, resource_id (UUID v4 validation)
   - Create ResourceMetadata dataclass with all required fields
   - Create SchemaInfo dataclass for schema registry
@@ -36,7 +36,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test hierarchy enforcement edge cases
   - _Requirements: 3.1, 3.2_
 
-- [ ] 3. Create storage layer foundation
+- [x] 3. Create storage layer foundation
   - Implement automatic directory structure creation (data/structured/, data/json/, etc.)
   - Create database connection managers for DuckDB, ChromaDB, and SQLite
   - Implement SQLite metadata registry schema with all required tables
@@ -53,7 +53,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test metadata registry schema creation
   - _Requirements: 4.4, 4.7, 11.4_
 
-- [ ] 4. Implement Sub-Layer 1: File validation and upload system
+- [x] 4. Implement Sub-Layer 1: File validation and upload system
   - Create file type detection and validation (CSV, Excel, JSON, PDF, TXT, etc.)
   - Implement file size validation (500MB default limit)
   - Create duplicate detection using hash-based comparison
@@ -61,7 +61,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Create bulk upload support with parallel processing
   - _Requirements: 1.1, 1.2, 1.3, 1.5, 1.6, 1.7, 1.8, 1.9_
 
-- [ ] 4.1 Write property test for universal file upload
+- [x] 4.1 Write property test for universal file upload
   - **Property 1: Universal File Upload and Processing**
   - **Validates: Requirements 1.1, 1.2, 1.3, 1.4**
 
@@ -75,7 +75,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test duplicate detection with identical and similar files
   - _Requirements: 1.5, 1.6, 1.7_
 
-- [ ] 5. Implement data cleaning engine
+- [x] 5. Implement data cleaning engine
   - Create structured data cleaning (remove empty rows/columns, strip whitespace, normalize column names)
   - Implement automatic data type detection and conversion
   - Create missing value handling with configurable strategies
@@ -94,7 +94,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test data type detection accuracy
   - _Requirements: 2.1, 2.2, 2.3, 2.5_
 
-- [ ] 6. Implement storage routing and database operations
+- [x] 6. Implement storage routing and database operations
   - Create DuckDB virtual table setup for structured data (CSV, Excel direct querying)
   - Implement DuckDB JSONB storage for JSON data with indexing
   - Create ChromaDB collection management and embedding storage
@@ -102,7 +102,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Create automatic indexing on user_id and client_id for fast filtering
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6_
 
-- [ ]* 6.1 Write property test for multi-database storage routing
+- [x] 6.1 Write property test for multi-database storage routing
   - **Property 4: Multi-Database Storage Routing**
   - **Validates: Requirements 4.1, 4.2, 4.3, 4.4**
 
@@ -112,7 +112,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test SQLite metadata operations
   - _Requirements: 4.1, 4.2, 4.3, 4.4_
 
-- [ ] 7. Implement versioning and audit system
+- [x] 7. Implement versioning and audit system
   - Create version management with non-destructive updates
   - Implement complete audit trail logging in lineage table
   - Create version retrieval and rollback functionality
@@ -130,10 +130,10 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test soft and hard delete operations
   - _Requirements: 5.1, 5.2, 10.1, 10.2_
 
-- [ ] 8. Checkpoint - Ensure Sub-Layer 1 (Data Ingestion & Storage) is complete
+- [x] 8. Checkpoint - Ensure Sub-Layer 1 (Data Ingestion & Storage) is complete
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 9. Implement Sub-Layer 2: SQL query engine
+- [x] 9. Implement Sub-Layer 2: SQL query engine
   - Create DuckDB query execution with virtual table support
   - Implement cross-resource SQL joins across different CSV/Excel files
   - Create derived field calculations and custom classifications
@@ -148,7 +148,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test streaming for large results
   - _Requirements: 6.2, 8.1, 8.2_
 
-- [ ] 10. Implement natural language processing system
+- [-] 10. Implement natural language processing system
   - Create OpenRouter API integration for LLM queries
   - Implement schema-aware text-to-SQL generation
   - Create query explanation and result interpretation
@@ -156,7 +156,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Add error handling with helpful alternative suggestions
   - _Requirements: 7.1, 7.3, 7.4, 7.5, 7.6_
 
-- [ ]* 10.1 Write property test for natural language query processing
+- [-] 10.1 Write property test for natural language query processing
   - **Property 7: Natural Language Query Processing**
   - **Validates: Requirements 7.1, 7.2, 7.3, 7.4**
 
@@ -166,7 +166,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test error handling and suggestions
   - _Requirements: 7.1, 7.4, 7.5_
 
-- [ ] 11. Implement semantic search engine
+- [x] 11. Implement semantic search engine
   - Create OpenRouter embedding generation integration
   - Implement ChromaDB semantic search with multiple strategies (semantic, keyword, hybrid, MMR)
   - Create multi-query retrieval with automatic query variations
@@ -181,7 +181,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test result ranking accuracy
   - _Requirements: 7.2, 7.7, 7.8_
 
-- [ ] 12. Implement AI data analyst agent
+- [x] 12. Implement AI data analyst agent
   - Create automatic resource identification for complex questions
   - Implement schema and sample data retrieval for context
   - Create cross-format data synthesis (structured + unstructured)
@@ -199,25 +199,28 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test report generation quality
   - _Requirements: 9.1, 9.2, 9.4_
 
-- [ ] 13. Implement caching and performance optimization
+- [SKIPPED] 13. Implement caching and performance optimization
   - Create LRU cache with configurable TTL (default 5 minutes)
   - Implement lazy loading for data access
   - Create parallel execution support for multi-resource queries
   - Add query result streaming for large datasets
   - Implement cache management and selective clearing
   - _Requirements: 6.4, 6.5, 6.7, 6.10, 10.6_
+  - **Note: Skipped for now, will be implemented as improvement after final completion**
 
-- [ ]* 13.1 Write property test for caching and optimization
+- [SKIPPED]* 13.1 Write property test for caching and optimization
   - **Property 15: Caching and Optimization Behavior**
   - **Validates: Requirements 6.4, 6.5, 6.6, 6.10, 10.6**
+  - **Note: Skipped along with task 13**
 
-- [ ]* 13.2 Write unit tests for performance features
+- [SKIPPED]* 13.2 Write unit tests for performance features
   - Test LRU cache behavior and TTL expiration
   - Test lazy loading implementation
   - Test parallel query execution
   - _Requirements: 6.4, 6.5, 6.7_
+  - **Note: Skipped along with task 13**
 
-- [ ] 14. Implement comprehensive API layer
+- [x] 14. Implement comprehensive API layer
   - Create Sub-Layer 1 APIs: upload_file(), upload_json(), upload_bulk(), update_resource(), delete_resource()
   - Create Sub-Layer 2 APIs: get_resource(), query_structured(), query_natural(), search_unstructured(), ask_data_analyst()
   - Implement metadata APIs: get_resource_metadata(), list_resources(), get_schema(), get_statistics()
@@ -225,7 +228,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Add consistent response formatting and comprehensive error handling
   - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5, 12.9_
 
-- [ ]* 14.1 Write property test for complete API coverage
+- [x] 14.1 Write property test for complete API coverage
   - **Property 12: Complete API Coverage**
   - **Validates: Requirements 12.1, 12.2, 12.3, 12.4, 12.5, 12.9**
 
@@ -261,7 +264,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Implement comprehensive error handling with descriptive messages
   - _Requirements: 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7_
 
-- [ ]* 16.1 Write property test for transaction safety
+- [ ] 16.1 Write property test for transaction safety
   - **Property 13: Transaction Safety and Data Integrity**
   - **Validates: Requirements 15.1, 15.2, 15.4, 15.7**
 

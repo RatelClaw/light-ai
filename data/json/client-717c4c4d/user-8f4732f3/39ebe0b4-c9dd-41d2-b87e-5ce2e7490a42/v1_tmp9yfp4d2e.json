@@ -1,0 +1,237 @@
+{
+  "customer_id": "CUST-009-2024",
+  "purchase_summary": {
+    "total_orders": 47,
+    "total_spent": 3250.75,
+    "average_order_value": 127.50,
+    "first_purchase_date": "2022-03-20T15:45:00Z",
+    "last_purchase_date": "2024-12-18T19:30:00Z",
+    "purchase_frequency": "Bi-weekly",
+    "return_rate": 8.5,
+    "favorite_payment_method": "Visa ending in 4567"
+  },
+  "category_spending": {
+    "Fashion & Apparel": {
+      "total_spent": 1456.25,
+      "percentage_of_total": 44.8,
+      "order_count": 22,
+      "average_order_value": 66.19,
+      "top_subcategories": ["Dresses", "Shoes", "Accessories"]
+    },
+    "Home & Garden": {
+      "total_spent": 892.50,
+      "percentage_of_total": 27.5,
+      "order_count": 12,
+      "average_order_value": 74.38,
+      "top_subcategories": ["Decor", "Kitchen", "Plants"]
+    },
+    "Beauty & Personal Care": {
+      "total_spent": 567.75,
+      "percentage_of_total": 17.5,
+      "order_count": 18,
+      "average_order_value": 31.54,
+      "top_subcategories": ["Skincare", "Makeup", "Hair Care"]
+    },
+    "Electronics": {
+      "total_spent": 334.25,
+      "percentage_of_total": 10.3,
+      "order_count": 5,
+      "average_order_value": 66.85,
+      "top_subcategories": ["Phone Accessories", "Smart Home", "Headphones"]
+    }
+  },
+  "recent_orders": [
+    {
+      "order_id": "ORD-2024-1218-001",
+      "order_date": "2024-12-18T19:30:00Z",
+      "total_amount": 156.75,
+      "status": "Delivered",
+      "items": [
+        {
+          "product_id": "PROD-FAD-001",
+          "product_name": "Winter Wool Coat - Navy",
+          "category": "Fashion & Apparel",
+          "subcategory": "Outerwear",
+          "price": 89.99,
+          "quantity": 1,
+          "discount_applied": 10.00
+        },
+        {
+          "product_id": "PROD-BPC-045",
+          "product_name": "Hydrating Face Serum Set",
+          "category": "Beauty & Personal Care",
+          "subcategory": "Skincare",
+          "price": 45.99,
+          "quantity": 1,
+          "discount_applied": 0.00
+        },
+        {
+          "product_id": "PROD-HG-123",
+          "product_name": "Ceramic Plant Pot - Medium",
+          "category": "Home & Garden",
+          "subcategory": "Decor",
+          "price": 24.99,
+          "quantity": 1,
+          "discount_applied": 3.22
+        }
+      ],
+      "shipping_cost": 0.00,
+      "tax_amount": 9.78,
+      "discount_total": 13.22,
+      "payment_method": "Visa ending in 4567"
+    },
+    {
+      "order_id": "ORD-2024-1205-002",
+      "order_date": "2024-12-05T21:15:00Z",
+      "total_amount": 198.50,
+      "status": "Delivered",
+      "items": [
+        {
+          "product_id": "PROD-FAD-078",
+          "product_name": "Ankle Boots - Black Leather",
+          "category": "Fashion & Apparel",
+          "subcategory": "Shoes",
+          "price": 129.99,
+          "quantity": 1,
+          "discount_applied": 19.50
+        },
+        {
+          "product_id": "PROD-HG-089",
+          "product_name": "Essential Oil Diffuser",
+          "category": "Home & Garden",
+          "subcategory": "Wellness",
+          "price": 67.99,
+          "quantity": 1,
+          "discount_applied": 0.00
+        }
+      ],
+      "shipping_cost": 0.00,
+      "tax_amount": 12.51,
+      "discount_total": 19.50,
+      "payment_method": "Visa ending in 4567"
+    },
+    {
+      "order_id": "ORD-2024-1122-003",
+      "order_date": "2024-11-22T16:45:00Z",
+      "total_amount": 87.25,
+      "status": "Delivered",
+      "items": [
+        {
+          "product_id": "PROD-BPC-067",
+          "product_name": "Vitamin C Brightening Mask",
+          "category": "Beauty & Personal Care",
+          "subcategory": "Skincare",
+          "price": 32.99,
+          "quantity": 2,
+          "discount_applied": 6.60
+        },
+        {
+          "product_id": "PROD-FAD-112",
+          "product_name": "Silk Scarf - Floral Print",
+          "category": "Fashion & Apparel",
+          "subcategory": "Accessories",
+          "price": 28.99,
+          "quantity": 1,
+          "discount_applied": 4.35
+        }
+      ],
+      "shipping_cost": 0.00,
+      "tax_amount": 5.47,
+      "discount_total": 10.95,
+      "payment_method": "Mastercard ending in 8901"
+    }
+  ],
+  "seasonal_patterns": {
+    "spring": {
+      "total_spent": 745.25,
+      "order_count": 11,
+      "top_categories": ["Home & Garden", "Fashion & Apparel"],
+      "peak_months": ["March", "April"]
+    },
+    "summer": {
+      "total_spent": 892.50,
+      "order_count": 14,
+      "top_categories": ["Fashion & Apparel", "Beauty & Personal Care"],
+      "peak_months": ["June", "July"]
+    },
+    "fall": {
+      "total_spent": 1156.75,
+      "order_count": 16,
+      "top_categories": ["Fashion & Apparel", "Electronics"],
+      "peak_months": ["September", "November"]
+    },
+    "winter": {
+      "total_spent": 456.25,
+      "order_count": 6,
+      "top_categories": ["Home & Garden", "Beauty & Personal Care"],
+      "peak_months": ["December", "January"]
+    }
+  },
+  "brand_preferences": {
+    "favorite_brands": [
+      {
+        "brand_name": "EcoStyle",
+        "category": "Fashion & Apparel",
+        "total_spent": 456.75,
+        "order_count": 8,
+        "loyalty_score": 9.2
+      },
+      {
+        "brand_name": "GlowUp Beauty",
+        "category": "Beauty & Personal Care",
+        "total_spent": 234.50,
+        "order_count": 12,
+        "loyalty_score": 8.8
+      },
+      {
+        "brand_name": "HomeHaven",
+        "category": "Home & Garden",
+        "total_spent": 378.25,
+        "order_count": 6,
+        "loyalty_score": 8.5
+      }
+    ],
+    "brand_diversity_score": 7.3,
+    "new_brand_adoption_rate": 0.23
+  },
+  "price_sensitivity": {
+    "discount_usage_rate": 0.68,
+    "average_discount_percentage": 18.5,
+    "coupon_redemption_rate": 0.45,
+    "sale_purchase_percentage": 0.72,
+    "price_threshold_analysis": {
+      "under_25": 0.15,
+      "25_to_50": 0.32,
+      "50_to_100": 0.38,
+      "100_to_200": 0.12,
+      "over_200": 0.03
+    }
+  },
+  "return_and_exchange_history": {
+    "total_returns": 4,
+    "return_rate": 8.5,
+    "return_reasons": [
+      {"reason": "Size issues", "count": 2},
+      {"reason": "Color different than expected", "count": 1},
+      {"reason": "Quality concerns", "count": 1}
+    ],
+    "average_return_processing_time": "3.2 days",
+    "exchange_preference": true,
+    "return_method_preference": "Online return portal"
+  },
+  "loyalty_program_engagement": {
+    "points_earned": 3251,
+    "points_redeemed": 401,
+    "current_balance": 2850,
+    "tier_progression": [
+      {"tier": "Bronze", "date_achieved": "2022-03-20"},
+      {"tier": "Silver", "date_achieved": "2022-08-15"},
+      {"tier": "Gold", "date_achieved": "2023-02-10"}
+    ],
+    "rewards_claimed": [
+      {"reward": "Free shipping for 6 months", "date": "2023-06-15"},
+      {"reward": "$25 birthday discount", "date": "2024-07-22"},
+      {"reward": "Early access to fall sale", "date": "2024-09-01"}
+    ]
+  }
+}

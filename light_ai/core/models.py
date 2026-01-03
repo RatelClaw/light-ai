@@ -5,6 +5,7 @@ Defines the data hierarchy, resource metadata, and schema information models.
 """
 
 import uuid
+import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, Dict, Any, List
@@ -42,17 +43,20 @@ class DataType(Enum):
 class DataHierarchy:
     """
     Core data hierarchy with client, user, and resource identifiers.
-    All IDs must be valid UUID v4 format.
+    - client_id: Organization identifier (can be human-readable like 'acme-corp')
+    - user_id: User identifier (can be human-readable like 'john.doe')  
+    - resource_id: Resource identifier (must be UUID v4)
     """
     client_id: str
     user_id: str
     resource_id: str
     
     def __post_init__(self):
-        """Validate UUID v4 format for all IDs."""
-        self._validate_uuid(self.client_id, "client_id")
-        self._validate_uuid(self.user_id, "user_id")
+        """Validate identifiers according to requirements."""
+        # Only resource_id must be UUID v4, client_id and user_id can be human-readable
         self._validate_uuid(self.resource_id, "resource_id")
+        self._validate_identifier(self.client_id, "client_id")
+        self._validate_identifier(self.user_id, "user_id")
     
     @staticmethod
     def _validate_uuid(uuid_str: str, field_name: str) -> None:
@@ -63,6 +67,17 @@ class DataHierarchy:
                 raise ValueError(f"{field_name} must be a valid UUID v4 string")
         except (ValueError, TypeError) as e:
             raise ValueError(f"{field_name} must be a valid UUID v4: {e}")
+    
+    @staticmethod
+    def _validate_identifier(identifier: str, field_name: str) -> None:
+        """Validate that identifier is non-empty and reasonable length."""
+        if not identifier or not isinstance(identifier, str):
+            raise ValueError(f"{field_name} must be a non-empty string")
+        if len(identifier) > 255:
+            raise ValueError(f"{field_name} must be 255 characters or less")
+        # Allow alphanumeric, hyphens, underscores, dots
+        if not re.match(r'^[a-zA-Z0-9._-]+$', identifier):
+            raise ValueError(f"{field_name} can only contain letters, numbers, dots, hyphens, and underscores")
     
     @classmethod
     def generate_new(cls, client_id: str, user_id: str) -> "DataHierarchy":
@@ -105,8 +120,8 @@ class ResourceMetadata:
     def __post_init__(self):
         """Validate the metadata after initialization."""
         DataHierarchy._validate_uuid(self.resource_id, "resource_id")
-        DataHierarchy._validate_uuid(self.user_id, "user_id")
-        DataHierarchy._validate_uuid(self.client_id, "client_id")
+        DataHierarchy._validate_identifier(self.user_id, "user_id")
+        DataHierarchy._validate_identifier(self.client_id, "client_id")
         
         if self.file_size_bytes < 0:
             raise ValueError("file_size_bytes must be non-negative")

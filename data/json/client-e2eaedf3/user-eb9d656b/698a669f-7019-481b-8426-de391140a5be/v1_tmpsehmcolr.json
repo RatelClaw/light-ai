@@ -1,0 +1,43 @@
+{
+  "airline_loyalty": {
+    "delta_skymiles": {
+      "status": "platinum",
+      "miles_balance": 125000,
+      "segments_flown": 45,
+      "benefits_used": ["lounge_access", "priority_boarding", "free_upgrades"]
+    },
+    "united_mileageplus": {
+      "status": "gold",
+      "miles_balance": 85000,
+      "segments_flown": 28,
+      "benefits_used": ["priority_boarding", "free_checked_bags"]
+    }
+  },
+  "hotel_loyalty": {
+    "marriott_bonvoy": {
+      "status": "platinum_elite",
+      "points_balance": 180000,
+      "nights_stayed": 52,
+      "benefits_used": ["room_upgrades", "late_checkout", "lounge_access"]
+    },
+    "hilton_honors": {
+      "status": "gold",
+      "points_balance": 95000,
+      "nights_stayed": 28,
+      "benefits_used": ["room_upgrades", "free_wifi"]
+    }
+  },
+  "credit_card_rewards": {
+    "chase_sapphire_reserve": {
+      "points_balance": 75000,
+      "annual_spending": 45000,
+      "travel_credits_used": 300
+    }
+  },
+  "program_engagement": {
+    "status_challenges_completed": 2,
+    "referrals_made": 5,
+    "co_branded_card_holder": true,
+    "mobile_app_usage": "daily"
+  }
+}

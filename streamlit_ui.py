@@ -50,10 +50,11 @@ if 'api' not in st.session_state:
         st.session_state.initialized = False
         st.session_state.init_error = str(e)
 
+# Initialize client_id and user_id with defaults but allow user configuration
 if 'client_id' not in st.session_state:
-    st.session_state.client_id = str(uuid.uuid4())
+    st.session_state.client_id = ""
 if 'user_id' not in st.session_state:
-    st.session_state.user_id = str(uuid.uuid4())
+    st.session_state.user_id = ""
 if 'resources' not in st.session_state:
     st.session_state.resources = []
 
@@ -86,6 +87,72 @@ def refresh_resources():
 
 # Main UI
 st.title("🚀 Universal Data Handler API Tester")
+
+# Client and User ID Configuration (Required for all operations)
+st.markdown("### 🔐 Client & User Configuration")
+st.markdown("**Required**: Enter your Client ID and User ID to access the system. These identify your organization and user account.")
+
+col1, col2, col3 = st.columns([2, 2, 1])
+
+with col1:
+    client_id_input = st.text_input(
+        "Client ID (Organization):",
+        value=st.session_state.client_id,
+        placeholder="e.g., acme-corp, startup-xyz, enterprise-123",
+        help="Unique identifier for your organization. Use a meaningful name with letters, numbers, dots, hyphens, and underscores."
+    )
+
+with col2:
+    user_id_input = st.text_input(
+        "User ID:",
+        value=st.session_state.user_id,
+        placeholder="e.g., john.doe, jane.smith, admin",
+        help="Unique identifier for your user account within the organization."
+    )
+
+with col3:
+    st.markdown("<br>", unsafe_allow_html=True)  # Add spacing
+    if st.button("🎲 Generate UUIDs"):
+        st.session_state.client_id = f"client-{str(uuid.uuid4())[:8]}"
+        st.session_state.user_id = f"user-{str(uuid.uuid4())[:8]}"
+        st.rerun()
+
+# Update session state when inputs change
+if client_id_input != st.session_state.client_id:
+    st.session_state.client_id = client_id_input
+if user_id_input != st.session_state.user_id:
+    st.session_state.user_id = user_id_input
+
+# Validate that both IDs are provided
+if not st.session_state.client_id or not st.session_state.user_id:
+    st.error("❌ Please provide both Client ID and User ID to continue")
+    st.info("💡 **Tip**: Use meaningful names like 'acme-corp' and 'john.doe' or click 'Generate UUIDs' for random IDs")
+    st.stop()
+
+# Validate identifier format
+def is_valid_identifier(identifier):
+    """Check if identifier follows the allowed format."""
+    import re
+    return bool(re.match(r'^[a-zA-Z0-9._-]+$', identifier)) and len(identifier) <= 255
+
+# Show validation status
+col1, col2 = st.columns(2)
+with col1:
+    if is_valid_identifier(st.session_state.client_id):
+        st.success(f"✅ Client ID: Valid format")
+    else:
+        st.error(f"❌ Client ID: Invalid format (use letters, numbers, dots, hyphens, underscores only)")
+
+with col2:
+    if is_valid_identifier(st.session_state.user_id):
+        st.success(f"✅ User ID: Valid format")
+    else:
+        st.error(f"❌ User ID: Invalid format (use letters, numbers, dots, hyphens, underscores only)")
+
+# Stop if validation fails
+if not (is_valid_identifier(st.session_state.client_id) and is_valid_identifier(st.session_state.user_id)):
+    st.stop()
+
 st.markdown("---")
 
 # Check initialization
@@ -98,26 +165,44 @@ if not st.session_state.get('initialized', False):
 # Sidebar for session info
 with st.sidebar:
     st.header("🔧 Session Info")
-    st.text(f"Client ID: {st.session_state.client_id[:8]}...")
-    st.text(f"User ID: {st.session_state.user_id[:8]}...")
     
+    # Display current IDs with copy buttons
+    st.markdown("**Current Session:**")
+    st.code(f"Client ID: {st.session_state.client_id}")
+    st.code(f"User ID: {st.session_state.user_id}")
+    
+    # Quick actions
     if st.button("🔄 Refresh Resources"):
         refresh_resources()
     
-    st.header("📊 Resources")
+    if st.button("🗑️ Clear Session"):
+        st.session_state.client_id = ""
+        st.session_state.user_id = ""
+        st.session_state.resources = []
+        st.rerun()
+    
+    st.header("📊 Your Resources")
     if st.session_state.resources:
-        for resource in st.session_state.resources:
-            st.text(f"• {resource.get('original_filename', 'Unknown')}")
+        st.markdown(f"**Total: {len(st.session_state.resources)} resources**")
+        for i, resource in enumerate(st.session_state.resources[:5]):  # Show first 5
+            filename = resource.get('original_filename', 'Unknown')
+            resource_type = resource.get('resource_type', 'unknown')
+            st.markdown(f"• **{filename}** ({resource_type})")
+        
+        if len(st.session_state.resources) > 5:
+            st.markdown(f"... and {len(st.session_state.resources) - 5} more")
     else:
-        st.text("No resources uploaded yet")
+        st.markdown("*No resources uploaded yet*")
+        st.markdown("👆 Upload some data to get started!")
 
 # Main tabs
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "📤 Data Upload", 
     "🔍 Data Retrieval", 
     "📊 Metadata", 
     "⚙️ Administration",
-    "🧪 Raw JSON"
+    "🧪 Raw JSON",
+    "📖 Examples"
 ])
 
 # ==================== DATA UPLOAD TAB ====================
@@ -516,7 +601,108 @@ with tab4:
                 )
                 display_response(response, "Create Backup")
 
+# ==================== EXAMPLES TAB ====================
+with tab6:
+    st.header("📖 Getting Started Examples")
+    
+    st.markdown("""
+    ### 🚀 Quick Start Guide
+    
+    **Step 1: Set Your Identity**
+    - Enter your **Client ID** (organization) and **User ID** above
+    - Use meaningful names like `acme-corp` and `john.doe` or generate UUIDs
+    
+    **Step 2: Upload Some Data**
+    - Go to the **Data Upload** tab
+    - Try uploading a CSV file, JSON data, or text document
+    - The system will automatically clean and organize your data
+    
+    **Step 3: Query Your Data**
+    - Go to the **Data Retrieval** tab
+    - Try SQL queries on structured data
+    - Ask natural language questions
+    - Search through documents
+    
+    **Step 4: Get AI Analysis**
+    - Use the AI Data Analyst for comprehensive insights
+    - Ask questions like "What trends do you see in my data?"
+    """)
+    
+    st.markdown("---")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("📊 Sample Data Scenarios")
+        
+        st.markdown("""
+        **Business Scenarios:**
+        - **Sales Team**: Upload sales reports (CSV), customer feedback (PDF), product docs (TXT)
+        - **HR Department**: Upload employee data (Excel), policies (PDF), surveys (JSON)
+        - **Marketing**: Upload campaign data (CSV), content (MD), analytics (JSON)
+        - **Finance**: Upload transactions (CSV), reports (PDF), budgets (Excel)
+        """)
+        
+        st.markdown("""
+        **Example Client/User Combinations:**
+        ```
+        Client ID: acme-corp          User ID: john.doe
+        Client ID: startup-xyz        User ID: jane.smith  
+        Client ID: enterprise-123     User ID: admin
+        Client ID: consulting-firm    User ID: analyst-1
+        ```
+        """)
+    
+    with col2:
+        st.subheader("💡 Sample Queries to Try")
+        
+        st.markdown("""
+        **SQL Queries:**
+        ```sql
+        SELECT * FROM sales_data LIMIT 10
+        SELECT product, SUM(revenue) FROM sales GROUP BY product
+        SELECT * FROM customers WHERE status = 'active'
+        ```
+        
+        **Natural Language Questions:**
+        - "What are my top selling products?"
+        - "Show me customers from California"
+        - "What's the average order value?"
+        - "Find all documents about pricing"
+        
+        **Semantic Search:**
+        - "troubleshooting guide"
+        - "performance optimization"
+        - "customer complaints"
+        - "pricing strategy"
+        """)
+    
+    st.markdown("---")
+    
+    st.subheader("🔧 System Architecture")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        **Data Storage:**
+        - **Structured Data** (CSV, Excel) → DuckDB
+        - **JSON Data** → DuckDB JSONB
+        - **Documents** (PDF, TXT) → ChromaDB + Embeddings
+        - **Metadata** → SQLite Registry
+        """)
+    
+    with col2:
+        st.markdown("""
+        **Key Features:**
+        - **Multi-tenant**: Isolated by Client ID + User ID
+        - **Versioned**: All changes tracked and reversible
+        - **AI-Powered**: Natural language queries + analysis
+        - **Fast**: Sub-second responses for most operations
+        """)
+
 # Footer
 st.markdown("---")
 st.markdown("🚀 **Universal Data Handler API Tester** - Test all API functionality through this web interface")
-st.markdown("💡 **Tip**: Upload some test data first, then explore the different query and analysis options!")
+st.markdown("💡 **Tip**: Start by setting your Client ID and User ID, then upload some test data to explore the system!")
+st.markdown("🔗 **Multi-tenant**: Each Client ID represents an organization, User ID represents individuals within that organization")

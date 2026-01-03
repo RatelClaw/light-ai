@@ -1,0 +1,130 @@
+{
+  "patient_demographics": {
+    "patient_id": "PT-008-2024",
+    "name": "Michael Thompson",
+    "date_of_birth": "1972-03-15",
+    "age": 52,
+    "gender": "Male",
+    "address": {
+      "street": "1234 Oak Street",
+      "city": "Portland",
+      "state": "OR",
+      "zip_code": "97201",
+      "country": "USA"
+    },
+    "contact_information": {
+      "primary_phone": "(503) 555-0198",
+      "email": "michael.thompson@email.com",
+      "preferred_contact_method": "Phone",
+      "emergency_contact": {
+        "name": "Jennifer Thompson",
+        "relationship": "Spouse",
+        "phone": "(503) 555-0199"
+      }
+    }
+  },
+  "insurance_information": {
+    "primary_insurance": {
+      "provider": "Blue Cross Blue Shield",
+      "plan_type": "PPO",
+      "policy_number": "BCBS123456789",
+      "group_number": "GRP789012",
+      "effective_date": "2024-01-01",
+      "copay_primary_care": 25,
+      "copay_specialist": 50,
+      "deductible": 2500,
+      "out_of_pocket_max": 8000
+    },
+    "secondary_insurance": null
+  },
+  "medical_identifiers": {
+    "mrn": "MRN-789012345",
+    "ssn_last_four": "4567",
+    "drivers_license": "OR-DL-987654321"
+  },
+  "care_team": {
+    "primary_care_physician": {
+      "name": "Dr. Sarah Johnson",
+      "specialty": "Family Medicine",
+      "practice": "Portland Family Health Center",
+      "phone": "(503) 555-0100",
+      "npi": "1234567890"
+    },
+    "specialists": [
+      {
+        "name": "Dr. Robert Kim",
+        "specialty": "Endocrinology",
+        "practice": "Pacific Northwest Diabetes Center",
+        "phone": "(503) 555-0200",
+        "npi": "2345678901"
+      },
+      {
+        "name": "Dr. Lisa Chen",
+        "specialty": "Nephrology",
+        "practice": "Oregon Kidney Associates",
+        "phone": "(503) 555-0300",
+        "npi": "3456789012"
+      }
+    ],
+    "other_providers": [
+      {
+        "name": "Maria Rodriguez",
+        "title": "Certified Diabetes Educator",
+        "practice": "Portland Diabetes Education Center",
+        "phone": "(503) 555-0400"
+      },
+      {
+        "name": "James Wilson",
+        "title": "Clinical Pharmacist",
+        "practice": "Portland Family Health Center",
+        "phone": "(503) 555-0101"
+      }
+    ]
+  },
+  "technology_preferences": {
+    "patient_portal_registered": true,
+    "smartphone_user": true,
+    "comfort_with_video_calls": "Moderate",
+    "preferred_apps": [
+      "MyChart",
+      "Glucose Buddy",
+      "Blood Pressure Monitor"
+    ],
+    "digital_health_engagement": "Moderate"
+  },
+  "communication_preferences": {
+    "preferred_language": "English",
+    "interpreter_needed": false,
+    "preferred_communication_times": [
+      "Weekday mornings 9-11 AM",
+      "Weekday evenings 6-8 PM"
+    ],
+    "communication_methods": {
+      "phone_calls": "Preferred",
+      "text_messages": "Acceptable for reminders",
+      "email": "Acceptable for non-urgent",
+      "video_calls": "Acceptable for routine follow-ups",
+      "in_person_visits": "Preferred for complex discussions"
+    }
+  },
+  "social_determinants": {
+    "employment_status": "Full-time employed",
+    "occupation": "Construction Supervisor",
+    "education_level": "High School Diploma",
+    "household_income_range": "$50,000-$75,000",
+    "marital_status": "Married",
+    "dependents": 2,
+    "transportation": "Personal vehicle",
+    "housing_stability": "Stable - homeowner",
+    "food_security": "Generally secure",
+    "social_support": "Strong family support system"
+  },
+  "accessibility_needs": {
+    "mobility_limitations": "Mild - occasional knee pain",
+    "vision_impairment": "Reading glasses required",
+    "hearing_impairment": "None",
+    "cognitive_limitations": "None",
+    "language_barriers": "None",
+    "cultural_considerations": "None specified"
+  }
+}

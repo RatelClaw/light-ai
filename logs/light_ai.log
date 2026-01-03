@@ -1348,3 +1348,488 @@ Traceback (most recent call last):
   File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 173, in upload_file
     resource_id = self.file_upload_api.upload_file(
 TypeError: FileUploadAPI.upload_file() got an unexpected keyword argument 'cleaning_config'
+2026-01-03 22:40:53 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:40:53 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:40:53 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:41:15 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:41:15 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:41:15 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:41:15 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: 'FileUploadAPI' object has no attribute 'upload_json'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 220, in upload_json
+    resource_id = self.file_upload_api.upload_json(
+AttributeError: 'FileUploadAPI' object has no attribute 'upload_json'. Did you mean: 'upload_bulk'?
+2026-01-03 22:43:05 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:43:05 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:05 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:43:05 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: client_id must be a valid UUID v4: badly formed hexadecimal UUID string
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py", line 61, in _validate_uuid
+    uuid_obj = uuid.UUID(uuid_str, version=4)
+  File "/Users/shashwatroy/.local/share/uv/python/cpython-3.10.19-macos-aarch64-none/lib/python3.10/uuid.py", line 177, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 250, in upload_json
+    metadata = self.file_upload_api.upload_file(
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_1/file_upload.py", line 339, in upload_file
+    hierarchy = DataHierarchy.generate_new(client_id, user_id)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py", line 71, in generate_new
+    return cls(client_id=client_id, user_id=user_id, resource_id=resource_id)
+  File "<string>", line 6, in __init__
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py", line 53, in __post_init__
+    self._validate_uuid(self.client_id, "client_id")
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py", line 65, in _validate_uuid
+    raise ValueError(f"{field_name} must be a valid UUID v4: {e}")
+ValueError: client_id must be a valid UUID v4: badly formed hexadecimal UUID string
+2026-01-03 22:43:25 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:43:25 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:43:25 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:43:25 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpu6u1ytg4.json (resource_id: 1e23e716-a2eb-4bc6-ad2b-ce8ebc221b00)
+2026-01-03 22:43:25 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpu6u1ytg4.json (json, 0.0MB)
+2026-01-03 22:43:25 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:43:25 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpu6u1ytg4.json -> 1e23e716-a2eb-4bc6-ad2b-ce8ebc221b00
+2026-01-03 22:43:25 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: 'UniversalDataHandler' object has no attribute 'data_cleaning_engine'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 258, in upload_json
+    cleaned_data = self.data_cleaning_engine.clean_json_data(
+AttributeError: 'UniversalDataHandler' object has no attribute 'data_cleaning_engine'. Did you mean: 'cleaning_engine'?
+2026-01-03 22:44:02 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:44:02 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:02 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:44:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpo94knh80.json (resource_id: 097a5353-f3ed-471c-8bdb-0ee8ab8c937d)
+2026-01-03 22:44:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpo94knh80.json (json, 0.0MB)
+2026-01-03 22:44:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:44:02 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpo94knh80.json -> 097a5353-f3ed-471c-8bdb-0ee8ab8c937d
+2026-01-03 22:44:02 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: 'DataCleaningEngine' object has no attribute 'clean_json_data'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 258, in upload_json
+    cleaned_data = self.cleaning_engine.clean_json_data(
+AttributeError: 'DataCleaningEngine' object has no attribute 'clean_json_data'
+2026-01-03 22:44:58 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:44:58 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:44:58 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpo8157ce_.json (resource_id: 95b85bfb-33bd-4825-be2f-53c43dbb74a8)
+2026-01-03 22:44:58 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpo8157ce_.json (json, 0.0MB)
+2026-01-03 22:44:58 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:44:58 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpo8157ce_.json -> 95b85bfb-33bd-4825-be2f-53c43dbb74a8
+2026-01-03 22:44:58 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:44:58 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:44:58 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:44:58 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:44:58 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:44:58 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:44:58 - light_ai.storage.storage_router - ERROR - storage_router.py:170 - Failed to store JSON data: 'dict' object has no attribute 'user_id'
+2026-01-03 22:44:58 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: Failed to store JSON data: 'dict' object has no attribute 'user_id'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_router.py", line 151, in store_json_data
+    metadata, None, hierarchy.user_id, OperationType.UPLOAD,
+AttributeError: 'dict' object has no attribute 'user_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 271, in upload_json
+    self.storage_router.store_json_data(
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_router.py", line 171, in store_json_data
+    raise RuntimeError(f"Failed to store JSON data: {e}")
+RuntimeError: Failed to store JSON data: 'dict' object has no attribute 'user_id'
+2026-01-03 22:47:38 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:47:38 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:38 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:47:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp29k08brk.json (resource_id: a9682dba-3064-4459-8916-9759ffbd2759)
+2026-01-03 22:47:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp29k08brk.json (json, 0.0MB)
+2026-01-03 22:47:38 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:47:38 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: user_id must be a valid UUID v4: badly formed hexadecimal UUID string
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py", line 65, in _validate_uuid
+    uuid_obj = uuid.UUID(uuid_str, version=4)
+  File "/Users/shashwatroy/.local/share/uv/python/cpython-3.10.19-macos-aarch64-none/lib/python3.10/uuid.py", line 177, in __init__
+    raise ValueError('badly formed hexadecimal UUID string')
+ValueError: badly formed hexadecimal UUID string
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 258, in upload_json
+    metadata = self.file_upload_api.upload_file(
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_1/file_upload.py", line 369, in upload_file
+    metadata = ResourceMetadata(
+  File "<string>", line 22, in __init__
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py", line 123, in __post_init__
+    DataHierarchy._validate_uuid(self.user_id, "user_id")
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/core/models.py", line 69, in _validate_uuid
+    raise ValueError(f"{field_name} must be a valid UUID v4: {e}")
+ValueError: user_id must be a valid UUID v4: badly formed hexadecimal UUID string
+2026-01-03 22:47:57 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:47:57 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:47:57 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp6a8qppnk.json (resource_id: f4bac155-12f8-4221-9c36-7f3255c33f2a)
+2026-01-03 22:47:57 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp6a8qppnk.json (json, 0.0MB)
+2026-01-03 22:47:57 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:47:57 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp6a8qppnk.json -> f4bac155-12f8-4221-9c36-7f3255c33f2a
+2026-01-03 22:47:57 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:47:57 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:47:57 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:47:57 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:47:57 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:47:57 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:47:57 - light_ai.storage.storage_router - ERROR - storage_router.py:170 - Failed to store JSON data: 'dict' object has no attribute 'user_id'
+2026-01-03 22:47:57 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: Failed to store JSON data: 'dict' object has no attribute 'user_id'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_router.py", line 151, in store_json_data
+    metadata, None, hierarchy.user_id, OperationType.UPLOAD,
+AttributeError: 'dict' object has no attribute 'user_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 271, in upload_json
+    self.storage_router.store_json_data(
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_router.py", line 171, in store_json_data
+    raise RuntimeError(f"Failed to store JSON data: {e}")
+RuntimeError: Failed to store JSON data: 'dict' object has no attribute 'user_id'
+2026-01-03 22:49:28 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:49:28 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:28 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:49:28 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpecrm9rhd.json (resource_id: 8b3e5858-31e6-4ad3-8666-1f461af0b3a4)
+2026-01-03 22:49:28 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpecrm9rhd.json (json, 0.0MB)
+2026-01-03 22:49:28 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:49:28 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpecrm9rhd.json -> 8b3e5858-31e6-4ad3-8666-1f461af0b3a4
+2026-01-03 22:49:28 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:49:28 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:49:28 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:49:28 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:49:28 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:29 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:49:29 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:49:29 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:49:29 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:49:29 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:49:29 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 8b3e5858-31e6-4ad3-8666-1f461af0b3a4
+2026-01-03 22:49:29 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 8b3e5858-31e6-4ad3-8666-1f461af0b3a4
+2026-01-03 22:49:29 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_8b3e5858_31e6_4ad3_8666_1f461af0b3a4
+2026-01-03 22:49:29 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_8b3e5858_31e6_4ad3_8666_1f461af0b3a4
+2026-01-03 22:49:29 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: 'MetadataRegistry' object has no attribute 'register_resource'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 307, in upload_json
+    self.metadata_registry.register_resource(metadata)
+AttributeError: 'MetadataRegistry' object has no attribute 'register_resource'
+2026-01-03 22:50:32 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:50:32 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:50:32 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpobal20v9.json (resource_id: 3ade2276-f26f-4aa9-a2fa-a87a3aa6e4cd)
+2026-01-03 22:50:32 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpobal20v9.json (json, 0.0MB)
+2026-01-03 22:50:32 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:50:32 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpobal20v9.json -> 3ade2276-f26f-4aa9-a2fa-a87a3aa6e4cd
+2026-01-03 22:50:32 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:50:32 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:50:32 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:50:32 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:50:32 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 3ade2276-f26f-4aa9-a2fa-a87a3aa6e4cd
+2026-01-03 22:50:32 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 3ade2276-f26f-4aa9-a2fa-a87a3aa6e4cd
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_3ade2276_f26f_4aa9_a2fa_a87a3aa6e4cd
+2026-01-03 22:50:32 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_3ade2276_f26f_4aa9_a2fa_a87a3aa6e4cd
+2026-01-03 22:50:32 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:32 - universal_data_handler - ERROR - api.py:128 - Error in upload_json: Resource 3ade2276-f26f-4aa9-a2fa-a87a3aa6e4cd already exists
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 307, in upload_json
+    self.metadata_registry.create_resource_metadata(metadata)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/metadata_registry.py", line 62, in create_resource_metadata
+    raise ValueError(f"Resource {metadata.resource_id} already exists")
+ValueError: Resource 3ade2276-f26f-4aa9-a2fa-a87a3aa6e4cd already exists
+2026-01-03 22:50:59 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:50:59 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:50:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp2uqocizm.json (resource_id: e4a326e6-c652-4b26-81f6-d017eb799aa2)
+2026-01-03 22:50:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp2uqocizm.json (json, 0.0MB)
+2026-01-03 22:50:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash c2c89980... (would query metadata registry)
+2026-01-03 22:50:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp2uqocizm.json -> e4a326e6-c652-4b26-81f6-d017eb799aa2
+2026-01-03 22:50:59 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:50:59 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:50:59 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:50:59 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:50:59 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: e4a326e6-c652-4b26-81f6-d017eb799aa2
+2026-01-03 22:50:59 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource e4a326e6-c652-4b26-81f6-d017eb799aa2
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_e4a326e6_c652_4b26_81f6_d017eb799aa2
+2026-01-03 22:50:59 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_e4a326e6_c652_4b26_81f6_d017eb799aa2
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:50:59 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:50:59 - light_ai.sub_layer_2.sql_query_engine - INFO - sql_query_engine.py:81 - SQL Query Engine initialized
+2026-01-03 22:50:59 - light_ai.sub_layer_2.sql_query_engine - ERROR - sql_query_engine.py:148 - Failed to execute SQL query: Access denied to table: products
+2026-01-03 22:50:59 - universal_data_handler - ERROR - api.py:128 - Error in query_structured: Query execution failed: Access denied to table: products
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 111, in execute_query
+    query_plan = self._create_query_plan(sql, client_id, user_id, access_level)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 318, in _create_query_plan
+    raise ValueError(f"Access denied to table: {table_ref}")
+ValueError: Access denied to table: products
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 612, in query_structured
+    result = self.sql_engine.execute_query(sql_query, client_id, user_id)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py", line 149, in execute_query
+    raise RuntimeError(f"Query execution failed: {e}")
+RuntimeError: Query execution failed: Access denied to table: products
+2026-01-03 22:50:59 - universal_data_handler - ERROR - api.py:128 - Error in query_natural: 'NaturalLanguageProcessor' object has no attribute 'process_query'
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 651, in query_natural
+    result = self.nl_processor.process_query(question, client_id, user_id)
+AttributeError: 'NaturalLanguageProcessor' object has no attribute 'process_query'
+2026-01-03 22:51:15 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:51:15 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:51:15 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpiv2571gd.json (resource_id: 8330b60a-a255-4b07-bd0c-0c5cca91081f)
+2026-01-03 22:51:15 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpiv2571gd.json (json, 0.0MB)
+2026-01-03 22:51:15 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 3edf8292... (would query metadata registry)
+2026-01-03 22:51:15 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpiv2571gd.json -> 8330b60a-a255-4b07-bd0c-0c5cca91081f
+2026-01-03 22:51:15 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:51:15 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:51:15 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:51:15 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:51:15 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:51:15 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 8330b60a-a255-4b07-bd0c-0c5cca91081f
+2026-01-03 22:51:15 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 8330b60a-a255-4b07-bd0c-0c5cca91081f
+2026-01-03 22:51:15 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_8330b60a_a255_4b07_bd0c_0c5cca91081f
+2026-01-03 22:51:15 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_8330b60a_a255_4b07_bd0c_0c5cca91081f
+2026-01-03 22:53:00 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:53:00 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:00 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:53:27 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:41 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpsehmcolr.json (resource_id: 698a669f-7019-481b-8426-de391140a5be)
+2026-01-03 22:53:41 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpsehmcolr.json (json, 0.0MB)
+2026-01-03 22:53:41 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash bf8dffb1... (would query metadata registry)
+2026-01-03 22:53:41 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmpsehmcolr.json -> 698a669f-7019-481b-8426-de391140a5be
+2026-01-03 22:53:41 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:53:41 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:53:41 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-03 22:53:41 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:53:41 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:53:41 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:42 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:53:42 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:53:42 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:53:42 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:53:42 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:53:42 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 698a669f-7019-481b-8426-de391140a5be
+2026-01-03 22:53:42 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 698a669f-7019-481b-8426-de391140a5be
+2026-01-03 22:53:42 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_698a669f_7019_481b_8426_de391140a5be
+2026-01-03 22:53:42 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_698a669f_7019_481b_8426_de391140a5be
+2026-01-03 22:53:42 - universal_data_handler - ERROR - api.py:128 - Error in upload_file: Resource 698a669f-7019-481b-8426-de391140a5be already exists
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 235, in upload_file
+    self.metadata_registry.create_resource_metadata(metadata)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/storage/metadata_registry.py", line 62, in create_resource_metadata
+    raise ValueError(f"Resource {metadata.resource_id} already exists")
+ValueError: Resource 698a669f-7019-481b-8426-de391140a5be already exists
+2026-01-03 22:54:01 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp6absf6lt.json (resource_id: 6c4bfc3e-aaf5-4181-b88a-056637d3cda2)
+2026-01-03 22:54:01 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp6absf6lt.json (json, 0.0MB)
+2026-01-03 22:54:01 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash 7a034cbd... (would query metadata registry)
+2026-01-03 22:54:01 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp6absf6lt.json -> 6c4bfc3e-aaf5-4181-b88a-056637d3cda2
+2026-01-03 22:54:01 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:54:01 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:54:01 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 1 operations
+2026-01-03 22:54:01 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 6c4bfc3e-aaf5-4181-b88a-056637d3cda2
+2026-01-03 22:54:01 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 6c4bfc3e-aaf5-4181-b88a-056637d3cda2
+2026-01-03 22:54:01 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_6c4bfc3e_aaf5_4181_b88a_056637d3cda2
+2026-01-03 22:54:01 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_6c4bfc3e_aaf5_4181_b88a_056637d3cda2
+2026-01-03 22:54:01 - universal_data_handler - ERROR - api.py:128 - Error in upload_file: Resource 6c4bfc3e-aaf5-4181-b88a-056637d3cda2 already exists
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/api.py", line 235, in upload_file
+    self.metadata_registry.create_resource_metadata(metadata)
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/./light_ai/storage/metadata_registry.py", line 62, in create_resource_metadata
+    raise ValueError(f"Resource {metadata.resource_id} already exists")
+ValueError: Resource 6c4bfc3e-aaf5-4181-b88a-056637d3cda2 already exists
+2026-01-03 22:55:10 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-03 22:55:10 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:10 - universal_data_handler - INFO - api.py:123 - Universal Data Handler API initialized successfully
+2026-01-03 22:55:27 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp9yfp4d2e.json (resource_id: 39ebe0b4-c9dd-41d2-b87e-5ce2e7490a42)
+2026-01-03 22:55:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp9yfp4d2e.json (json, 0.0MB)
+2026-01-03 22:55:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:354 - Duplicate check for hash d753689d... (would query metadata registry)
+2026-01-03 22:55:44 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:382 - File upload completed: tmp9yfp4d2e.json -> 39ebe0b4-c9dd-41d2-b87e-5ce2e7490a42
+2026-01-03 22:55:44 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-03 22:55:44 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-03 22:55:44 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 1 operations
+2026-01-03 22:55:44 - light_ai.storage.storage_router - INFO - storage_router.py:57 - Initializing storage router...
+2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:695 - Initializing all database managers...
+2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:72 - DuckDB initialized at: data/duckdb/main.db
+2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:304 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:703 - All database managers initialized successfully
+2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:488 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-03 22:55:44 - light_ai.storage.storage_router - INFO - storage_router.py:61 - Storage router initialized successfully
+2026-01-03 22:55:44 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 39ebe0b4-c9dd-41d2-b87e-5ce2e7490a42
+2026-01-03 22:55:44 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 39ebe0b4-c9dd-41d2-b87e-5ce2e7490a42
+2026-01-03 22:55:44 - light_ai.storage.database_managers - INFO - database_managers.py:215 - Stored JSON data in table: json_data.json_39ebe0b4_c9dd_41d2_b87e_5ce2e7490a42
+2026-01-03 22:55:44 - light_ai.storage.storage_router - INFO - storage_router.py:166 - Stored JSON data: json_39ebe0b4_c9dd_41d2_b87e_5ce2e7490a42

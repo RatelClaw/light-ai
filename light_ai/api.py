@@ -164,27 +164,82 @@ class UniversalDataHandler:
             if not os.path.exists(file_path):
                 return APIResponse(success=False, error=f"File not found: {file_path}")
             
-            # Create cleaning config if provided
-            config = None
-            if cleaning_config:
-                config = CleaningConfig(**cleaning_config)
-            
-            # Upload file using Sub-Layer 1 API
-            resource_id = self.file_upload_api.upload_file(
+            # Upload file using Sub-Layer 1 API - returns ResourceMetadata
+            metadata = self.file_upload_api.upload_file(
                 client_id=client_id,
                 user_id=user_id,
                 file_path=file_path,
-                resource_name=resource_name,
-                cleaning_config=config
+                resource_name=resource_name
             )
             
-            # Get metadata for response
-            metadata = self.metadata_registry.get_resource_metadata(resource_id)
+            # Clean the data based on type
+            if metadata.resource_type == ResourceType.STRUCTURED:
+                # Load and clean structured data
+                if metadata.data_type == DataType.CSV:
+                    df = pd.read_csv(file_path)
+                elif metadata.data_type == DataType.EXCEL:
+                    df = pd.read_excel(file_path)
+                else:
+                    # For other structured types, try pandas read_csv as fallback
+                    df = pd.read_csv(file_path)
+                
+                cleaned_data, stats = self.cleaning_engine.clean_data(df, metadata.data_type)
+                
+                # Create hierarchy for storage
+                hierarchy = DataHierarchy(
+                    client_id=client_id,
+                    user_id=user_id, 
+                    resource_id=metadata.resource_id
+                )
+                
+                # Store in DuckDB
+                self.storage_router.store_structured_data(
+                    file_path, hierarchy, metadata
+                )
+            elif metadata.resource_type == ResourceType.JSON:
+                # Load and clean JSON data
+                with open(file_path, 'r') as f:
+                    json_data = json.load(f)
+                cleaned_data, stats = self.cleaning_engine.clean_data(json_data, metadata.data_type)
+                
+                # Create hierarchy for storage
+                hierarchy = DataHierarchy(
+                    client_id=client_id,
+                    user_id=user_id, 
+                    resource_id=metadata.resource_id
+                )
+                
+                # Store in DuckDB JSONB
+                self.storage_router.store_json_data(
+                    cleaned_data, hierarchy, metadata
+                )
+            elif metadata.resource_type == ResourceType.UNSTRUCTURED:
+                # Clean unstructured data
+                cleaned_data, stats = self.cleaning_engine.clean_data(
+                    None, metadata.data_type, file_path=Path(file_path)
+                )
+                
+                # Create hierarchy for storage
+                hierarchy = DataHierarchy(
+                    client_id=client_id,
+                    user_id=user_id, 
+                    resource_id=metadata.resource_id
+                )
+                
+                # For unstructured data, we need to prepare embeddings and documents
+                # For now, let's skip the actual storage and just log
+                self.logger.info(f"Would store unstructured data for {metadata.resource_id}")
+                # TODO: Implement proper unstructured data storage with embeddings
+            
+            # Register metadata (only once, not done by storage router for file uploads)
+            # Note: For JSON files, storage router already creates metadata, so skip this
+            if metadata.resource_type != ResourceType.JSON:
+                self.metadata_registry.create_resource_metadata(metadata)
             
             return APIResponse(
                 success=True,
                 data={
-                    "resource_id": resource_id,
+                    "resource_id": metadata.resource_id,
                     "filename": metadata.original_filename,
                     "resource_type": metadata.resource_type.value,
                     "data_type": metadata.data_type.value,
@@ -216,30 +271,62 @@ class UniversalDataHandler:
             if not self._validate_access(client_id, user_id):
                 return APIResponse(success=False, error="Invalid client_id or user_id")
             
-            # Upload JSON using Sub-Layer 1 API
-            resource_id = self.file_upload_api.upload_json(
-                client_id=client_id,
-                user_id=user_id,
-                json_data=json_data,
-                resource_name=resource_name,
-                flatten=flatten
-            )
+            # Create temporary JSON file
+            import tempfile
+            import json
             
-            # Get metadata for response
-            metadata = self.metadata_registry.get_resource_metadata(resource_id)
+            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as tmp_file:
+                json.dump(json_data, tmp_file, indent=2)
+                tmp_file_path = tmp_file.name
             
-            return APIResponse(
-                success=True,
-                data={
-                    "resource_id": resource_id,
-                    "resource_name": resource_name,
-                    "resource_type": metadata.resource_type.value,
-                    "data_type": metadata.data_type.value,
-                    "version": metadata.version,
-                    "flattened": flatten
-                },
-                metadata={"operation": "upload_json"}
-            )
+            try:
+                # Upload JSON file using existing file upload
+                metadata = self.file_upload_api.upload_file(
+                    client_id=client_id,
+                    user_id=user_id,
+                    file_path=tmp_file_path,
+                    resource_name=resource_name
+                )
+                
+                # Clean and store the JSON data
+                cleaned_data, stats = self.cleaning_engine.clean_data(
+                    json_data, DataType.JSON
+                )
+                
+                # Create hierarchy for storage
+                hierarchy = DataHierarchy(
+                    client_id=client_id,
+                    user_id=user_id, 
+                    resource_id=metadata.resource_id
+                )
+                
+                # Store in appropriate database
+                self.storage_router.store_json_data(
+                    cleaned_data, hierarchy, metadata
+                )
+                
+                # Metadata is already registered by storage_router
+                
+                return APIResponse(
+                    success=True,
+                    data={
+                        "resource_id": metadata.resource_id,
+                        "resource_name": resource_name,
+                        "resource_type": metadata.resource_type.value,
+                        "data_type": metadata.data_type.value,
+                        "version": metadata.version,
+                        "flattened": flatten,
+                        "file_size_bytes": metadata.file_size_bytes
+                    },
+                    metadata={"operation": "upload_json"}
+                )
+                
+            finally:
+                # Clean up temporary file
+                try:
+                    os.unlink(tmp_file_path)
+                except:
+                    pass
             
         except Exception as e:
             return self._handle_error(e, "upload_json")
@@ -276,21 +363,62 @@ class UniversalDataHandler:
             if cleaning_config:
                 config = CleaningConfig(**cleaning_config)
             
-            # Upload files using Sub-Layer 1 API
-            resource_ids = self.file_upload_api.upload_bulk(
+            # Upload files using Sub-Layer 1 API - returns List[ResourceMetadata]
+            metadata_list = self.file_upload_api.upload_bulk(
                 client_id=client_id,
                 user_id=user_id,
-                files=files,
-                parallel=parallel,
-                cleaning_config=config
+                file_paths=files,
+                parallel=parallel
             )
             
-            # Get metadata for all resources
+            # Process each uploaded file
             resources_info = []
-            for resource_id in resource_ids:
-                metadata = self.metadata_registry.get_resource_metadata(resource_id)
+            resource_ids = []
+            
+            for metadata in metadata_list:
+                # Clean and store the data based on type
+                file_path = files[metadata_list.index(metadata)]  # Get original file path
+                
+                # Create hierarchy for storage
+                hierarchy = DataHierarchy(
+                    client_id=client_id,
+                    user_id=user_id, 
+                    resource_id=metadata.resource_id
+                )
+                
+                if metadata.resource_type == ResourceType.STRUCTURED:
+                    if metadata.data_type == DataType.CSV:
+                        df = pd.read_csv(file_path)
+                    elif metadata.data_type == DataType.EXCEL:
+                        df = pd.read_excel(file_path)
+                    else:
+                        df = pd.read_csv(file_path)
+                    
+                    cleaned_data, stats = self.cleaning_engine.clean_data(df, metadata.data_type)
+                    self.storage_router.store_structured_data(
+                        file_path, hierarchy, metadata
+                    )
+                elif metadata.resource_type == ResourceType.JSON:
+                    with open(file_path, 'r') as f:
+                        json_data = json.load(f)
+                    cleaned_data, stats = self.cleaning_engine.clean_data(json_data, metadata.data_type)
+                    self.storage_router.store_json_data(
+                        cleaned_data, hierarchy, metadata
+                    )
+                elif metadata.resource_type == ResourceType.UNSTRUCTURED:
+                    cleaned_data, stats = self.cleaning_engine.clean_data(
+                        None, metadata.data_type, file_path=Path(file_path)
+                    )
+                    # Skip unstructured storage for now
+                    self.logger.info(f"Would store unstructured data for {metadata.resource_id}")
+                
+                # Register metadata (only for bulk uploads where storage router doesn't handle it)
+                self.metadata_registry.create_resource_metadata(metadata)
+                
+                # Add to response data
+                resource_ids.append(metadata.resource_id)
                 resources_info.append({
-                    "resource_id": resource_id,
+                    "resource_id": metadata.resource_id,
                     "filename": metadata.original_filename,
                     "resource_type": metadata.resource_type.value,
                     "data_type": metadata.data_type.value,
