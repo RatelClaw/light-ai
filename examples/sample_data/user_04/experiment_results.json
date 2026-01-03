@@ -1,0 +1,64 @@
+{
+  "experiment": {
+    "id": "EXP-2024-001",
+    "title": "Cognitive Enhancement Study",
+    "principal_investigator": "Dr. Sarah Research",
+    "start_date": "2024-01-01",
+    "end_date": "2024-03-31",
+    "status": "Completed",
+    "participants": 15,
+    "groups": ["Treatment A", "Treatment B", "Control"]
+  },
+  "methodology": {
+    "design": "Randomized Controlled Trial",
+    "duration": "12 weeks",
+    "primary_endpoint": "Cognitive Score Improvement",
+    "secondary_endpoints": ["Quality of Life", "Side Effects", "Compliance"],
+    "statistical_power": 0.80,
+    "significance_level": 0.05
+  },
+  "results": {
+    "treatment_a": {
+      "n": 5,
+      "baseline_mean": 64.6,
+      "final_mean": 85.4,
+      "improvement": 20.8,
+      "std_deviation": 2.1,
+      "p_value": 0.001,
+      "effect_size": 1.85
+    },
+    "treatment_b": {
+      "n": 5,
+      "baseline_mean": 58.2,
+      "final_mean": 75.2,
+      "improvement": 17.0,
+      "std_deviation": 2.3,
+      "p_value": 0.003,
+      "effect_size": 1.42
+    },
+    "control": {
+      "n": 5,
+      "baseline_mean": 63.8,
+      "final_mean": 67.0,
+      "improvement": 3.2,
+      "std_deviation": 1.8,
+      "p_value": 0.245,
+      "effect_size": 0.18
+    }
+  },
+  "statistical_analysis": {
+    "anova_f_statistic": 45.67,
+    "anova_p_value": 0.0001,
+    "post_hoc_comparisons": {
+      "treatment_a_vs_control": 0.0001,
+      "treatment_b_vs_control": 0.002,
+      "treatment_a_vs_treatment_b": 0.045
+    }
+  },
+  "conclusions": {
+    "primary": "Both treatments showed significant improvement over control",
+    "secondary": "Treatment A demonstrated superior efficacy compared to Treatment B",
+    "clinical_significance": "Results suggest meaningful cognitive enhancement",
+    "limitations": "Small sample size, single-center study"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "portfolio": {
+    "account_id": "INV-2024-001",
+    "owner": "John Investor",
+    "total_value": 45750.00,
+    "last_updated": "2024-01-29",
+    "holdings": [
+      {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "shares": 50,
+        "purchase_price": 150.00,
+        "current_price": 185.50,
+        "total_value": 9275.00,
+        "gain_loss": 1775.00,
+        "percentage": 23.67
+      },
+      {
+        "symbol": "GOOGL",
+        "name": "Alphabet Inc.",
+        "shares": 25,
+        "purchase_price": 120.00,
+        "current_price": 142.80,
+        "total_value": 3570.00,
+        "gain_loss": 570.00,
+        "percentage": 19.00
+      },
+      {
+        "symbol": "MSFT",
+        "name": "Microsoft Corporation",
+        "shares": 40,
+        "purchase_price": 280.00,
+        "current_price": 315.25,
+        "total_value": 12610.00,
+        "gain_loss": 1410.00,
+        "percentage": 12.59
+      },
+      {
+        "symbol": "TSLA",
+        "name": "Tesla Inc.",
+        "shares": 30,
+        "purchase_price": 200.00,
+        "current_price": 185.00,
+        "total_value": 5550.00,
+        "gain_loss": -450.00,
+        "percentage": -7.50
+      },
+      {
+        "symbol": "SPY",
+        "name": "SPDR S&P 500 ETF",
+        "shares": 35,
+        "purchase_price": 400.00,
+        "current_price": 420.71,
+        "total_value": 14724.85,
+        "gain_loss": 724.85,
+        "percentage": 5.18
+      }
+    ],
+    "performance": {
+      "total_invested": 41700.00,
+      "total_gain_loss": 4050.00,
+      "overall_return": 9.71,
+      "best_performer": "AAPL",
+      "worst_performer": "TSLA"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+transaction_id,date,account,category,description,amount,type,balance
+TXN001,2024-01-01,Checking,Income,Salary Deposit,5500.00,Credit,15750.00
+TXN002,2024-01-02,Checking,Housing,Rent Payment,-1200.00,Debit,14550.00
+TXN003,2024-01-03,Checking,Food,Grocery Store,-85.50,Debit,14464.50
+TXN004,2024-01-04,Savings,Transfer,Monthly Savings,1000.00,Credit,8500.00
+TXN005,2024-01-05,Checking,Transportation,Gas Station,-45.00,Debit,14419.50
+TXN006,2024-01-06,Checking,Utilities,Electric Bill,-120.00,Debit,14299.50
+TXN007,2024-01-07,Checking,Entertainment,Movie Theater,-25.00,Debit,14274.50
+TXN008,2024-01-08,Checking,Food,Restaurant,-65.00,Debit,14209.50
+TXN009,2024-01-09,Checking,Healthcare,Pharmacy,-35.00,Debit,14174.50
+TXN010,2024-01-10,Checking,Shopping,Online Purchase,-150.00,Debit,14024.50
+TXN011,2024-01-11,Checking,Transportation,Public Transit,-15.00,Debit,14009.50
+TXN012,2024-01-12,Checking,Food,Grocery Store,-95.00,Debit,13914.50
+TXN013,2024-01-13,Investment,Investment,Stock Purchase,-500.00,Debit,2800.00
+TXN014,2024-01-14,Checking,Income,Freelance Payment,800.00,Credit,14714.50
+TXN015,2024-01-15,Checking,Utilities,Internet Bill,-80.00,Debit,14634.50

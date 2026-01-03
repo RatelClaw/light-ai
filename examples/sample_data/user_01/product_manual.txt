@@ -1,0 +1,60 @@
+LAPTOP PRO - USER MANUAL
+
+GETTING STARTED
+================
+
+Thank you for purchasing the Laptop Pro. This high-performance laptop is designed for business professionals and power users who demand reliability and speed.
+
+SPECIFICATIONS
+==============
+- Processor: Intel Core i7-12700H (12 cores, 20 threads)
+- Memory: 32GB DDR5 RAM
+- Storage: 1TB NVMe SSD
+- Display: 15.6" 4K OLED (3840x2160)
+- Graphics: NVIDIA RTX 4060 8GB
+- Battery: 90Wh lithium-ion
+- Weight: 4.2 lbs (1.9 kg)
+- Operating System: Windows 11 Pro
+
+SETUP INSTRUCTIONS
+==================
+
+1. INITIAL SETUP
+   - Remove the laptop from packaging
+   - Connect the power adapter
+   - Press the power button to start
+   - Follow the Windows 11 setup wizard
+
+2. DRIVER INSTALLATION
+   - Windows Update will automatically install most drivers
+   - Visit our support website for the latest graphics drivers
+   - Install the Laptop Pro Control Center for advanced settings
+
+3. FIRST TIME CONFIGURATION
+   - Create a recovery drive using Windows Recovery Media Creator
+   - Set up Windows Hello for secure login
+   - Configure power management settings for optimal battery life
+
+PERFORMANCE OPTIMIZATION
+========================
+
+For best performance:
+- Keep the laptop on a hard, flat surface for proper ventilation
+- Use the included cooling pad for intensive tasks
+- Enable High Performance mode in power settings for demanding applications
+- Regular maintenance: clean vents monthly, update drivers quarterly
+
+TROUBLESHOOTING
+===============
+
+Common Issues:
+- Slow startup: Disable unnecessary startup programs
+- Overheating: Check for dust in vents, ensure proper ventilation
+- Battery drain: Adjust screen brightness, close unused applications
+- WiFi connectivity: Update network drivers, reset network settings
+
+For technical support, contact our 24/7 helpline or visit the online support portal.
+
+WARRANTY
+========
+This product comes with a 3-year comprehensive warranty covering hardware defects and manufacturing issues. Extended warranty options are available for purchase.

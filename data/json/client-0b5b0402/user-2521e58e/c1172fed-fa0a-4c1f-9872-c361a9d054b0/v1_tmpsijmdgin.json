@@ -1,0 +1,55 @@
+{
+  "feedback_data": [
+    {
+      "customer_id": "CUST001",
+      "product": "Laptop Pro",
+      "rating": 5,
+      "review": "Excellent performance and build quality. Perfect for business use.",
+      "date": "2024-01-20",
+      "verified_purchase": true,
+      "helpful_votes": 23
+    },
+    {
+      "customer_id": "CUST002",
+      "product": "Wireless Mouse",
+      "rating": 4,
+      "review": "Good ergonomics and battery life. Occasionally loses connection.",
+      "date": "2024-01-21",
+      "verified_purchase": true,
+      "helpful_votes": 8
+    },
+    {
+      "customer_id": "CUST003",
+      "product": "Office Chair",
+      "rating": 5,
+      "review": "Very comfortable for long work sessions. Great lumbar support.",
+      "date": "2024-01-22",
+      "verified_purchase": true,
+      "helpful_votes": 15
+    },
+    {
+      "customer_id": "CUST004",
+      "product": "Smartphone X",
+      "rating": 4,
+      "review": "Great camera quality and fast performance. Battery could be better.",
+      "date": "2024-01-23",
+      "verified_purchase": true,
+      "helpful_votes": 31
+    },
+    {
+      "customer_id": "CUST005",
+      "product": "Standing Desk",
+      "rating": 5,
+      "review": "Sturdy construction and smooth height adjustment. Worth the investment.",
+      "date": "2024-01-24",
+      "verified_purchase": true,
+      "helpful_votes": 19
+    }
+  ],
+  "summary": {
+    "total_reviews": 5,
+    "average_rating": 4.6,
+    "verified_purchases": 5,
+    "total_helpful_votes": 96
+  }
+}
