@@ -1,0 +1,11 @@
+employee_id,name,department,position,salary,hire_date,performance_score,manager_id
+EMP001,Alice Johnson,Engineering,Senior Developer,95000,2022-03-15,4.8,MGR001
+EMP002,Bob Smith,Marketing,Marketing Manager,78000,2021-07-20,4.5,MGR002
+EMP003,Carol Davis,Engineering,DevOps Engineer,88000,2023-01-10,4.7,MGR001
+EMP004,David Wilson,Sales,Sales Representative,65000,2022-11-05,4.2,MGR003
+EMP005,Eva Brown,HR,HR Specialist,72000,2021-09-12,4.6,MGR004
+EMP006,Frank Miller,Engineering,Junior Developer,68000,2023-06-01,4.3,MGR001
+EMP007,Grace Lee,Finance,Financial Analyst,75000,2022-02-28,4.9,MGR005
+EMP008,Henry Taylor,Marketing,Content Creator,58000,2023-04-15,4.1,MGR002
+EMP009,Iris Chen,Engineering,QA Engineer,82000,2021-12-03,4.8,MGR001
+EMP010,Jack Anderson,Sales,Account Manager,85000,2022-08-17,4.4,MGR003

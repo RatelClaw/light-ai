@@ -8,6 +8,7 @@ with proper initialization, connection pooling, and error handling.
 import sqlite3
 import duckdb
 import chromadb
+import os
 from pathlib import Path
 from typing import Optional, Dict, Any, List
 from contextlib import contextmanager
@@ -437,9 +438,9 @@ class ChromaDBManager:
     def get_database_size(self) -> int:
         """Get ChromaDB storage size in bytes."""
         try:
-            if self.persist_directory.exists():
+            if self.db_path.exists():
                 total_size = 0
-                for file_path in self.persist_directory.rglob('*'):
+                for file_path in self.db_path.rglob('*'):
                     if file_path.is_file():
                         total_size += file_path.stat().st_size
                 return total_size
@@ -752,3 +753,63 @@ class DatabaseManagers:
             health['chromadb'] = False
         
         return health
+    
+    def get_database_stats(self) -> Dict[str, Any]:
+        """
+        Get statistics for all databases.
+        
+        Returns:
+            Dict[str, Any]: Statistics for each database
+        """
+        stats = {}
+        
+        # SQLite stats
+        try:
+            sqlite_path = self.sqlite.db_path
+            if os.path.exists(sqlite_path):
+                stats['sqlite'] = {
+                    'file_size_bytes': os.path.getsize(sqlite_path),
+                    'file_path': sqlite_path
+                }
+            else:
+                stats['sqlite'] = {'file_size_bytes': 0, 'file_path': sqlite_path}
+        except Exception as e:
+            logger.error(f"Failed to get SQLite stats: {e}")
+            stats['sqlite'] = {'error': str(e)}
+        
+        # DuckDB stats
+        try:
+            duckdb_path = self.duckdb.db_path
+            if os.path.exists(duckdb_path):
+                stats['duckdb'] = {
+                    'file_size_bytes': os.path.getsize(duckdb_path),
+                    'file_path': duckdb_path
+                }
+            else:
+                stats['duckdb'] = {'file_size_bytes': 0, 'file_path': duckdb_path}
+        except Exception as e:
+            logger.error(f"Failed to get DuckDB stats: {e}")
+            stats['duckdb'] = {'error': str(e)}
+        
+        # ChromaDB stats
+        try:
+            chroma_path = self.chromadb.db_path
+            if os.path.exists(chroma_path):
+                # Calculate directory size
+                total_size = 0
+                for dirpath, dirnames, filenames in os.walk(chroma_path):
+                    for filename in filenames:
+                        filepath = os.path.join(dirpath, filename)
+                        total_size += os.path.getsize(filepath)
+                stats['chromadb'] = {
+                    'directory_size_bytes': total_size,
+                    'directory_path': chroma_path
+                }
+            else:
+                stats['chromadb'] = {'directory_size_bytes': 0, 'directory_path': chroma_path}
+        except Exception as e:
+            logger.error(f"Failed to get ChromaDB stats: {e}")
+            stats['chromadb'] = {'error': str(e)}
+        
+        return stats
+        return stats

@@ -231,9 +231,8 @@ class UniversalDataHandler:
                 self.logger.info(f"Would store unstructured data for {metadata.resource_id}")
                 # TODO: Implement proper unstructured data storage with embeddings
             
-            # Register metadata (only once, not done by storage router for file uploads)
-            # Note: Storage router already creates metadata for all types, so skip this
-            # self.metadata_registry.create_resource_metadata(metadata)
+            # Register metadata - this is REQUIRED for the resources endpoint to work
+            self.metadata_registry.create_resource_metadata(metadata)
             
             return APIResponse(
                 success=True,
@@ -1064,9 +1063,9 @@ class UniversalDataHandler:
             
             # Get cache statistics
             cache_stats = {
-                "sql_cache_size": self.sql_engine.get_cache_size(),
+                "sql_cache_stats": self.sql_engine.get_cache_stats(),
                 "embedding_cache_size": self.search_engine.get_cache_size(),
-                "metadata_cache_size": self.metadata_registry.get_cache_size()
+                "metadata_cache_size": getattr(self.metadata_registry, 'get_cache_size', lambda: 0)()
             }
             
             return APIResponse(
@@ -1077,7 +1076,19 @@ class UniversalDataHandler:
                     "cache_stats": cache_stats,
                     "system_info": {
                         "base_path": self.base_path,
-                        "config": self.config.to_dict(),
+                        "config": {
+                            "openrouter_model": self.config.openrouter.default_model,
+                            "database_paths": {
+                                "duckdb": str(self.config.database.duckdb_path),
+                                "sqlite": str(self.config.database.sqlite_path),
+                                "chromadb": str(self.config.database.chromadb_path)
+                            },
+                            "storage_paths": {
+                                "raw": str(self.config.storage.raw_data_dir),
+                                "structured": str(self.config.storage.structured_data_dir),
+                                "unstructured": str(self.config.storage.unstructured_data_dir)
+                            }
+                        },
                         "uptime": "N/A"  # Could track this if needed
                     }
                 },

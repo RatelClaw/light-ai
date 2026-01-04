@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "project_id": "PROJ001",
+      "name": "E-commerce Platform Redesign",
+      "status": "In Progress",
+      "start_date": "2024-01-01",
+      "end_date": "2024-06-30",
+      "budget": 250000,
+      "spent": 125000,
+      "team_size": 8,
+      "completion_percentage": 65,
+      "priority": "High",
+      "client": "TechCorp Inc",
+      "description": "Complete redesign of the e-commerce platform with modern UI/UX and improved performance."
+    },
+    {
+      "project_id": "PROJ002",
+      "name": "Mobile App Development",
+      "status": "Completed",
+      "start_date": "2023-09-01",
+      "end_date": "2024-01-15",
+      "budget": 180000,
+      "spent": 175000,
+      "team_size": 6,
+      "completion_percentage": 100,
+      "priority": "Medium",
+      "client": "StartupXYZ",
+      "description": "Native mobile application for iOS and Android with real-time features."
+    },
+    {
+      "project_id": "PROJ003",
+      "name": "Data Analytics Dashboard",
+      "status": "Planning",
+      "start_date": "2024-03-01",
+      "end_date": "2024-08-31",
+      "budget": 320000,
+      "spent": 15000,
+      "team_size": 5,
+      "completion_percentage": 5,
+      "priority": "High",
+      "client": "DataCorp Ltd",
+      "description": "Advanced analytics dashboard with machine learning insights and real-time reporting."
+    }
+  ],
+  "team_performance": {
+    "total_projects": 3,
+    "completed_projects": 1,
+    "in_progress_projects": 1,
+    "planning_projects": 1,
+    "total_budget": 750000,
+    "total_spent": 315000,
+    "average_team_size": 6.3
+  }
+}

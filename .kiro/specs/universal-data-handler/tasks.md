@@ -148,7 +148,7 @@ This implementation plan breaks down the Universal Data Handler system into disc
   - Test streaming for large results
   - _Requirements: 6.2, 8.1, 8.2_
 
-- [-] 10. Implement natural language processing system
+- [ ] 10. Implement natural language processing system
   - Create OpenRouter API integration for LLM queries
   - Implement schema-aware text-to-SQL generation
   - Create query explanation and result interpretation

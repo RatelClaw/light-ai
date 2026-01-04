@@ -292,21 +292,25 @@ def validate_hierarchy_access(requesting_user_id: str, requesting_client_id: str
     Returns:
         bool: True if access is allowed, False otherwise
     """
-    # Validate UUIDs
+    # Validate identifiers (client_id and user_id can be human-readable, only resource_id needs to be UUID)
     try:
-        DataHierarchy._validate_uuid(requesting_user_id, "requesting_user_id")
-        DataHierarchy._validate_uuid(requesting_client_id, "requesting_client_id")
+        DataHierarchy._validate_identifier(requesting_user_id, "requesting_user_id")
+        DataHierarchy._validate_identifier(requesting_client_id, "requesting_client_id")
     except ValueError:
         return False
     
     # Must be same client
     if requesting_client_id != target_hierarchy.client_id:
+        print(f"DEBUG: Client mismatch: {requesting_client_id} != {target_hierarchy.client_id}")
         return False
     
     # Check access based on level
     if access_level == AccessLevel.USER:
         # User can only access their own resources
-        return requesting_user_id == target_hierarchy.user_id
+        result = requesting_user_id == target_hierarchy.user_id
+        if not result:
+            print(f"DEBUG: User mismatch: {requesting_user_id} != {target_hierarchy.user_id}")
+        return result
     elif access_level == AccessLevel.MANAGER:
         # Manager can access team resources (same client, any user)
         return True  # Already validated same client above
