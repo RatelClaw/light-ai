@@ -50,7 +50,12 @@ class OpenRouterConfig:
     """OpenRouter API configuration."""
     api_key: str = ""
     base_url: str = "https://openrouter.ai/api/v1"
-    default_model: str = "anthropic/claude-3.5-sonnet"
+    default_model: str = "openai/gpt-3.5-turbo"  # More reliable model
+    fallback_models: list = field(default_factory=lambda: [
+        "meta-llama/llama-3.1-8b-instruct:free",
+        "microsoft/wizardlm-2-8x22b",
+        "anthropic/claude-3.5-sonnet"
+    ])
     embedding_model: str = "text-embedding-3-small"
     timeout_seconds: int = 30
 

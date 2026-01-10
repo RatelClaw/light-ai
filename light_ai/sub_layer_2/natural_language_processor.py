@@ -104,10 +104,14 @@ class NaturalLanguageProcessor:
         self.storage_router = StorageRouter(config)
         self.sql_engine = SQLQueryEngine(config)
         
-        # Initialize OpenRouter client
+        # Initialize OpenRouter client with proper headers
         self.openai_client = OpenAI(
             api_key=self.config.openrouter.api_key,
-            base_url=self.config.openrouter.base_url
+            base_url=self.config.openrouter.base_url,
+            default_headers={
+                "HTTP-Referer": "http://localhost:8000",  # Optional: for OpenRouter analytics
+                "X-Title": "Universal Data Handler"  # Optional: for OpenRouter analytics
+            }
         )
         
         # Context management
@@ -473,33 +477,90 @@ class NaturalLanguageProcessor:
     def _generate_sql_from_question(self, question: str, schema_contexts: List[SchemaContext],
                                   context: QueryContext) -> Dict[str, Any]:
         """Generate SQL query from natural language question using OpenRouter LLM."""
-        try:
-            # Build comprehensive prompt
-            prompt = self._build_sql_generation_prompt(question, schema_contexts, context)
-            
-            # Call OpenRouter LLM
-            response = self.openai_client.chat.completions.create(
-                model=self.config.openrouter.default_model,
-                messages=[
-                    {"role": "system", "content": "You are an expert SQL generator. Generate accurate SQL queries based on natural language questions and provided schema information. Always include explanations."},
-                    {"role": "user", "content": prompt}
-                ],
-                max_tokens=1000,
-                temperature=0.1  # Low temperature for consistent SQL generation
-            )
-            
-            response_text = response.choices[0].message.content.strip()
-            
-            # Parse the response to extract SQL and explanation
-            return self._parse_sql_response(response_text)
-            
-        except Exception as e:
-            logger.error(f"Failed to generate SQL from question: {e}")
-            return {
-                'sql': None,
-                'explanation': f"Failed to generate SQL: {str(e)}",
-                'confidence': 0.0
-            }
+        
+        # Build comprehensive prompt
+        prompt = self._build_sql_generation_prompt(question, schema_contexts, context)
+        
+        # Try multiple models in order of preference
+        models_to_try = [self.config.openrouter.default_model] + getattr(self.config.openrouter, 'fallback_models', [])
+        
+        for model in models_to_try:
+            try:
+                logger.info(f"Attempting SQL generation with model: {model}")
+                
+                # Call OpenRouter LLM
+                response = self.openai_client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": "You are an expert SQL generator. Generate accurate SQL queries based on natural language questions and provided schema information. Always include explanations."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    max_tokens=1000,
+                    temperature=0.1  # Low temperature for consistent SQL generation
+                )
+                
+                response_text = response.choices[0].message.content.strip()
+                
+                # Parse the response to extract SQL and explanation
+                result = self._parse_sql_response(response_text)
+                logger.info(f"Successfully generated SQL with model: {model}")
+                return result
+                
+            except Exception as e:
+                logger.warning(f"Model {model} failed: {e}")
+                continue
+        
+        # If all models fail, use fallback
+        logger.error(f"All models failed for question: {question}")
+        
+        # Fallback: Try to generate simple SQL based on patterns
+        fallback_result = self._generate_fallback_sql(question, schema_contexts)
+        if fallback_result['sql']:
+            logger.info(f"Using fallback SQL generation for question: {question}")
+            return fallback_result
+        
+        return {
+            'sql': None,
+            'explanation': f"Could not generate SQL query from the question.",
+            'confidence': 0.0
+        }
+    
+    def _generate_fallback_sql(self, question: str, schema_contexts: List[SchemaContext]) -> Dict[str, Any]:
+        """Generate simple SQL using pattern matching as fallback."""
+        question_lower = question.lower()
+        
+        if not schema_contexts:
+            return {'sql': None, 'explanation': 'No schema available', 'confidence': 0.0}
+        
+        # Get the first available table
+        first_schema = schema_contexts[0]
+        table_name = first_schema.table_name
+        columns = [col.name for col in first_schema.columns]
+        
+        # Simple pattern matching for common queries
+        if any(word in question_lower for word in ['all', 'everything', 'show', 'list', 'get']):
+            sql = f"SELECT * FROM {table_name} LIMIT 100"
+            explanation = f"Showing all data from {table_name} (limited to 100 rows)"
+            confidence = 0.7
+        elif 'count' in question_lower:
+            sql = f"SELECT COUNT(*) as total_count FROM {table_name}"
+            explanation = f"Counting total records in {table_name}"
+            confidence = 0.8
+        elif any(word in question_lower for word in ['first', 'top', 'recent']):
+            sql = f"SELECT * FROM {table_name} LIMIT 10"
+            explanation = f"Showing first 10 records from {table_name}"
+            confidence = 0.6
+        else:
+            # Default: show some data
+            sql = f"SELECT * FROM {table_name} LIMIT 10"
+            explanation = f"Showing sample data from {table_name}"
+            confidence = 0.3
+        
+        return {
+            'sql': sql,
+            'explanation': explanation,
+            'confidence': confidence
+        }
     
     def _build_sql_generation_prompt(self, question: str, schema_contexts: List[SchemaContext],
                                    context: QueryContext) -> str:
