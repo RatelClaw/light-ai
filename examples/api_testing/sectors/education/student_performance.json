@@ -17,32 +17,6 @@
         "financial_aid": true,
         "work_study": false,
         "residence": "On-campus"
-      },
-      {
-        "student_id": "STU-002",
-        "program": "Business Administration",
-        "year_level": "Senior",
-        "age": 23,
-        "gender": "Male",
-        "enrollment_status": "Part-time",
-        "gpa": 3.42,
-        "credit_hours": 9,
-        "financial_aid": false,
-        "work_study": true,
-        "residence": "Off-campus"
-      },
-      {
-        "student_id": "STU-003",
-        "program": "Engineering",
-        "year_level": "Sophomore",
-        "age": 20,
-        "gender": "Male",
-        "enrollment_status": "Full-time",
-        "gpa": 3.89,
-        "credit_hours": 18,
-        "financial_aid": true,
-        "work_study": false,
-        "residence": "On-campus"
       }
     ],
     "course_performance": [

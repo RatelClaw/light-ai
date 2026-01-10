@@ -133,3 +133,45 @@
 2026-01-10 13:27:45,802 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
 2026-01-10 13:27:45,804 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 130.87ms
 2026-01-10 13:27:45,804 - AGENT_ACTIVITY - INFO - Agent response logged: 131.32ms, 0 tokens
+2026-01-10 20:20:42,263 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768029642
+2026-01-10 20:20:42,264 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 20:20:42,265 - AGENT_ACTIVITY - INFO - Agent response logged: 1.30ms, 0 tokens
+2026-01-10 21:59:39,939 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768035579
+2026-01-10 21:59:39,939 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 21:59:39,940 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.66ms
+2026-01-10 21:59:39,940 - AGENT_ACTIVITY - INFO - Agent response logged: 1.18ms, 0 tokens
+2026-01-10 22:00:25,899 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768035625
+2026-01-10 22:00:25,900 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 22:00:25,900 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.73ms
+2026-01-10 22:00:25,901 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.00ms
+2026-01-10 22:00:25,901 - AGENT_ACTIVITY - INFO - Agent response logged: 1.40ms, 0 tokens
+2026-01-10 22:01:11,297 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768035671
+2026-01-10 22:01:11,297 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 22:01:11,297 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.39ms
+2026-01-10 22:01:11,297 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.00ms
+2026-01-10 22:01:11,297 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.08ms
+2026-01-10 22:01:11,297 - AGENT_ACTIVITY - INFO - Agent response logged: 0.84ms, 0 tokens
+2026-01-10 22:02:14,108 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768035734
+2026-01-10 22:02:14,108 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 22:02:14,109 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.70ms
+2026-01-10 22:02:14,109 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.00ms
+2026-01-10 22:02:14,109 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.33ms
+2026-01-10 22:02:14,109 - AGENT_ACTIVITY - INFO - Agent response logged: 1.72ms, 0 tokens
+2026-01-10 22:06:29,780 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768035989
+2026-01-10 22:06:29,780 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 22:06:29,814 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 34.42ms
+2026-01-10 22:06:29,815 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.00ms
+2026-01-10 22:06:29,816 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 1.31ms
+2026-01-10 22:06:29,816 - AGENT_ACTIVITY - INFO - Agent response logged: 36.56ms, 0 tokens
+2026-01-10 22:11:13,952 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768036273
+2026-01-10 22:11:13,953 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 22:11:13,954 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.82ms
+2026-01-10 22:11:13,954 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.00ms
+2026-01-10 22:11:13,954 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.49ms
+2026-01-10 22:11:13,954 - AGENT_ACTIVITY - INFO - Agent response logged: 2.20ms, 0 tokens
+2026-01-10 22:17:34,833 - AGENT_ACTIVITY - INFO - Agent query logged: master_data_analyst_strands_1768036654
+2026-01-10 22:17:34,834 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 0.00ms
+2026-01-10 22:17:34,862 - AGENT_ACTIVITY - INFO - Tool usage logged: resource_discovery - 27.67ms
+2026-01-10 22:17:34,862 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.00ms
+2026-01-10 22:17:34,863 - AGENT_ACTIVITY - INFO - Tool usage logged: field_extraction - 0.87ms
+2026-01-10 22:17:34,863 - AGENT_ACTIVITY - INFO - Agent response logged: 29.39ms, 0 tokens

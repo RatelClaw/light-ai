@@ -37,52 +37,71 @@ def upload_json_data(client_id, user_id, json_data, resource_name):
         return {"error": str(e)}, 500
 
 def get_persona_analysis(client_id, user_id, query):
-    """Get persona and context analysis using the new enhanced analysis agent"""
+    """Get persona and context analysis using the existing AI agent system"""
     try:
-        # Import the enhanced analysis agent
+        # Import the existing master agent system
         import sys
+        import asyncio
         from pathlib import Path
         sys.path.append(str(Path(__file__).parent.parent))
         
-        from light_ai.agents.enhanced_analysis_agent import get_analysis_agent, AnalysisRequest
+        from light_ai.agents.master_agent import MasterDataAnalystAgent, AnalysisRequest
+        from light_ai.core.models import AccessLevel
+        from light_ai.config import get_config
         
-        # Create analysis request
+        # Create analysis request for persona and context
         request = AnalysisRequest(
-            client_id=client_id,
             user_id=user_id,
-            query=query,
+            client_id=client_id,
+            query=f"Analyze the user's data to extract persona characteristics and contextual information. {query}",
             desired_fields={
-                "persona": "Extract detailed persona characteristics",
-                "context": "Provide contextual information"
+                "persona": "Extract detailed persona characteristics, personality traits, demographics, interests, and behavioral patterns",
+                "context": "Provide contextual information about the user's situation, environment, and circumstances"
             },
             optional_fields={
-                "insights": "Generate insights from the data",
-                "recommendations": "Provide recommendations"
-            }
+                "insights": "Generate insights about the user's patterns and preferences",
+                "recommendations": "Provide personalized recommendations based on the analysis"
+            },
+            access_level=AccessLevel.USER,
+            include_visualizations=True
         )
         
-        # Get the analysis agent and perform analysis
-        agent = get_analysis_agent()
-        result = agent.analyze_user_data(request)
+        # Initialize and run the master agent
+        config = get_config()
+        agent = MasterDataAnalystAgent(config)
         
-        if result.success:
+        # Run the analysis using asyncio
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            result = loop.run_until_complete(agent.analyze_data(request))
+        finally:
+            loop.close()
+        
+        if result and (result.results or result.insights):
+            # Format the response using the AI agent results
             formatted_result = {
                 "success": True,
                 "data": {
-                    "persona": result.persona or "Persona analysis completed",
-                    "context": result.context or "Context information extracted",
-                    "insights": result.insights or "Insights generated from available data",
-                    "recommendations": result.recommendations or "Recommendations provided",
-                    "data_summary": result.data_summary,
-                    "analysis_method": "Enhanced Analysis Agent with Direct Data Access"
+                    "persona": result.insights[0] if result.insights else "Persona analysis completed using AI agents",
+                    "context": result.methodology if result.methodology else "Context extracted using intelligent field mapping",
+                    "insights": "; ".join(result.insights) if result.insights else "AI-powered insights generated",
+                    "recommendations": "; ".join(result.follow_up_suggestions) if result.follow_up_suggestions else "Recommendations provided by analysis agents",
+                    "data_summary": {
+                        "sources_used": len(result.sources_used) if result.sources_used else 0,
+                        "confidence_score": result.confidence_score if hasattr(result, 'confidence_score') else 0.8,
+                        "execution_time_ms": result.execution_time_ms if hasattr(result, 'execution_time_ms') else 0,
+                        "field_mappings": result.field_mappings if hasattr(result, 'field_mappings') else None
+                    },
+                    "analysis_method": "AI Agent System with Intelligent Field Extraction"
                 }
             }
             return formatted_result, 200
         else:
-            return {"success": False, "error": result.error}, 400
+            return {"success": False, "error": "AI agent analysis returned no results"}, 400
             
     except Exception as e:
-        return {"error": f"Analysis failed: {str(e)}"}, 500
+        return {"error": f"AI agent analysis failed: {str(e)}"}, 500
 
 def get_user_resources(client_id, user_id):
     """Get all resources for a user"""

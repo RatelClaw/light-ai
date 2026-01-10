@@ -1,0 +1,19 @@
+2026-01-10 22:17:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-10 22:17:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-10 22:17:00 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-10 22:17:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp5jv2zhi9.json (resource_id: eec745d0-b7ed-4fad-8c88-09c043a96cea)
+2026-01-10 22:17:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp5jv2zhi9.json (json, 0.0MB)
+2026-01-10 22:17:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:356 - Duplicate check for hash c32bb23e... (querying metadata registry)
+2026-01-10 22:17:00 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:392 - File upload completed: tmp5jv2zhi9.json -> eec745d0-b7ed-4fad-8c88-09c043a96cea
+2026-01-10 22:17:00 - light_ai.storage.storage_router - INFO - storage_router.py:59 - Initializing storage router...
+2026-01-10 22:17:00 - light_ai.storage.database_managers - INFO - database_managers.py:696 - Initializing all database managers...
+2026-01-10 22:17:00 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-10 22:17:00 - light_ai.storage.database_managers - INFO - database_managers.py:73 - DuckDB initialized at: data/duckdb/main.db
+2026-01-10 22:17:00 - light_ai.storage.database_managers - INFO - database_managers.py:305 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-10 22:17:00 - light_ai.storage.database_managers - INFO - database_managers.py:704 - All database managers initialized successfully
+2026-01-10 22:17:00 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-10 22:17:00 - light_ai.storage.storage_router - INFO - storage_router.py:63 - Storage router initialized successfully
+2026-01-10 22:17:00 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: eec745d0-b7ed-4fad-8c88-09c043a96cea
+2026-01-10 22:17:00 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource eec745d0-b7ed-4fad-8c88-09c043a96cea
+2026-01-10 22:17:00 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_eec745d0_b7ed_4fad_8c88_09c043a96cea
+2026-01-10 22:17:00 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_eec745d0_b7ed_4fad_8c88_09c043a96cea

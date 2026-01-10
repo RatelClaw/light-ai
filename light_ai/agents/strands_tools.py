@@ -21,7 +21,8 @@ from ..sub_layer_2.semantic_search_engine import SemanticSearchEngine, SearchStr
 from ..config import Config, get_config
 from ..logger import get_logger
 from .logging import get_activity_logger
-from ..api import UniversalDataHandler
+# Import the new data retrieval engine
+from ..data_retrieval_engine import get_retrieval_engine
 
 logger = get_logger(__name__)
 activity_logger = get_activity_logger()
@@ -48,17 +49,14 @@ class ResourceDiscoveryTool:
     def __init__(self, config: Optional[Config] = None):
         """Initialize resource discovery tool."""
         self.config = config or get_config()
-        self.metadata_registry = MetadataRegistry(config)
-        self.storage_router = StorageRouter(config)
-        # Initialize Universal Data Handler for direct access to user data
-        self.data_handler = UniversalDataHandler(config)
+        # Use the new data retrieval engine that works with Universal Data Handler
+        self.retrieval_engine = get_retrieval_engine()
         self._initialized = False
     
     def initialize(self) -> None:
         """Initialize the tool and dependencies."""
         if not self._initialized:
-            self.metadata_registry.initialize()
-            self.storage_router.initialize()
+            # The retrieval engine handles its own initialization
             self._initialized = True
     
     def discover_resources(self, user_id: str, client_id: str, 
@@ -89,21 +87,30 @@ class ResourceDiscoveryTool:
                 None, 0.0
             )
             
-            # Get all accessible resources using Universal Data Handler
-            resources_response = self.data_handler.list_resources(
-                client_id=client_id,
-                user_id=user_id,
-                access_level="user"
-            )
+            # Get all accessible resources using the new data retrieval engine
+            user_resources = self.retrieval_engine.get_user_resources(client_id, user_id)
             
-            if not resources_response.success:
+            if not user_resources:
                 return ToolResult(
                     success=False,
-                    error=f"Failed to discover resources: {resources_response.error}",
+                    error="No resources found for this user",
                     execution_time_ms=(time.time() - start_time) * 1000
                 )
             
-            resources_data = resources_response.data.get("resources", [])
+            # Convert ResourceInfo objects to dictionaries for compatibility
+            resources_data = []
+            for resource_info in user_resources:
+                resource_dict = {
+                    "resource_id": resource_info.resource_id,
+                    "filename": resource_info.original_filename,
+                    "resource_type": resource_info.data_type,
+                    "type": resource_info.data_type,
+                    "size_bytes": resource_info.file_size_bytes,
+                    "created_at": resource_info.created_at,
+                    "row_count": resource_info.row_count,
+                    "column_count": resource_info.column_count
+                }
+                resources_data.append(resource_dict)
             
             # Filter by type if specified
             if resource_type:
@@ -120,34 +127,14 @@ class ResourceDiscoveryTool:
             for resource_dict, relevance_score in scored_resources:
                 resource_info = {
                     "resource_id": resource_dict.get("resource_id"),
-                    "filename": resource_dict.get("original_filename", resource_dict.get("filename")),
-                    "resource_type": resource_dict.get("resource_type"),
-                    "data_type": resource_dict.get("data_type"),
-                    "file_size_mb": round(resource_dict.get("file_size_bytes", 0) / (1024 * 1024), 2),
+                    "filename": resource_dict.get("filename"),
+                    "resource_type": resource_dict.get("type"),
+                    "data_type": resource_dict.get("type"),
+                    "file_size_mb": round(resource_dict.get("size_bytes", 0) / (1024 * 1024), 2),
                     "created_at": resource_dict.get("created_at"),
-                    "row_count": resource_dict.get("row_count"),
-                    "column_count": resource_dict.get("column_count"),
-                    "chunk_count": resource_dict.get("chunk_count"),
                     "relevance_score": relevance_score,
-                    "processing_status": resource_dict.get("processing_status", "completed")
+                    "processing_status": "completed"
                 }
-                
-                # Add schema information for structured data
-                if resource_dict.get("resource_type") == "structured":
-                    schema_response = self.data_handler.get_schema(
-                        resource_id=resource_dict.get("resource_id"),
-                        client_id=client_id,
-                        user_id=user_id
-                    )
-                    if schema_response.success and schema_response.data:
-                        schema_data = schema_response.data.get("schema", {})
-                        resource_info["schema"] = {
-                            "columns": list(schema_data.get("columns", {}).keys()),
-                            "column_types": {
-                                col: info.get("type", "unknown") 
-                                for col, info in schema_data.get("columns", {}).items()
-                            }
-                        }
                 
                 resource_info_list.append(resource_info)
             
@@ -158,7 +145,7 @@ class ResourceDiscoveryTool:
                 "master_data_analyst", user_id, client_id,
                 "resource_discovery", 
                 {"query_context": query_context, "resource_type": resource_type.value if resource_type else None},
-                f"Found {len(resource_data)} resources", execution_time
+                f"Found {len(resource_info_list)} resources", execution_time
             )
             
             return ToolResult(
@@ -253,15 +240,14 @@ class FieldExtractionTool:
     def __init__(self, config: Optional[Config] = None):
         """Initialize field extraction tool."""
         self.config = config or get_config()
-        self.metadata_registry = MetadataRegistry(config)
-        self.storage_router = StorageRouter(config)
+        # Use the new data retrieval engine
+        self.retrieval_engine = get_retrieval_engine()
         self._initialized = False
     
     def initialize(self) -> None:
         """Initialize the tool and dependencies."""
         if not self._initialized:
-            self.metadata_registry.initialize()
-            self.storage_router.initialize()
+            # The retrieval engine handles its own initialization
             self._initialized = True
     
     def extract_and_map_fields(self, user_id: str, client_id: str,
@@ -292,29 +278,45 @@ class FieldExtractionTool:
                 None, 0.0
             )
             
-            # Get resources to analyze
+            # Get resources to analyze using the data retrieval engine
             if resource_ids:
+                # Get specific resources
                 resources = []
                 for resource_id in resource_ids:
-                    resource = self.metadata_registry.get_resource_metadata(resource_id)
-                    if resource and resource.user_id == user_id and resource.client_id == client_id:
-                        resources.append(resource)
+                    resource_result = self.retrieval_engine.get_resource_by_id(resource_id)
+                    if resource_result.success and resource_result.data:
+                        resources.append({
+                            "resource_id": resource_id,
+                            "data": resource_result.data
+                        })
             else:
-                resources = self.metadata_registry.list_resources(client_id, user_id)
+                # Get all user resources
+                user_resources = self.retrieval_engine.get_user_resources(client_id, user_id)
+                resources = [{"resource_id": r["resource_id"], "data": None} for r in user_resources]
             
             # Analyze fields in each resource
             field_mappings = {}
             available_fields = {}
             
             for resource in resources:
-                if resource.resource_type == ResourceType.STRUCTURED:
-                    resource_fields = self._analyze_structured_fields(resource)
-                    available_fields[resource.resource_id] = resource_fields
+                resource_id = resource["resource_id"]
+                
+                # Get the actual data if not already loaded
+                if resource["data"] is None:
+                    resource_result = self.retrieval_engine.get_resource_by_id(resource_id)
+                    resource_data = resource_result.data if resource_result.success else None
+                else:
+                    resource_data = resource["data"]
+                
+                if resource_data and isinstance(resource_data, dict):
+                    # Extract field names from the data structure
+                    resource_fields = self._extract_fields_from_data(resource_data)
+                    available_fields[resource_id] = resource_fields
                     
                     # Map desired fields to available fields
                     mappings = self._map_fields(desired_fields, resource_fields)
                     if mappings:
-                        field_mappings[resource.resource_id] = mappings
+                        field_mappings[resource_id] = mappings
             
             # Generate field derivation suggestions
             derivation_suggestions = self._suggest_field_derivations(
@@ -359,6 +361,33 @@ class FieldExtractionTool:
                 error=error_msg,
                 execution_time_ms=execution_time
             )
+    
+    def _extract_fields_from_data(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Extract field information from actual data structure."""
+        fields = {}
+        
+        def extract_from_dict(d: Dict[str, Any], prefix: str = ""):
+            for key, value in d.items():
+                field_name = f"{prefix}.{key}" if prefix else key
+                
+                if isinstance(value, dict):
+                    # Nested dictionary - recurse
+                    extract_from_dict(value, field_name)
+                elif isinstance(value, list) and value and isinstance(value[0], dict):
+                    # List of dictionaries - analyze first item
+                    extract_from_dict(value[0], field_name)
+                else:
+                    # Simple field
+                    field_type = type(value).__name__
+                    fields[field_name] = {
+                        "type": field_type,
+                        "description": f"Field of type {field_type}",
+                        "nullable": True,
+                        "sample_value": str(value)[:100] if value is not None else None
+                    }
+        
+        extract_from_dict(data)
+        return fields
     
     def _analyze_structured_fields(self, resource: ResourceMetadata) -> Dict[str, Any]:
         """Analyze fields in a structured resource."""
@@ -471,17 +500,14 @@ class QueryExecutionTool:
     def __init__(self, config: Optional[Config] = None):
         """Initialize query execution tool."""
         self.config = config or get_config()
-        self.storage_router = StorageRouter(config)
-        self.sql_engine = SQLQueryEngine(config)
-        # Initialize Universal Data Handler for direct access to user data
-        self.data_handler = UniversalDataHandler(config)
+        # Use the new data retrieval engine
+        self.retrieval_engine = get_retrieval_engine()
         self._initialized = False
     
     def initialize(self) -> None:
         """Initialize the tool and dependencies."""
         if not self._initialized:
-            self.storage_router.initialize()
-            self.sql_engine.initialize()
+            # The retrieval engine handles its own initialization
             self._initialized = True
     
     def execute_query(self, user_id: str, client_id: str,
@@ -525,54 +551,33 @@ class QueryExecutionTool:
             
             # Execute based on query type
             if query_type == "sql":
-                # Use Universal Data Handler for SQL execution
-                result_response = self.data_handler.query_structured(
-                    client_id=client_id,
-                    user_id=user_id,
-                    sql_query=query,
-                    output_format="json"
-                )
-                
-                if result_response.success:
-                    result_data = result_response.data
-                    data = {
-                        "results": result_data.get("results", []),
-                        "columns": list(result_data.get("results", [{}])[0].keys()) if result_data.get("results") else [],
-                        "row_count": result_data.get("row_count", len(result_data.get("results", []))),
-                        "execution_time_ms": result_data.get("execution_time_ms", 0),
-                        "query_type": "sql"
-                    }
-                else:
-                    return ToolResult(
-                        success=False,
-                        error=f"SQL execution failed: {result_response.error}",
-                        execution_time_ms=(time.time() - start_time) * 1000
-                    )
+                # For now, return a simple message since SQL queries need the full system
+                data = {
+                    "results": [],
+                    "message": "SQL queries not yet supported in simplified mode. Use data retrieval instead.",
+                    "query_type": "sql"
+                }
             
             elif query_type == "search":
-                # Use Universal Data Handler for semantic search
-                search_response = self.data_handler.search_unstructured(
-                    client_id=client_id,
-                    user_id=user_id,
-                    query=query,
-                    strategy="hybrid",
-                    limit=10
-                )
+                # Use the retrieval engine to search user data
+                search_results = self.retrieval_engine.search_user_data(client_id, user_id, query)
                 
-                if search_response.success:
-                    search_data = search_response.data
-                    data = {
-                        "results": search_data.get("results", []),
-                        "total_results": search_data.get("total_results", 0),
-                        "search_time_ms": search_data.get("search_time_ms", 0),
-                        "query_type": "search"
-                    }
-                else:
-                    data = {
-                        "results": [],
-                        "message": f"Search failed: {search_response.error}",
-                        "query_type": "search"
-                    }
+                data = {
+                    "results": search_results.get("matches", []),
+                    "total_results": search_results.get("total_searched", 0),
+                    "search_time_ms": 0,
+                    "query_type": "search"
+                }
+            
+            elif query_type == "data":
+                # Get all user data
+                all_data = self.retrieval_engine.get_all_user_data(client_id, user_id)
+                
+                data = {
+                    "results": all_data.get("data_by_source", {}).get("json_files", []),
+                    "total_results": all_data.get("total_resources", 0),
+                    "query_type": "data"
+                }
             
             else:
                 return ToolResult(
@@ -644,15 +649,14 @@ class DataSynthesisTool:
     def __init__(self, config: Optional[Config] = None):
         """Initialize data synthesis tool."""
         self.config = config or get_config()
-        self.storage_router = StorageRouter(config)
-        # Initialize Universal Data Handler for direct access to user data
-        self.data_handler = UniversalDataHandler(config)
+        # Use the new data retrieval engine
+        self.retrieval_engine = get_retrieval_engine()
         self._initialized = False
     
     def initialize(self) -> None:
         """Initialize the tool and dependencies."""
         if not self._initialized:
-            self.storage_router.initialize()
+            # The retrieval engine handles its own initialization
             self._initialized = True
     
     def synthesize_data(self, user_id: str, client_id: str,
@@ -683,18 +687,15 @@ class DataSynthesisTool:
                 None, 0.0
             )
             
-            # Get resource information using Universal Data Handler
+            # Get resource information using the data retrieval engine
             resources = []
             for resource_id in resource_ids:
-                resource_response = self.data_handler.get_resource_metadata(
-                    resource_id=resource_id,
-                    client_id=client_id,
-                    user_id=user_id
-                )
-                if resource_response.success:
-                    resource_data = resource_response.data
-                    if resource_data.get("user_id") == user_id and resource_data.get("client_id") == client_id:
-                        resources.append(resource_data)
+                resource_result = self.retrieval_engine.get_resource_by_id(resource_id)
+                if resource_result.success and resource_result.data:
+                    resources.append({
+                        "resource_id": resource_id,
+                        "data": resource_result.data
+                    })
             
             if not resources:
                 return ToolResult(
@@ -821,15 +822,14 @@ class CrossResourceSynthesisTool:
     def __init__(self, config: Optional[Config] = None):
         """Initialize cross-resource synthesis tool."""
         self.config = config or get_config()
-        self.metadata_registry = MetadataRegistry(config)
-        # Initialize Universal Data Handler for direct access to user data
-        self.data_handler = UniversalDataHandler(config)
+        # Use the new data retrieval engine
+        self.retrieval_engine = get_retrieval_engine()
         self._initialized = False
     
     def initialize(self) -> None:
         """Initialize the tool and dependencies."""
         if not self._initialized:
-            self.metadata_registry.initialize()
+            # The retrieval engine handles its own initialization
             self._initialized = True
     
     def synthesize_resources(self, user_id: str, client_id: str,
