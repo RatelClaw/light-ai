@@ -1,0 +1,12 @@
+product_id,name,category,price,stock,inventory_summary_total_products,inventory_summary_total_value,inventory_summary_categories
+P001,Laptop,electronics,999.99,50.0,,,
+P002,T-Shirt,clothing,29.99,200.0,,,
+P003,Novel,books,15.99,100.0,,,
+P004,Smartphone,electronics,699.99,75.0,,,
+P005,Coffee Maker,home,89.99,30.0,,,
+,,,,,5.0,,
+,,,,,,41249.25,
+,,,,,,,electronics
+,,,,,,,clothing
+,,,,,,,books
+,,,,,,,home

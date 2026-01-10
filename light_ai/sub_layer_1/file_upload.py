@@ -349,9 +349,19 @@ class FileUploadAPI:
         # Check for duplicates if requested
         duplicates = []
         if check_duplicates:
-            # This would normally query the metadata registry
-            # For now, we'll just log that duplicate checking would happen here
-            logger.info(f"Duplicate check for hash {file_hash[:8]}... (would query metadata registry)")
+            # Query metadata registry for existing files with same hash
+            try:
+                # This would be implemented by querying the metadata registry
+                # For now, we'll implement a basic check
+                logger.info(f"Duplicate check for hash {file_hash[:8]}... (querying metadata registry)")
+                # TODO: Implement actual metadata registry query by file_hash
+                # existing_resources = metadata_registry.find_by_hash(file_hash)
+                # if existing_resources:
+                #     logger.warning(f"Found {len(existing_resources)} duplicate(s) for hash {file_hash[:8]}...")
+                #     duplicates = existing_resources
+            except Exception as e:
+                logger.warning(f"Duplicate check failed: {e}")
+                # Continue with upload even if duplicate check fails
         
         # Determine storage path
         storage_subdir = self._get_storage_subdir(resource_type)

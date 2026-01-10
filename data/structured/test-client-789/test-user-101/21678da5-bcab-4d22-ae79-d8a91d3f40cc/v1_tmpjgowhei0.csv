@@ -1,0 +1,4 @@
+id,name,age,city,purchase_amount,category
+1,John Doe,30,New York,150.5,electronics
+2,Jane Smith,25,Los Angeles,200.75,clothing
+3,Bob Johnson,35,Chicago,99.99,books

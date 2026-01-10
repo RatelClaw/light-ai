@@ -1,0 +1,83 @@
+{
+  "healthcare_analytics": {
+    "facility_id": "HOSP-001",
+    "facility_name": "Metropolitan General Hospital",
+    "reporting_period": "2024-Q1",
+    "patient_demographics": [
+      {
+        "patient_id": "PAT-001",
+        "age_group": "65-75",
+        "gender": "Female",
+        "admission_type": "Emergency",
+        "primary_diagnosis": "Acute Myocardial Infarction",
+        "secondary_diagnoses": ["Diabetes Type 2", "Hypertension"],
+        "length_of_stay": 7,
+        "treatment_cost": 45000,
+        "outcome": "Discharged Home",
+        "readmission_30_day": false,
+        "satisfaction_score": 4.2
+      },
+      {
+        "patient_id": "PAT-002",
+        "age_group": "45-55",
+        "gender": "Male",
+        "admission_type": "Elective",
+        "primary_diagnosis": "Hip Replacement",
+        "secondary_diagnoses": ["Osteoarthritis"],
+        "length_of_stay": 4,
+        "treatment_cost": 32000,
+        "outcome": "Discharged Home",
+        "readmission_30_day": false,
+        "satisfaction_score": 4.8
+      },
+      {
+        "patient_id": "PAT-003",
+        "age_group": "25-35",
+        "gender": "Female",
+        "admission_type": "Emergency",
+        "primary_diagnosis": "Appendicitis",
+        "secondary_diagnoses": [],
+        "length_of_stay": 2,
+        "treatment_cost": 18000,
+        "outcome": "Discharged Home",
+        "readmission_30_day": false,
+        "satisfaction_score": 4.5
+      },
+      {
+        "patient_id": "PAT-004",
+        "age_group": "75-85",
+        "gender": "Male",
+        "admission_type": "Emergency",
+        "primary_diagnosis": "Pneumonia",
+        "secondary_diagnoses": ["COPD", "Heart Failure"],
+        "length_of_stay": 12,
+        "treatment_cost": 67000,
+        "outcome": "Transferred to Skilled Nursing",
+        "readmission_30_day": true,
+        "satisfaction_score": 3.8
+      }
+    ],
+    "clinical_metrics": {
+      "average_length_of_stay": 6.25,
+      "readmission_rate": 0.25,
+      "mortality_rate": 0.02,
+      "infection_rate": 0.08,
+      "patient_satisfaction": 4.33,
+      "cost_per_case": 40500
+    },
+    "quality_indicators": {
+      "hand_hygiene_compliance": 0.94,
+      "medication_error_rate": 0.003,
+      "fall_rate": 0.12,
+      "pressure_ulcer_rate": 0.05,
+      "central_line_infection_rate": 0.02
+    },
+    "resource_utilization": {
+      "bed_occupancy_rate": 0.87,
+      "or_utilization": 0.82,
+      "emergency_wait_time": 45,
+      "staff_to_patient_ratio": 1.2,
+      "equipment_downtime": 0.03
+    }
+  }
+}

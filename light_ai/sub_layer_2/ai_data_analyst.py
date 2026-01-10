@@ -313,6 +313,8 @@ class AIDataAnalyst:
                 client_id, user_id if access_level == AccessLevel.USER else None
             )
             
+            logger.info(f"Found {len(all_resources)} total resources for client_id={client_id}, user_id={user_id}")
+            
             if not all_resources:
                 return []
             
@@ -321,11 +323,14 @@ class AIDataAnalyst:
             
             for resource in all_resources:
                 relevance_score = self._calculate_resource_relevance(question, resource)
-                if relevance_score > 0.1:  # Minimum relevance threshold
+                logger.info(f"Resource {resource.resource_id} ({resource.original_filename}) relevance score: {relevance_score}")
+                if relevance_score >= 0.1:  # Minimum relevance threshold (inclusive)
                     scored_resources.append((resource, relevance_score))
             
             # Sort by relevance and return top resources
             scored_resources.sort(key=lambda x: x[1], reverse=True)
+            
+            logger.info(f"Found {len(scored_resources)} relevant resources above threshold")
             
             # Return top 10 most relevant resources
             return [resource for resource, score in scored_resources[:10]]

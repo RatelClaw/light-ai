@@ -1,0 +1,16 @@
+date,product,category,sales_amount,quantity,region,customer_type
+2024-01-15,Laptop Pro,Electronics,1299.99,1,North America,Business
+2024-01-16,Wireless Mouse,Electronics,29.99,3,North America,Consumer
+2024-01-17,Office Chair,Furniture,249.99,2,Europe,Business
+2024-01-18,Smartphone X,Electronics,899.99,1,Asia,Consumer
+2024-01-19,Desk Lamp,Furniture,79.99,4,North America,Consumer
+2024-01-20,Tablet Mini,Electronics,399.99,2,Europe,Business
+2024-01-21,Ergonomic Keyboard,Electronics,149.99,1,Asia,Business
+2024-01-22,Standing Desk,Furniture,599.99,1,North America,Business
+2024-01-23,Webcam HD,Electronics,89.99,5,Europe,Consumer
+2024-01-24,Monitor 27inch,Electronics,329.99,2,Asia,Business
+2024-01-25,Coffee Maker,Appliances,199.99,1,North America,Consumer
+2024-01-26,Blender Pro,Appliances,149.99,3,Europe,Consumer
+2024-01-27,Air Purifier,Appliances,299.99,1,Asia,Business
+2024-01-28,Smart Watch,Electronics,249.99,2,North America,Consumer
+2024-01-29,Headphones,Electronics,179.99,4,Europe,Consumer

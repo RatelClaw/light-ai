@@ -1,0 +1,13 @@
+id,name,age,city,purchase_amount,category,sales_summary_total_sales,sales_summary_total_customers,sales_summary_average_order,sales_summary_top_category,metadata_source,metadata_created_at,metadata_region
+1.0,John Doe,30.0,New York,150.5,electronics,,,,,,,
+2.0,Jane Smith,25.0,Los Angeles,200.75,clothing,,,,,,,
+3.0,Bob Johnson,35.0,Chicago,99.99,books,,,,,,,
+4.0,Alice Brown,28.0,Houston,175.25,electronics,,,,,,,
+5.0,Charlie Wilson,42.0,Phoenix,89.5,home,,,,,,,
+,,,,,,715.99,,,,,,
+,,,,,,,5.0,,,,,
+,,,,,,,,143.2,,,,
+,,,,,,,,,electronics,,,
+,,,,,,,,,,integration_test,,
+,,,,,,,,,,,2024-01-10T10:00:00Z,
+,,,,,,,,,,,,US

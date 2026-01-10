@@ -120,6 +120,9 @@ class UniversalDataHandler:
         self.search_engine = SemanticSearchEngine(self.config)
         self.ai_analyst = AIDataAnalyst(self.config)
         
+        # Share the metadata registry instance to ensure consistency
+        self.ai_analyst.metadata_registry = self.metadata_registry
+        
         self.logger.info("Universal Data Handler API initialized successfully")
     
     def _handle_error(self, error: Exception, operation: str) -> APIResponse:
@@ -231,9 +234,6 @@ class UniversalDataHandler:
                 self.logger.info(f"Would store unstructured data for {metadata.resource_id}")
                 # TODO: Implement proper unstructured data storage with embeddings
             
-            # Register metadata - this is REQUIRED for the resources endpoint to work
-            self.metadata_registry.create_resource_metadata(metadata)
-            
             return APIResponse(
                 success=True,
                 data={
@@ -269,64 +269,165 @@ class UniversalDataHandler:
             if not self._validate_access(client_id, user_id):
                 return APIResponse(success=False, error="Invalid client_id or user_id")
             
-            # Create temporary JSON file
-            import tempfile
-            import json
+            # Import cleaning config
+            from .sub_layer_1.data_cleaning import CleaningConfig, DataCleaningEngine
             
-            with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as tmp_file:
-                json.dump(json_data, tmp_file, indent=2)
-                tmp_file_path = tmp_file.name
+            # Create cleaning configuration with flattening if requested
+            cleaning_config = CleaningConfig(
+                flatten_json=flatten,
+                max_flatten_depth=3,
+                normalize_json_keys=True,
+                remove_null_objects=True
+            )
             
-            try:
-                # Upload JSON file using existing file upload
-                metadata = self.file_upload_api.upload_file(
-                    client_id=client_id,
-                    user_id=user_id,
-                    file_path=tmp_file_path,
-                    resource_name=resource_name
-                )
+            # Create custom cleaning engine with flattening config
+            custom_cleaning_engine = DataCleaningEngine(cleaning_config)
+            
+            # Clean and potentially flatten the JSON data
+            cleaned_data, stats = custom_cleaning_engine.clean_data(
+                json_data, DataType.JSON
+            )
+            
+            # If flattening was requested and successful, convert to structured data
+            if flatten and stats.get('flattened', False):
+                # Convert flattened JSON to DataFrame for structured storage
+                if isinstance(cleaned_data, dict):
+                    # Check if this is a dict with array values that should be expanded
+                    df_data = []
+                    for key, value in cleaned_data.items():
+                        if isinstance(value, list) and value and isinstance(value[0], dict):
+                            # This is an array of objects - expand it
+                            df_data.extend(value)
+                        elif isinstance(value, list):
+                            # This is a simple array - create rows with the key as column
+                            for item in value:
+                                df_data.append({key: item})
+                        else:
+                            # Single value - create a row
+                            df_data.append({key: value})
+                    
+                    # If no array expansion happened, use the original flattened data
+                    if not df_data:
+                        df_data = [cleaned_data]
+                        
+                elif isinstance(cleaned_data, list):
+                    df_data = cleaned_data
+                else:
+                    df_data = [cleaned_data]
                 
-                # Clean and store the JSON data
-                cleaned_data, stats = self.cleaning_engine.clean_data(
-                    json_data, DataType.JSON
-                )
+                # Create DataFrame from flattened data
+                df = pd.DataFrame(df_data)
                 
-                # Create hierarchy for storage
-                hierarchy = DataHierarchy(
-                    client_id=client_id,
-                    user_id=user_id, 
-                    resource_id=metadata.resource_id
-                )
+                # Create temporary CSV file for structured upload
+                import tempfile
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=False) as tmp_file:
+                    df.to_csv(tmp_file.name, index=False)
+                    tmp_file_path = tmp_file.name
                 
-                # Store in appropriate database
-                self.storage_router.store_json_data(
-                    cleaned_data, hierarchy, metadata
-                )
-                
-                # Metadata is already registered by storage_router
-                
-                return APIResponse(
-                    success=True,
-                    data={
-                        "resource_id": metadata.resource_id,
-                        "resource_name": resource_name,
-                        "resource_type": metadata.resource_type.value,
-                        "data_type": metadata.data_type.value,
-                        "version": metadata.version,
-                        "flattened": flatten,
-                        "file_size_bytes": metadata.file_size_bytes
-                    },
-                    metadata={"operation": "upload_json"}
-                )
-                
-            finally:
-                # Clean up temporary file
                 try:
-                    os.unlink(tmp_file_path)
-                except:
-                    pass
+                    # Upload as structured data (CSV)
+                    metadata = self.file_upload_api.upload_file(
+                        client_id=client_id,
+                        user_id=user_id,
+                        file_path=tmp_file_path,
+                        resource_name=resource_name
+                    )
+                    
+                    # Override resource type to structured since we flattened it
+                    metadata.resource_type = ResourceType.STRUCTURED
+                    metadata.data_type = DataType.CSV
+                    metadata.row_count = len(df)
+                    metadata.column_count = len(df.columns)
+                    
+                    # Create hierarchy for storage
+                    hierarchy = DataHierarchy(
+                        client_id=client_id,
+                        user_id=user_id, 
+                        resource_id=metadata.resource_id
+                    )
+                    
+                    # Store as structured data so AI can query it
+                    self.storage_router.store_structured_data(
+                        tmp_file_path, hierarchy, metadata
+                    )
+                    
+                    return APIResponse(
+                        success=True,
+                        data={
+                            "resource_id": metadata.resource_id,
+                            "resource_name": resource_name,
+                            "resource_type": metadata.resource_type.value,
+                            "data_type": metadata.data_type.value,
+                            "version": metadata.version,
+                            "flattened": True,
+                            "file_size_bytes": metadata.file_size_bytes,
+                            "row_count": metadata.row_count,
+                            "column_count": metadata.column_count
+                        },
+                        metadata={"operation": "upload_json", "converted_to_structured": True}
+                    )
+                    
+                finally:
+                    # Clean up temporary file
+                    try:
+                        os.unlink(tmp_file_path)
+                    except:
+                        pass
+            
+            else:
+                # Store as JSON data (not flattened or flattening failed)
+                # Create temporary JSON file
+                import tempfile
+                import json
+                
+                with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as tmp_file:
+                    json.dump(cleaned_data, tmp_file, indent=2)
+                    tmp_file_path = tmp_file.name
+                
+                try:
+                    # Upload JSON file using existing file upload
+                    metadata = self.file_upload_api.upload_file(
+                        client_id=client_id,
+                        user_id=user_id,
+                        file_path=tmp_file_path,
+                        resource_name=resource_name
+                    )
+                    
+                    # Create hierarchy for storage
+                    hierarchy = DataHierarchy(
+                        client_id=client_id,
+                        user_id=user_id, 
+                        resource_id=metadata.resource_id
+                    )
+                    
+                    # Store in appropriate database
+                    self.storage_router.store_json_data(
+                        cleaned_data, hierarchy, metadata
+                    )
+                    
+                    return APIResponse(
+                        success=True,
+                        data={
+                            "resource_id": metadata.resource_id,
+                            "resource_name": resource_name,
+                            "resource_type": metadata.resource_type.value,
+                            "data_type": metadata.data_type.value,
+                            "version": metadata.version,
+                            "flattened": flatten,
+                            "file_size_bytes": metadata.file_size_bytes
+                        },
+                        metadata={"operation": "upload_json"}
+                    )
+                    
+                finally:
+                    # Clean up temporary file
+                    try:
+                        os.unlink(tmp_file_path)
+                    except:
+                        pass
             
         except Exception as e:
+            return self._handle_error(e, "upload_json")
             return self._handle_error(e, "upload_json")
     
     def upload_bulk(self, client_id: str, user_id: str, files: List[str],
@@ -758,14 +859,17 @@ class UniversalDataHandler:
                 user_id=user_id
             )
             
+            # Import asdict for dataclass conversion
+            from dataclasses import asdict
+            
             return APIResponse(
                 success=True,
                 data={
                     "question": question,
                     "analysis_type": report.analysis_type.value,
                     "summary": report.executive_summary,
-                    "insights": [insight.to_dict() for insight in report.key_insights],
-                    "data_sources": [source.to_dict() for source in report.data_sources_used],
+                    "insights": [asdict(insight) for insight in report.key_insights],
+                    "data_sources": [asdict(source) for source in report.data_sources_used],
                     "reasoning": report.methodology,
                     "recommendations": report.recommendations,
                     "visualizations": report.visualizations,

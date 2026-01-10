@@ -1,0 +1,14 @@
+{
+  "user_id": "a762d5c8-561b-473b-b045-a95981265834",
+  "client_id": "c8f21a97-b04e-4d97-95ab-a76a01e1ebcb",
+  "user_name": "e2e_test_user",
+  "access_level": "user",
+  "permissions": [
+    "read",
+    "write"
+  ],
+  "resource_permissions": {},
+  "created_at": "2026-01-10T00:27:45.832120",
+  "updated_at": "2026-01-10T00:27:45.832120",
+  "is_active": true
+}

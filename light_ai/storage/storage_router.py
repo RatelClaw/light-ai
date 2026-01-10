@@ -21,6 +21,7 @@ from .storage_utils import StoragePathUtils, FileManager
 from .version_manager import VersionManager, OperationType
 from ..config import Config, get_config
 from ..logger import get_logger
+from ..security.simple_security import SimpleSecurityManager
 
 logger = get_logger(__name__)
 
@@ -49,6 +50,7 @@ class StorageRouter:
         self.path_utils = StoragePathUtils(config)
         self.file_manager = FileManager(config)
         self.version_manager = VersionManager(config)
+        self.security_manager = SimpleSecurityManager(config)  # Add simple security
         self._initialized = False
     
     def initialize(self) -> None:
@@ -579,10 +581,50 @@ class StorageRouter:
         logger.info("Storage optimization completed")
         return results
     
-    def close(self) -> None:
-        """Close all database connections."""
-        self.db_managers.close_all()
-        logger.info("Storage router closed")
+    def validate_user_access_to_resource(self, user_id: str, client_id: str, 
+                                       resource_id: str) -> bool:
+        """
+        Validate that user can access a specific resource.
+        
+        Args:
+            user_id: User identifier
+            client_id: Client identifier
+            resource_id: Resource identifier
+            
+        Returns:
+            True if user can access the resource
+        """
+        resource_metadata = self.metadata_registry.get_resource_metadata(resource_id)
+        if not resource_metadata:
+            return False
+        
+        return self.security_manager.validate_user_access(user_id, client_id, resource_metadata)
+    
+    def ensure_user_exists(self, client_id: str, user_name: str) -> str:
+        """
+        Ensure user exists in security system, create if needed.
+        
+        Args:
+            client_id: Client identifier
+            user_name: Human-readable username
+            
+        Returns:
+            User ID
+        """
+        return self.security_manager.ensure_user_exists(client_id, user_name)
+    
+    def get_user_id_by_username(self, client_id: str, user_name: str) -> Optional[str]:
+        """
+        Get user_id by username for simplified access.
+        
+        Args:
+            client_id: Client identifier
+            user_name: Username
+            
+        Returns:
+            User ID or None if not found
+        """
+        return self.security_manager.get_user_id_by_username(client_id, user_name)
     
     # Version Management Methods
     
@@ -723,3 +765,8 @@ class StorageRouter:
             'soft_deleted_resources_cleaned': resources_deleted,
             'audit_records_cleaned': audit_records_deleted
         }
+    
+    def close(self) -> None:
+        """Close all database connections."""
+        self.db_managers.close_all()
+        logger.info("Storage router closed")

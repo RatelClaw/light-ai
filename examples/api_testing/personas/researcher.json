@@ -1,0 +1,92 @@
+{
+  "persona_profile": {
+    "persona_name": "Academic Researcher",
+    "user_id": "researcher-001", 
+    "client_id": "university-research-001",
+    "expertise_level": "Expert",
+    "research_domain": ["Experimental Design", "Statistical Analysis", "Publication", "Peer Review"],
+    "analysis_preferences": {
+      "statistical_depth": "Rigorous",
+      "visualization_complexity": "Publication Quality",
+      "technical_detail": "Comprehensive",
+      "methodology_explanation": "Detailed",
+      "reproducibility": "Essential"
+    }
+  },
+  "sample_queries": [
+    {
+      "query_id": "R-Q001",
+      "query": "Conduct a power analysis for a randomized controlled trial comparing three treatment groups with an expected medium effect size",
+      "expected_response_type": "Statistical Power Analysis",
+      "complexity": "High",
+      "research_requirements": [
+        "Sample size calculations",
+        "Power curves",
+        "Effect size justification",
+        "Alpha and beta error rates",
+        "Multiple comparison corrections"
+      ]
+    },
+    {
+      "query_id": "R-Q002",
+      "query": "Perform a meta-analysis of treatment effects across multiple studies, including heterogeneity assessment and publication bias testing",
+      "expected_response_type": "Meta-Analysis Report",
+      "complexity": "Very High",
+      "research_requirements": [
+        "Forest plots",
+        "Heterogeneity statistics (I², Q-test)",
+        "Funnel plots for bias assessment",
+        "Random/fixed effects models",
+        "Sensitivity analysis"
+      ]
+    },
+    {
+      "query_id": "R-Q003",
+      "query": "Analyze longitudinal data using mixed-effects models to account for repeated measures and missing data patterns",
+      "expected_response_type": "Longitudinal Analysis",
+      "complexity": "High",
+      "research_requirements": [
+        "Model specification details",
+        "Random effects structure",
+        "Missing data mechanisms",
+        "Model diagnostics",
+        "Interpretation guidelines"
+      ]
+    }
+  ],
+  "data_preferences": {
+    "granularity": "Individual observations",
+    "aggregation_level": "Participant level",
+    "missing_data_handling": "Multiple imputation preferred",
+    "outlier_treatment": "Conservative approach",
+    "data_quality": "Extensive validation required"
+  },
+  "visualization_preferences": {
+    "chart_types": ["Forest plots", "Kaplan-Meier curves", "Violin plots", "Correlation matrices", "Residual plots"],
+    "statistical_overlays": ["Confidence intervals", "P-values", "Effect sizes", "Model fits"],
+    "publication_quality": "High resolution required",
+    "export_formats": ["EPS", "TIFF", "PDF", "LaTeX compatible"]
+  },
+  "reporting_style": {
+    "methods_section": "Detailed and replicable",
+    "results_section": "Comprehensive statistics",
+    "discussion_section": "Limitations and implications",
+    "references": "Peer-reviewed sources",
+    "reproducible_research": "Code and data availability",
+    "ethical_considerations": "IRB compliance noted"
+  },
+  "publication_requirements": {
+    "journal_standards": "High-impact journals",
+    "statistical_reporting": "APA/AMA guidelines",
+    "figure_quality": "Publication ready",
+    "supplementary_materials": "Detailed appendices",
+    "peer_review_preparation": "Anticipate reviewer questions"
+  },
+  "research_integrity": {
+    "data_transparency": "Open science practices",
+    "preregistration": "Study protocols documented",
+    "conflict_of_interest": "Declared appropriately",
+    "funding_acknowledgment": "Grant information included",
+    "collaboration": "Multi-institutional coordination"
+  }
+}

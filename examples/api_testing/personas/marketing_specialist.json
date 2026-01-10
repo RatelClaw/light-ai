@@ -1,0 +1,98 @@
+{
+  "persona_profile": {
+    "persona_name": "Marketing Specialist",
+    "user_id": "marketing-001",
+    "client_id": "marketing-dept-001",
+    "expertise_level": "Specialized",
+    "primary_focus": ["Campaign Performance", "Customer Segmentation", "ROI Analysis", "Brand Analytics"],
+    "analysis_preferences": {
+      "statistical_depth": "Marketing-focused",
+      "visualization_complexity": "Engaging and Clear",
+      "technical_detail": "Campaign-relevant",
+      "methodology_explanation": "Marketing-oriented",
+      "customer_insights": "Essential"
+    }
+  },
+  "sample_queries": [
+    {
+      "query_id": "MS-Q001",
+      "query": "Analyze customer lifetime value across different acquisition channels and recommend budget allocation for maximum ROI",
+      "expected_response_type": "Channel Performance Analysis",
+      "complexity": "High",
+      "marketing_requirements": [
+        "CLV calculations by channel",
+        "Customer acquisition cost analysis",
+        "ROI comparison across channels",
+        "Budget optimization recommendations",
+        "Attribution modeling"
+      ]
+    },
+    {
+      "query_id": "MS-Q002",
+      "query": "Segment customers based on purchasing behavior and create targeted marketing personas with campaign recommendations",
+      "expected_response_type": "Customer Segmentation",
+      "complexity": "Medium",
+      "marketing_requirements": [
+        "Behavioral clustering analysis",
+        "Persona development",
+        "Segment profitability analysis",
+        "Targeting strategies",
+        "Message personalization"
+      ]
+    },
+    {
+      "query_id": "MS-Q003",
+      "query": "Evaluate the effectiveness of our recent email marketing campaigns and identify factors driving engagement and conversion",
+      "expected_response_type": "Campaign Analysis",
+      "complexity": "Medium",
+      "marketing_requirements": [
+        "Engagement metrics analysis",
+        "Conversion funnel analysis",
+        "A/B test results",
+        "Subject line performance",
+        "Optimization recommendations"
+      ]
+    }
+  ],
+  "data_preferences": {
+    "granularity": "Campaign and customer level",
+    "aggregation_level": "Segment and channel",
+    "time_horizon": "Campaign cycles and seasonal",
+    "customer_journey": "Multi-touch attribution",
+    "competitive_context": "Market benchmarking"
+  },
+  "visualization_preferences": {
+    "chart_types": ["Funnel charts", "Cohort analysis", "Attribution models", "Heatmaps", "Journey maps"],
+    "marketing_overlays": ["Conversion rates", "Engagement scores", "ROI indicators", "Trend lines"],
+    "brand_consistency": "Company colors and style",
+    "export_formats": ["PowerPoint", "PDF", "Interactive dashboards"]
+  },
+  "reporting_style": {
+    "campaign_summary": "Performance highlights",
+    "customer_insights": "Behavioral patterns",
+    "recommendations": "Actionable tactics",
+    "roi_analysis": "Investment justification",
+    "competitive_analysis": "Market positioning",
+    "presentation_ready": "Stakeholder-friendly"
+  },
+  "marketing_metrics": {
+    "acquisition_metrics": ["CAC", "Conversion rates", "Lead quality", "Channel performance"],
+    "engagement_metrics": ["Open rates", "Click rates", "Time on site", "Social engagement"],
+    "retention_metrics": ["Churn rate", "Repeat purchase", "Loyalty scores", "NPS"],
+    "revenue_metrics": ["CLV", "ROAS", "Revenue attribution", "Upsell rates"]
+  },
+  "campaign_optimization": {
+    "testing_framework": "A/B and multivariate testing",
+    "personalization": "Dynamic content optimization",
+    "automation": "Trigger-based campaigns",
+    "cross_channel": "Omnichannel coordination",
+    "measurement": "Multi-touch attribution"
+  },
+  "customer_focus": {
+    "segmentation_strategy": "Behavioral and demographic",
+    "journey_mapping": "Touchpoint optimization",
+    "experience_optimization": "Conversion path analysis",
+    "retention_strategy": "Lifecycle marketing",
+    "value_optimization": "Revenue per customer"
+  }
+}

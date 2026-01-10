@@ -1,0 +1,91 @@
+{
+  "persona_profile": {
+    "persona_name": "Operations Manager",
+    "user_id": "ops-manager-001",
+    "client_id": "operations-dept-001", 
+    "expertise_level": "Operational",
+    "primary_focus": ["Process Optimization", "Efficiency Metrics", "Resource Management", "Quality Control"],
+    "analysis_preferences": {
+      "statistical_depth": "Practical",
+      "visualization_complexity": "Operational Dashboards",
+      "technical_detail": "Actionable",
+      "methodology_explanation": "Process-focused",
+      "real_time_monitoring": "Critical"
+    }
+  },
+  "sample_queries": [
+    {
+      "query_id": "OM-Q001",
+      "query": "Identify bottlenecks in our production process and calculate the potential throughput improvement from addressing each one",
+      "expected_response_type": "Process Analysis",
+      "complexity": "Medium",
+      "operational_requirements": [
+        "Bottleneck identification",
+        "Capacity utilization metrics",
+        "Throughput calculations",
+        "Resource allocation optimization",
+        "Implementation timeline"
+      ]
+    },
+    {
+      "query_id": "OM-Q002",
+      "query": "Analyze equipment downtime patterns and predict maintenance needs to minimize production interruptions",
+      "expected_response_type": "Predictive Maintenance",
+      "complexity": "High",
+      "operational_requirements": [
+        "Failure pattern analysis",
+        "Maintenance scheduling optimization",
+        "Cost-benefit analysis",
+        "Risk assessment",
+        "Spare parts inventory planning"
+      ]
+    },
+    {
+      "query_id": "OM-Q003",
+      "query": "Evaluate workforce productivity metrics and identify opportunities for efficiency improvements across different shifts",
+      "expected_response_type": "Productivity Analysis",
+      "complexity": "Medium",
+      "operational_requirements": [
+        "Shift performance comparison",
+        "Productivity benchmarking",
+        "Training needs assessment",
+        "Staffing optimization",
+        "Performance improvement plans"
+      ]
+    }
+  ],
+  "data_preferences": {
+    "granularity": "Process and shift level",
+    "aggregation_level": "Department and team",
+    "time_horizon": "Daily, weekly, monthly",
+    "real_time_updates": "Preferred for critical metrics",
+    "historical_comparison": "Year-over-year and seasonal"
+  },
+  "visualization_preferences": {
+    "chart_types": ["Control charts", "Gantt charts", "Heat maps", "Pareto charts", "Run charts"],
+    "operational_overlays": ["Control limits", "Targets", "Alerts", "Trend indicators"],
+    "dashboard_style": "Real-time monitoring",
+    "export_formats": ["Excel", "PDF", "Mobile-friendly"]
+  },
+  "reporting_style": {
+    "executive_summary": "Key metrics and actions",
+    "operational_details": "Process-specific insights",
+    "recommendations": "Immediate and long-term",
+    "cost_impact": "Always quantified",
+    "implementation_plan": "Step-by-step approach",
+    "monitoring_plan": "Ongoing measurement strategy"
+  },
+  "performance_metrics": {
+    "efficiency_indicators": ["OEE", "Cycle time", "Throughput", "Utilization"],
+    "quality_metrics": ["Defect rates", "First pass yield", "Rework costs"],
+    "cost_metrics": ["Cost per unit", "Labor efficiency", "Material waste"],
+    "safety_metrics": ["Incident rates", "Near misses", "Safety compliance"]
+  },
+  "decision_support": {
+    "optimization_focus": "Cost reduction and efficiency",
+    "risk_management": "Operational continuity",
+    "resource_allocation": "Data-driven decisions",
+    "continuous_improvement": "Lean and Six Sigma principles",
+    "stakeholder_communication": "Clear and actionable"
+  }
+}

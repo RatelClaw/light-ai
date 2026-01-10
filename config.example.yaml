@@ -1,9 +1,9 @@
-# Example configuration file for Universal Data Handler
+# Example configuration file for Intelligent AI Data Analyst System
 # Copy this to config.yaml and customize as needed
 
-# OpenRouter API configuration (required)
+# OpenRouter API configuration
 openrouter:
-  api_key: "your-openrouter-api-key-here"  # Required - get from https://openrouter.ai
+  api_key: "your-openrouter-api-key-here"
   base_url: "https://openrouter.ai/api/v1"
   default_model: "anthropic/claude-3.5-sonnet"
   embedding_model: "text-embedding-3-small"
@@ -11,21 +11,21 @@ openrouter:
 
 # Storage configuration
 storage:
-  base_directory: "."  # Base directory for all data storage
-  max_file_size_mb: 500  # Maximum file size for uploads
+  base_directory: "."
+  max_file_size_mb: 500
 
 # Data processing configuration
 processing:
-  chunk_size_tokens: 512  # Size of text chunks for unstructured data
-  chunk_overlap_tokens: 50  # Overlap between chunks
-  cache_ttl_minutes: 5  # Cache time-to-live in minutes
-  max_parallel_workers: 4  # Maximum parallel workers for bulk operations
-  streaming_threshold_rows: 10000  # Row count threshold for streaming results
+  chunk_size_tokens: 512
+  chunk_overlap_tokens: 50
+  cache_ttl_minutes: 5
+  max_parallel_workers: 4
+  streaming_threshold_rows: 10000
 
 # Logging configuration
 logging:
-  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
-  file_enabled: true  # Enable file logging
-  console_enabled: true  # Enable console logging
-  max_file_size_mb: 10  # Maximum log file size before rotation
-  backup_count: 5  # Number of backup log files to keep
+  level: "INFO"
+  file_enabled: true
+  console_enabled: true
+  max_file_size_mb: 10
+  backup_count: 5

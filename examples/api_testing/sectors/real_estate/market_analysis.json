@@ -1,0 +1,164 @@
+{
+  "real_estate_analytics": {
+    "market_id": "MKT-001",
+    "market_name": "San Francisco Bay Area",
+    "analysis_date": "2024-01-31",
+    "property_listings": [
+      {
+        "property_id": "PROP-001",
+        "address": "123 Tech Street, San Francisco, CA",
+        "property_type": "Condo",
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "square_feet": 1200,
+        "listing_price": 1250000,
+        "price_per_sqft": 1041.67,
+        "days_on_market": 28,
+        "neighborhood": "SOMA",
+        "year_built": 2018,
+        "hoa_fees": 650,
+        "property_taxes": 15000,
+        "walkability_score": 95,
+        "school_rating": 8,
+        "crime_index": 3.2
+      },
+      {
+        "property_id": "PROP-002",
+        "address": "456 Suburban Lane, Palo Alto, CA",
+        "property_type": "Single Family",
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "square_feet": 2800,
+        "listing_price": 3200000,
+        "price_per_sqft": 1142.86,
+        "days_on_market": 15,
+        "neighborhood": "Midtown",
+        "year_built": 1995,
+        "hoa_fees": 0,
+        "property_taxes": 38400,
+        "walkability_score": 72,
+        "school_rating": 10,
+        "crime_index": 1.8
+      },
+      {
+        "property_id": "PROP-003",
+        "address": "789 Valley View, San Jose, CA",
+        "property_type": "Townhouse",
+        "bedrooms": 3,
+        "bathrooms": 2.5,
+        "square_feet": 1850,
+        "listing_price": 1450000,
+        "price_per_sqft": 783.78,
+        "days_on_market": 42,
+        "neighborhood": "Willow Glen",
+        "year_built": 2010,
+        "hoa_fees": 350,
+        "property_taxes": 17400,
+        "walkability_score": 68,
+        "school_rating": 9,
+        "crime_index": 2.5
+      }
+    ],
+    "market_trends": {
+      "median_home_price": 1650000,
+      "price_change_yoy": 0.08,
+      "price_change_mom": 0.02,
+      "inventory_months": 2.1,
+      "new_listings": 1250,
+      "pending_sales": 980,
+      "closed_sales": 1100,
+      "average_days_on_market": 32,
+      "price_reductions": 0.15,
+      "cash_sales_percentage": 0.35
+    },
+    "neighborhood_analysis": [
+      {
+        "neighborhood": "SOMA",
+        "median_price": 1400000,
+        "price_trend": 0.12,
+        "inventory_level": "Low",
+        "demand_score": 9.2,
+        "appreciation_forecast": 0.06,
+        "rental_yield": 0.035,
+        "demographics": {
+          "median_age": 32,
+          "median_income": 145000,
+          "population_density": 15000,
+          "education_level": "Graduate"
+        }
+      },
+      {
+        "neighborhood": "Midtown",
+        "median_price": 3100000,
+        "price_trend": 0.05,
+        "inventory_level": "Very Low",
+        "demand_score": 9.8,
+        "appreciation_forecast": 0.04,
+        "rental_yield": 0.025,
+        "demographics": {
+          "median_age": 42,
+          "median_income": 250000,
+          "population_density": 8500,
+          "education_level": "Graduate"
+        }
+      },
+      {
+        "neighborhood": "Willow Glen",
+        "median_price": 1500000,
+        "price_trend": 0.07,
+        "inventory_level": "Moderate",
+        "demand_score": 8.5,
+        "appreciation_forecast": 0.05,
+        "rental_yield": 0.032,
+        "demographics": {
+          "median_age": 38,
+          "median_income": 180000,
+          "population_density": 6200,
+          "education_level": "Bachelor"
+        }
+      }
+    ],
+    "investment_analysis": {
+      "cap_rates": {
+        "residential": 0.032,
+        "commercial": 0.045,
+        "industrial": 0.055,
+        "retail": 0.038
+      },
+      "rental_market": {
+        "average_rent_1br": 3200,
+        "average_rent_2br": 4500,
+        "average_rent_3br": 6200,
+        "vacancy_rate": 0.04,
+        "rent_growth_yoy": 0.08,
+        "tenant_turnover": 0.25
+      },
+      "financing_conditions": {
+        "mortgage_rates_30yr": 0.068,
+        "mortgage_rates_15yr": 0.061,
+        "loan_to_value_max": 0.80,
+        "debt_service_coverage_min": 1.25,
+        "credit_score_min": 720
+      }
+    },
+    "economic_indicators": {
+      "employment_rate": 0.96,
+      "job_growth": 0.035,
+      "population_growth": 0.012,
+      "gdp_growth": 0.028,
+      "inflation_rate": 0.032,
+      "interest_rates": 0.055,
+      "construction_permits": 2500,
+      "housing_starts": 1800
+    },
+    "risk_factors": {
+      "earthquake_risk": "High",
+      "flood_risk": "Low",
+      "fire_risk": "Medium",
+      "market_volatility": "High",
+      "regulatory_risk": "Medium",
+      "liquidity_risk": "Low",
+      "interest_rate_sensitivity": "High"
+    }
+  }
+}

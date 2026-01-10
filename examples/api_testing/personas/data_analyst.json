@@ -1,0 +1,77 @@
+{
+  "persona_profile": {
+    "persona_name": "Data Analyst",
+    "user_id": "analyst-001",
+    "client_id": "analytics-corp-001",
+    "expertise_level": "Advanced",
+    "primary_tools": ["SQL", "Python", "R", "Tableau", "Excel"],
+    "analysis_preferences": {
+      "statistical_depth": "High",
+      "visualization_complexity": "Advanced",
+      "technical_detail": "Comprehensive",
+      "methodology_explanation": "Required",
+      "code_generation": "Preferred"
+    }
+  },
+  "sample_queries": [
+    {
+      "query_id": "DA-Q001",
+      "query": "Perform a comprehensive statistical analysis of customer churn patterns, including correlation analysis, hypothesis testing, and predictive modeling recommendations",
+      "expected_response_type": "Statistical Report",
+      "complexity": "High",
+      "technical_requirements": [
+        "Correlation matrices",
+        "P-values and confidence intervals",
+        "Feature importance rankings",
+        "Model performance metrics",
+        "Code snippets for implementation"
+      ]
+    },
+    {
+      "query_id": "DA-Q002", 
+      "query": "Calculate the statistical significance of conversion rate differences between A/B test groups using appropriate hypothesis testing methods",
+      "expected_response_type": "Hypothesis Test Results",
+      "complexity": "Medium",
+      "technical_requirements": [
+        "Test statistic calculations",
+        "P-value interpretation",
+        "Effect size measurements",
+        "Power analysis",
+        "Confidence intervals"
+      ]
+    },
+    {
+      "query_id": "DA-Q003",
+      "query": "Generate a time series decomposition analysis showing trend, seasonality, and residual components with forecasting recommendations",
+      "expected_response_type": "Time Series Analysis",
+      "complexity": "High",
+      "technical_requirements": [
+        "Seasonal decomposition plots",
+        "Autocorrelation analysis",
+        "Stationarity tests",
+        "Forecasting accuracy metrics",
+        "Model selection criteria"
+      ]
+    }
+  ],
+  "data_preferences": {
+    "granularity": "Raw data preferred",
+    "aggregation_level": "Flexible based on analysis",
+    "missing_data_handling": "Explicit documentation required",
+    "outlier_treatment": "Statistical methods preferred",
+    "sample_size_requirements": "Power analysis based"
+  },
+  "visualization_preferences": {
+    "chart_types": ["Scatter plots", "Box plots", "Heatmaps", "Distribution plots", "Regression plots"],
+    "statistical_overlays": ["Confidence bands", "Trend lines", "Statistical annotations"],
+    "interactivity": "High",
+    "export_formats": ["PNG", "SVG", "PDF", "Interactive HTML"]
+  },
+  "reporting_style": {
+    "methodology_section": "Required",
+    "assumptions_documentation": "Critical",
+    "limitations_discussion": "Expected",
+    "reproducibility": "Code and parameters included",
+    "peer_review_ready": true
+  }
+}

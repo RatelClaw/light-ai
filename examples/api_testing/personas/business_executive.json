@@ -1,0 +1,84 @@
+{
+  "persona_profile": {
+    "persona_name": "Business Executive",
+    "user_id": "exec-001",
+    "client_id": "executive-suite-001",
+    "expertise_level": "Strategic",
+    "primary_focus": ["KPIs", "ROI", "Strategic Planning", "Risk Management", "Market Analysis"],
+    "analysis_preferences": {
+      "statistical_depth": "Summary Level",
+      "visualization_complexity": "Clear and Simple",
+      "technical_detail": "Minimal",
+      "methodology_explanation": "Brief",
+      "business_impact": "Critical"
+    }
+  },
+  "sample_queries": [
+    {
+      "query_id": "BE-Q001",
+      "query": "What are the key performance indicators showing the biggest impact on our quarterly revenue growth?",
+      "expected_response_type": "Executive Summary",
+      "complexity": "Medium",
+      "business_requirements": [
+        "Clear KPI rankings",
+        "Revenue impact quantification",
+        "Actionable recommendations",
+        "Risk assessment",
+        "Timeline for implementation"
+      ]
+    },
+    {
+      "query_id": "BE-Q002",
+      "query": "Analyze our market position compared to competitors and identify strategic opportunities for the next fiscal year",
+      "expected_response_type": "Strategic Analysis",
+      "complexity": "High",
+      "business_requirements": [
+        "Competitive benchmarking",
+        "Market share analysis",
+        "Growth opportunities",
+        "Investment requirements",
+        "Expected ROI"
+      ]
+    },
+    {
+      "query_id": "BE-Q003",
+      "query": "What operational inefficiencies are costing us the most money and what's the potential savings from addressing them?",
+      "expected_response_type": "Cost Analysis",
+      "complexity": "Medium",
+      "business_requirements": [
+        "Cost impact prioritization",
+        "Savings potential",
+        "Implementation complexity",
+        "Payback period",
+        "Resource requirements"
+      ]
+    }
+  ],
+  "data_preferences": {
+    "granularity": "Aggregated summaries",
+    "aggregation_level": "Department/Division level",
+    "time_horizon": "Quarterly and Annual",
+    "benchmarking": "Industry comparisons preferred",
+    "trend_analysis": "Year-over-year focus"
+  },
+  "visualization_preferences": {
+    "chart_types": ["Bar charts", "Line graphs", "Pie charts", "Dashboards", "Scorecards"],
+    "business_overlays": ["Targets", "Benchmarks", "Trend indicators", "Alert thresholds"],
+    "interactivity": "Moderate",
+    "export_formats": ["PowerPoint", "PDF", "Executive Dashboard"]
+  },
+  "reporting_style": {
+    "executive_summary": "Required first",
+    "key_insights": "Bullet points preferred",
+    "recommendations": "Prioritized action items",
+    "financial_impact": "Always quantified",
+    "presentation_ready": true,
+    "board_meeting_appropriate": true
+  },
+  "decision_support": {
+    "risk_tolerance": "Conservative",
+    "investment_horizon": "3-5 years",
+    "success_metrics": ["Revenue growth", "Profit margins", "Market share", "Customer satisfaction"],
+    "stakeholder_considerations": ["Shareholders", "Board", "Employees", "Customers"]
+  }
+}

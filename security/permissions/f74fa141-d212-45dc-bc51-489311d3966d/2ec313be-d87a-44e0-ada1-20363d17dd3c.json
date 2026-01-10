@@ -1,0 +1,14 @@
+{
+  "user_id": "2ec313be-d87a-44e0-ada1-20363d17dd3c",
+  "client_id": "f74fa141-d212-45dc-bc51-489311d3966d",
+  "user_name": "ai_test_user",
+  "access_level": "user",
+  "permissions": [
+    "read",
+    "write"
+  ],
+  "resource_permissions": {},
+  "created_at": "2026-01-10T00:27:45.672678",
+  "updated_at": "2026-01-10T00:27:45.672678",
+  "is_active": true
+}

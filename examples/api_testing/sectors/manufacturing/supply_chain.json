@@ -1,0 +1,146 @@
+{
+  "supply_chain_analytics": {
+    "company_id": "MFG-001",
+    "company_name": "Advanced Manufacturing Corp",
+    "reporting_period": "2024-Q1",
+    "production_facilities": [
+      {
+        "facility_id": "FAC-001",
+        "location": "Detroit, MI",
+        "capacity_utilization": 0.87,
+        "efficiency_score": 0.92,
+        "downtime_hours": 45,
+        "quality_score": 0.96,
+        "energy_consumption_kwh": 2500000,
+        "waste_percentage": 0.03,
+        "safety_incidents": 2,
+        "employee_count": 450
+      },
+      {
+        "facility_id": "FAC-002",
+        "location": "Austin, TX",
+        "capacity_utilization": 0.91,
+        "efficiency_score": 0.89,
+        "downtime_hours": 38,
+        "quality_score": 0.94,
+        "energy_consumption_kwh": 1800000,
+        "waste_percentage": 0.04,
+        "safety_incidents": 1,
+        "employee_count": 320
+      }
+    ],
+    "supplier_network": [
+      {
+        "supplier_id": "SUP-001",
+        "supplier_name": "Steel Solutions Inc",
+        "material_category": "Raw Materials",
+        "reliability_score": 0.95,
+        "quality_rating": 4.6,
+        "lead_time_days": 14,
+        "cost_per_unit": 125.50,
+        "delivery_performance": 0.98,
+        "risk_level": "Low",
+        "contract_value": 15000000,
+        "geographic_location": "Pittsburgh, PA"
+      },
+      {
+        "supplier_id": "SUP-002",
+        "supplier_name": "Precision Components Ltd",
+        "material_category": "Components",
+        "reliability_score": 0.88,
+        "quality_rating": 4.2,
+        "lead_time_days": 21,
+        "cost_per_unit": 89.75,
+        "delivery_performance": 0.92,
+        "risk_level": "Medium",
+        "contract_value": 8500000,
+        "geographic_location": "Shanghai, China"
+      },
+      {
+        "supplier_id": "SUP-003",
+        "supplier_name": "Electronics Depot",
+        "material_category": "Electronics",
+        "reliability_score": 0.91,
+        "quality_rating": 4.4,
+        "lead_time_days": 18,
+        "cost_per_unit": 245.30,
+        "delivery_performance": 0.95,
+        "risk_level": "Low",
+        "contract_value": 12000000,
+        "geographic_location": "San Jose, CA"
+      }
+    ],
+    "inventory_management": {
+      "raw_materials": {
+        "current_stock_value": 25000000,
+        "turnover_rate": 8.5,
+        "stockout_incidents": 3,
+        "excess_inventory_value": 2100000,
+        "carrying_cost_percentage": 0.18
+      },
+      "work_in_progress": {
+        "current_stock_value": 18000000,
+        "cycle_time_days": 12,
+        "throughput_rate": 0.85,
+        "bottleneck_stations": ["Assembly Line 3", "Quality Control"]
+      },
+      "finished_goods": {
+        "current_stock_value": 32000000,
+        "turnover_rate": 12.2,
+        "obsolescence_rate": 0.02,
+        "fulfillment_rate": 0.96
+      }
+    },
+    "logistics_performance": {
+      "inbound_logistics": {
+        "on_time_delivery": 0.94,
+        "transportation_cost_per_unit": 12.50,
+        "damage_rate": 0.008,
+        "customs_delay_hours": 8.5
+      },
+      "outbound_logistics": {
+        "order_fulfillment_time": 2.8,
+        "shipping_accuracy": 0.97,
+        "customer_delivery_time": 5.2,
+        "return_rate": 0.03,
+        "shipping_cost_per_order": 18.75
+      }
+    },
+    "quality_metrics": {
+      "defect_rate": 0.012,
+      "first_pass_yield": 0.94,
+      "customer_complaints": 45,
+      "warranty_claims": 128,
+      "quality_cost_percentage": 0.08,
+      "six_sigma_level": 4.2
+    },
+    "predictive_maintenance": [
+      {
+        "equipment_id": "EQ-001",
+        "equipment_type": "CNC Machine",
+        "health_score": 0.78,
+        "predicted_failure_date": "2024-04-15",
+        "maintenance_cost": 15000,
+        "downtime_risk_hours": 72,
+        "replacement_urgency": "Medium"
+      },
+      {
+        "equipment_id": "EQ-002",
+        "equipment_type": "Conveyor System",
+        "health_score": 0.92,
+        "predicted_failure_date": "2024-07-22",
+        "maintenance_cost": 8500,
+        "downtime_risk_hours": 24,
+        "replacement_urgency": "Low"
+      }
+    ],
+    "sustainability_metrics": {
+      "carbon_footprint_tons": 12500,
+      "renewable_energy_percentage": 0.35,
+      "water_usage_gallons": 2500000,
+      "recycling_rate": 0.68,
+      "waste_to_landfill_tons": 450,
+      "sustainability_score": 0.72
+    }
+  }
+}

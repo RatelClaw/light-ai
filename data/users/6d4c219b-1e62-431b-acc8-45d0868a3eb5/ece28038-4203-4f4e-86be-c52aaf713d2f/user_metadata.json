@@ -1,0 +1,9 @@
+{
+  "user_id": "ece28038-4203-4f4e-86be-c52aaf713d2f",
+  "client_id": "6d4c219b-1e62-431b-acc8-45d0868a3eb5",
+  "user_name": "e2e_test_user",
+  "key_id": "396dd0d70366c0d26927cff701396bbc",
+  "created_at": "2026-01-09T23:37:51.276253",
+  "namespace_path": "data/users/6d4c219b-1e62-431b-acc8-45d0868a3eb5/ece28038-4203-4f4e-86be-c52aaf713d2f",
+  "encryption_enabled": true
+}

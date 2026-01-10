@@ -1,0 +1,153 @@
+{
+  "technology_analytics": {
+    "platform_id": "TECH-001",
+    "platform_name": "CloudSync Pro",
+    "product_type": "SaaS Platform",
+    "analysis_period": "2024-Q1",
+    "user_metrics": [
+      {
+        "user_id": "USR-001",
+        "user_type": "Enterprise",
+        "subscription_tier": "Premium",
+        "signup_date": "2023-08-15",
+        "last_login": "2024-01-30",
+        "session_count": 145,
+        "total_usage_hours": 287,
+        "features_used": 18,
+        "support_tickets": 3,
+        "nps_score": 9,
+        "churn_probability": 0.05,
+        "monthly_revenue": 299
+      },
+      {
+        "user_id": "USR-002",
+        "user_type": "SMB",
+        "subscription_tier": "Standard",
+        "signup_date": "2023-11-22",
+        "last_login": "2024-01-29",
+        "session_count": 89,
+        "total_usage_hours": 156,
+        "features_used": 12,
+        "support_tickets": 1,
+        "nps_score": 8,
+        "churn_probability": 0.12,
+        "monthly_revenue": 99
+      },
+      {
+        "user_id": "USR-003",
+        "user_type": "Individual",
+        "subscription_tier": "Basic",
+        "signup_date": "2024-01-05",
+        "last_login": "2024-01-28",
+        "session_count": 32,
+        "total_usage_hours": 45,
+        "features_used": 6,
+        "support_tickets": 0,
+        "nps_score": 7,
+        "churn_probability": 0.25,
+        "monthly_revenue": 19
+      }
+    ],
+    "feature_adoption": [
+      {
+        "feature_name": "File Sync",
+        "adoption_rate": 0.95,
+        "daily_active_users": 8500,
+        "usage_frequency": 4.2,
+        "user_satisfaction": 4.6,
+        "performance_score": 0.98,
+        "error_rate": 0.002,
+        "feature_stickiness": 0.87
+      },
+      {
+        "feature_name": "Collaboration Tools",
+        "adoption_rate": 0.72,
+        "daily_active_users": 6400,
+        "usage_frequency": 2.8,
+        "user_satisfaction": 4.3,
+        "performance_score": 0.94,
+        "error_rate": 0.008,
+        "feature_stickiness": 0.65
+      },
+      {
+        "feature_name": "Advanced Analytics",
+        "adoption_rate": 0.38,
+        "daily_active_users": 3400,
+        "usage_frequency": 1.5,
+        "user_satisfaction": 4.1,
+        "performance_score": 0.91,
+        "error_rate": 0.012,
+        "feature_stickiness": 0.42
+      },
+      {
+        "feature_name": "API Integration",
+        "adoption_rate": 0.25,
+        "daily_active_users": 2200,
+        "usage_frequency": 3.8,
+        "user_satisfaction": 4.4,
+        "performance_score": 0.96,
+        "error_rate": 0.005,
+        "feature_stickiness": 0.78
+      }
+    ],
+    "performance_metrics": {
+      "system_uptime": 0.9985,
+      "average_response_time": 245,
+      "api_success_rate": 0.9992,
+      "data_transfer_speed": 125.5,
+      "concurrent_users_peak": 12500,
+      "storage_utilization": 0.68,
+      "bandwidth_usage_gb": 45000,
+      "error_rate": 0.0008
+    },
+    "business_metrics": {
+      "monthly_recurring_revenue": 485000,
+      "annual_recurring_revenue": 5820000,
+      "customer_acquisition_cost": 125,
+      "customer_lifetime_value": 2400,
+      "churn_rate": 0.08,
+      "net_revenue_retention": 1.15,
+      "gross_margin": 0.82,
+      "payback_period_months": 8.5
+    },
+    "user_behavior": {
+      "average_session_duration": 28.5,
+      "pages_per_session": 12.3,
+      "bounce_rate": 0.15,
+      "conversion_rate": 0.045,
+      "feature_discovery_rate": 0.32,
+      "onboarding_completion": 0.78,
+      "time_to_first_value": 3.2,
+      "user_engagement_score": 7.8
+    },
+    "support_analytics": {
+      "ticket_volume": 450,
+      "average_resolution_time": 4.2,
+      "first_contact_resolution": 0.68,
+      "customer_satisfaction": 4.3,
+      "escalation_rate": 0.12,
+      "self_service_usage": 0.55,
+      "knowledge_base_effectiveness": 0.72
+    },
+    "security_metrics": {
+      "security_incidents": 2,
+      "vulnerability_patches": 15,
+      "failed_login_attempts": 1250,
+      "data_breach_incidents": 0,
+      "compliance_score": 0.96,
+      "penetration_test_score": 0.92,
+      "encryption_coverage": 1.0,
+      "access_control_violations": 3
+    },
+    "growth_indicators": {
+      "user_growth_rate": 0.15,
+      "revenue_growth_rate": 0.22,
+      "market_penetration": 0.08,
+      "viral_coefficient": 0.35,
+      "organic_growth_rate": 0.45,
+      "paid_acquisition_rate": 0.55,
+      "expansion_revenue": 0.25,
+      "product_market_fit_score": 8.2
+    }
+  }
+}

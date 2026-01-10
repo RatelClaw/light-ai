@@ -1,0 +1,137 @@
+{
+  "retail_analytics": {
+    "store_id": "STORE-001",
+    "store_name": "Premium Electronics Outlet",
+    "analysis_period": "2024-Q1",
+    "customer_segments": [
+      {
+        "segment_id": "SEG-001",
+        "segment_name": "Tech Enthusiasts",
+        "customer_count": 2500,
+        "avg_age": 32,
+        "avg_income": 85000,
+        "purchase_frequency": 4.2,
+        "avg_order_value": 450,
+        "lifetime_value": 2800,
+        "churn_probability": 0.15,
+        "preferred_categories": ["Smartphones", "Laptops", "Gaming"],
+        "channel_preference": "Online"
+      },
+      {
+        "segment_id": "SEG-002",
+        "segment_name": "Business Professionals",
+        "customer_count": 1800,
+        "avg_age": 42,
+        "avg_income": 120000,
+        "purchase_frequency": 2.8,
+        "avg_order_value": 750,
+        "lifetime_value": 4200,
+        "churn_probability": 0.08,
+        "preferred_categories": ["Laptops", "Accessories", "Software"],
+        "channel_preference": "In-Store"
+      },
+      {
+        "segment_id": "SEG-003",
+        "segment_name": "Budget Conscious",
+        "customer_count": 3200,
+        "avg_age": 28,
+        "avg_income": 45000,
+        "purchase_frequency": 2.1,
+        "avg_order_value": 180,
+        "lifetime_value": 850,
+        "churn_probability": 0.25,
+        "preferred_categories": ["Accessories", "Refurbished", "Basic Electronics"],
+        "channel_preference": "Online"
+      }
+    ],
+    "product_performance": [
+      {
+        "product_id": "PROD-001",
+        "product_name": "iPhone 15 Pro",
+        "category": "Smartphones",
+        "units_sold": 450,
+        "revenue": 540000,
+        "profit_margin": 0.25,
+        "inventory_turnover": 8.2,
+        "return_rate": 0.03,
+        "customer_rating": 4.6,
+        "price_elasticity": -1.2
+      },
+      {
+        "product_id": "PROD-002",
+        "product_name": "MacBook Pro M3",
+        "category": "Laptops",
+        "units_sold": 180,
+        "revenue": 432000,
+        "profit_margin": 0.18,
+        "inventory_turnover": 4.5,
+        "return_rate": 0.02,
+        "customer_rating": 4.8,
+        "price_elasticity": -0.8
+      },
+      {
+        "product_id": "PROD-003",
+        "product_name": "Gaming Headset Pro",
+        "category": "Gaming",
+        "units_sold": 320,
+        "revenue": 64000,
+        "profit_margin": 0.35,
+        "inventory_turnover": 12.1,
+        "return_rate": 0.08,
+        "customer_rating": 4.2,
+        "price_elasticity": -1.8
+      }
+    ],
+    "sales_channels": {
+      "online": {
+        "revenue_share": 0.65,
+        "conversion_rate": 0.032,
+        "avg_session_duration": 8.5,
+        "bounce_rate": 0.42,
+        "cart_abandonment_rate": 0.68,
+        "mobile_traffic_share": 0.58
+      },
+      "in_store": {
+        "revenue_share": 0.35,
+        "foot_traffic": 15000,
+        "conversion_rate": 0.18,
+        "avg_transaction_time": 12.3,
+        "staff_efficiency": 0.85,
+        "space_utilization": 0.72
+      }
+    },
+    "marketing_campaigns": [
+      {
+        "campaign_id": "CAMP-001",
+        "campaign_name": "Spring Tech Sale",
+        "channel": "Digital",
+        "budget": 50000,
+        "impressions": 2500000,
+        "clicks": 75000,
+        "conversions": 1200,
+        "revenue_generated": 540000,
+        "roi": 9.8,
+        "customer_acquisition_cost": 41.67
+      },
+      {
+        "campaign_id": "CAMP-002",
+        "campaign_name": "Business Solutions Promo",
+        "channel": "Email",
+        "budget": 15000,
+        "impressions": 180000,
+        "clicks": 14400,
+        "conversions": 720,
+        "revenue_generated": 324000,
+        "roi": 20.6,
+        "customer_acquisition_cost": 20.83
+      }
+    ],
+    "seasonal_trends": {
+      "q1_growth": 0.12,
+      "holiday_impact": 1.85,
+      "back_to_school_boost": 1.42,
+      "summer_decline": -0.18,
+      "weather_correlation": 0.23
+    }
+  }
+}

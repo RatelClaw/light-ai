@@ -1,0 +1,2 @@
+customers
+"[{'id': 1, 'name': 'John Doe', 'age': 30, 'city': 'New York', 'purchase_amount': 150.5, 'category': 'electronics'}, {'id': 2, 'name': 'Jane Smith', 'age': 25, 'city': 'Los Angeles', 'purchase_amount': 200.75, 'category': 'clothing'}]"
