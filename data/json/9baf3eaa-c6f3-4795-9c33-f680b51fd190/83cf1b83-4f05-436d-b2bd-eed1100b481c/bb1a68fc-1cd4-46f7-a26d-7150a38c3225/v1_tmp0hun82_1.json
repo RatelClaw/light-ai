@@ -1,0 +1,37 @@
+{
+  "student_profile": {
+    "student_id": "STU-002",
+    "name": "Bob Smith",
+    "program": "Data Science",
+    "year_level": "Senior",
+    "age": 22,
+    "gender": "Male",
+    "gpa": 3.85,
+    "interests": [
+      "Machine Learning",
+      "Statistics",
+      "Research"
+    ],
+    "career_goals": "Data Scientist at research institution",
+    "personality_traits": [
+      "Analytical",
+      "Methodical",
+      "Curious"
+    ],
+    "skills": [
+      "Python",
+      "R",
+      "SQL",
+      "Statistics"
+    ],
+    "academic_performance": {
+      "current_semester_gpa": 3.9,
+      "favorite_subjects": [
+        "Machine Learning",
+        "Statistics",
+        "Research Methods"
+      ],
+      "research_projects": 3
+    }
+  }
+}

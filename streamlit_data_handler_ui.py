@@ -37,36 +37,52 @@ def upload_json_data(client_id, user_id, json_data, resource_name):
         return {"error": str(e)}, 500
 
 def get_persona_analysis(client_id, user_id, query):
-    """Get persona and context analysis using API v1 natural language query"""
-    url = f"{API_V1_BASE}/query/natural"
-    payload = {
-        "client_id": client_id,
-        "user_id": user_id,
-        "question": f"Based on the user's data, {query}. Please provide detailed persona characteristics and contextual information.",
-        "output_format": "json"
-    }
-    
+    """Get persona and context analysis using the new enhanced analysis agent"""
     try:
-        response = requests.post(url, json=payload)
-        result = response.json()
+        # Import the enhanced analysis agent
+        import sys
+        from pathlib import Path
+        sys.path.append(str(Path(__file__).parent.parent))
         
-        if response.status_code == 200 and result.get("success"):
-            # Format the response to match expected structure
-            data = result.get("data", {})
+        from light_ai.agents.enhanced_analysis_agent import get_analysis_agent, AnalysisRequest
+        
+        # Create analysis request
+        request = AnalysisRequest(
+            client_id=client_id,
+            user_id=user_id,
+            query=query,
+            desired_fields={
+                "persona": "Extract detailed persona characteristics",
+                "context": "Provide contextual information"
+            },
+            optional_fields={
+                "insights": "Generate insights from the data",
+                "recommendations": "Provide recommendations"
+            }
+        )
+        
+        # Get the analysis agent and perform analysis
+        agent = get_analysis_agent()
+        result = agent.analyze_user_data(request)
+        
+        if result.success:
             formatted_result = {
                 "success": True,
                 "data": {
-                    "persona": data.get("answer", "Analysis completed"),
-                    "context": data.get("summary", "Context information extracted"),
-                    "insights": data.get("insights", "Additional insights available"),
-                    "raw_response": data
+                    "persona": result.persona or "Persona analysis completed",
+                    "context": result.context or "Context information extracted",
+                    "insights": result.insights or "Insights generated from available data",
+                    "recommendations": result.recommendations or "Recommendations provided",
+                    "data_summary": result.data_summary,
+                    "analysis_method": "Enhanced Analysis Agent with Direct Data Access"
                 }
             }
             return formatted_result, 200
         else:
-            return result, response.status_code
+            return {"success": False, "error": result.error}, 400
+            
     except Exception as e:
-        return {"error": str(e)}, 500
+        return {"error": f"Analysis failed: {str(e)}"}, 500
 
 def get_user_resources(client_id, user_id):
     """Get all resources for a user"""
