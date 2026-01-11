@@ -672,3 +672,4 @@ NameError: name 'get_remote_address' is not defined
 2026-01-11 13:09:00 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource a9b9b805-141b-424f-9054-a671451aff6a
 2026-01-11 13:09:00 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_a9b9b805_141b_424f_9054_a671451aff6a
 2026-01-11 13:09:00 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_a9b9b805_141b_424f_9054_a671451aff6a
+2026-01-11 13:19:21 - comprehensive_api_v2 - INFO - api_v2.py:315 - Shutting down Comprehensive API Layer v2
