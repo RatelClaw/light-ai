@@ -1156,11 +1156,25 @@ class VisualizationTool:
             # Check unique values ratio
             values = [row.get(col) for row in data if row.get(col) is not None]
             if values:
-                unique_ratio = len(set(values)) / len(values)
-                
-                # If less than 50% unique and not numeric, likely categorical
-                if unique_ratio < 0.5 and col not in self._identify_numeric_columns(data, [col]):
-                    categorical_columns.append(col)
+                try:
+                    # Only process hashable values for categorical analysis
+                    hashable_values = []
+                    for val in values:
+                        if isinstance(val, (str, int, float, bool, type(None))):
+                            hashable_values.append(val)
+                        else:
+                            # Skip unhashable types like dict, list
+                            continue
+                    
+                    if hashable_values:
+                        unique_ratio = len(set(hashable_values)) / len(hashable_values)
+                        
+                        # If less than 50% unique and not numeric, likely categorical
+                        if unique_ratio < 0.5 and col not in self._identify_numeric_columns(data, [col]):
+                            categorical_columns.append(col)
+                except (TypeError, ValueError):
+                    # Skip columns that can't be processed
+                    continue
         
         return categorical_columns
     

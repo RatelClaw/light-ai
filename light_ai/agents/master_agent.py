@@ -357,7 +357,24 @@ Remember: You have specialized tools to help with each step of data analysis. Us
                 
                 # Step 3: Execute queries on structured data
                 structured_resources = [r for r in resources if r["resource_type"] == "structured"]
-                if structured_resources:
+                json_resources = [r for r in resources if r["resource_type"] == "json"]
+                
+                # Get data from JSON resources (which is what we uploaded)
+                if json_resources:
+                    query_result = self.query_execution.execute_query(
+                        request.user_id, request.client_id, request.query, "data",
+                        access_level=request.access_level
+                    )
+                    
+                    if query_result.success and query_result.data:
+                        json_data_results = query_result.data.get("results", [])
+                        # Extract the actual data from the JSON files
+                        for json_item in json_data_results:
+                            if "data" in json_item:
+                                response["results"].append(json_item["data"])
+                
+                # Also try structured data if available
+                elif structured_resources:
                     # Generate a simple query for demonstration
                     sample_resource = structured_resources[0]
                     table_name = f"structured_data.resource_{sample_resource['resource_id'].replace('-', '_')}_enhanced"
@@ -404,6 +421,11 @@ Remember: You have specialized tools to help with each step of data analysis. Us
                 # Generate insights based on the analysis
                 response["insights"] = self._generate_insights(request, response)
                 
+                # Extract persona and context if requested
+                if request.desired_fields:
+                    extracted_fields = self._extract_desired_field_values(request, response)
+                    response.update(extracted_fields)
+                
                 # Generate analysis summary
                 response["analysis"] = self._generate_analysis_summary(request, response)
             
@@ -422,73 +444,546 @@ Remember: You have specialized tools to help with each step of data analysis. Us
         """Generate insights based on analysis results."""
         insights = []
         
-        # Data availability insights
-        if response["sources_used"]:
-            insights.append(f"Analysis based on {len(response['sources_used'])} data sources: {', '.join(response['sources_used'])}")
-        
-        # Results insights
+        # If we have actual data results, analyze them for persona/context insights
         if response["results"]:
-            insights.append(f"Retrieved {len(response['results'])} data records for analysis")
-            
-            # Sample data insight
-            if len(response["results"]) > 0:
-                sample_row = response["results"][0]
-                non_system_fields = [k for k in sample_row.keys() if k not in ['client_id', 'user_id']]
-                if non_system_fields:
-                    insights.append(f"Data includes fields: {', '.join(non_system_fields[:5])}")
+            insights.extend(self._analyze_data_for_insights(request, response["results"]))
         
-        # Field mapping insights
+        # If we have field mappings, use them to understand the data structure
         if response.get("field_mappings"):
-            mapped_fields = len(response["field_mappings"].get("field_mappings", {}))
-            if mapped_fields > 0:
-                insights.append(f"Successfully mapped {mapped_fields} requested fields to available data")
+            insights.extend(self._analyze_field_mappings_for_insights(request, response["field_mappings"]))
         
-        # Cross-resource insights
+        # If we have cross-resource synthesis, analyze the combined data
         if response.get("cross_resource_synthesis"):
-            synthesis = response["cross_resource_synthesis"]
-            if synthesis.get("total_resources", 0) > 1:
-                insights.append(f"Combined analysis across {synthesis['total_resources']} different data sources")
+            insights.extend(self._analyze_synthesis_for_insights(request, response["cross_resource_synthesis"]))
         
-        # Visualization insights
-        if response.get("visualizations"):
-            viz_count = len(response["visualizations"])
-            insights.append(f"Generated {viz_count} visualization suggestions to help explore the data")
-        
-        # Default insight if none generated
+        # If no specific insights were generated, provide data availability info
         if not insights:
-            insights.append("Analysis completed - ready for follow-up questions")
+            if response["sources_used"]:
+                insights.append(f"Found data from {len(response['sources_used'])} sources but unable to extract specific insights for the requested analysis")
+            else:
+                insights.append("No relevant data found for the requested analysis")
         
         return insights
     
+    def _analyze_data_for_insights(self, request: AnalysisRequest, results: List[Dict[str, Any]]) -> List[str]:
+        """Analyze actual data results to generate meaningful insights."""
+        insights = []
+        
+        if not results:
+            return insights
+        
+        # Look for persona-related queries
+        query_lower = request.query.lower()
+        is_persona_query = any(term in query_lower for term in ['persona', 'profile', 'characteristics', 'traits'])
+        is_context_query = any(term in query_lower for term in ['context', 'background', 'environment', 'situation'])
+        
+        # Analyze the first few records for patterns
+        sample_data = results[:5]  # Analyze first 5 records
+        
+        for record in sample_data:
+            # Skip system fields
+            data_fields = {k: v for k, v in record.items() if k not in ['client_id', 'user_id', 'resource_id']}
+            
+            if is_persona_query:
+                persona_insights = self._extract_persona_insights(data_fields)
+                insights.extend(persona_insights)
+            
+            if is_context_query:
+                context_insights = self._extract_context_insights(data_fields)
+                insights.extend(context_insights)
+            
+            # General data insights
+            if not is_persona_query and not is_context_query:
+                general_insights = self._extract_general_insights(data_fields, request.query)
+                insights.extend(general_insights)
+        
+        return list(set(insights))  # Remove duplicates
+    
+    def _extract_persona_insights(self, data: Dict[str, Any]) -> List[str]:
+        """Extract persona-specific insights from data."""
+        insights = []
+        
+        # Flatten nested data for analysis
+        flattened_data = self._flatten_data_for_analysis(data)
+        
+        # Look for demographic information
+        demographics = []
+        for key, value in flattened_data.items():
+            key_lower = key.lower()
+            if any(demo_key in key_lower for demo_key in ['age', 'gender', 'program', 'occupation', 'role']):
+                demographics.append(f"{key.replace('_', ' ').title()}: {value}")
+        
+        if demographics:
+            insights.append(f"Demographics: {', '.join(demographics)}")
+        
+        # Look for performance/achievement indicators
+        performance = []
+        for key, value in flattened_data.items():
+            key_lower = key.lower()
+            if any(perf_key in key_lower for perf_key in ['gpa', 'grade', 'score', 'rating', 'performance']):
+                if isinstance(value, (int, float)):
+                    performance.append(f"{key.replace('_', ' ').title()}: {value}")
+        
+        if performance:
+            insights.append(f"Performance indicators: {', '.join(performance)}")
+        
+        # Look for interests and goals
+        interests = []
+        for key, value in flattened_data.items():
+            key_lower = key.lower()
+            if any(interest_key in key_lower for interest_key in ['interest', 'goal', 'aspiration', 'hobby']):
+                if isinstance(value, list):
+                    interests.extend(value)
+                else:
+                    interests.append(str(value))
+        
+        if interests:
+            insights.append(f"Interests/Goals: {', '.join(interests[:5])}")  # Limit to 5
+        
+        # Look for behavioral patterns
+        behaviors = []
+        for key, value in flattened_data.items():
+            key_lower = key.lower()
+            if any(behavior_key in key_lower for behavior_key in ['status', 'frequency', 'usage', 'participation']):
+                behaviors.append(f"{key.replace('_', ' ').title()}: {value}")
+        
+        if behaviors:
+            insights.append(f"Behavioral patterns: {', '.join(behaviors[:3])}")  # Limit to 3
+        
+        return insights
+    
+    def _extract_context_insights(self, data: Dict[str, Any]) -> List[str]:
+        """Extract context-specific insights from data."""
+        insights = []
+        
+        # Flatten nested data for analysis
+        flattened_data = self._flatten_data_for_analysis(data)
+        
+        # Look for institutional/organizational context
+        institutional = []
+        for key, value in flattened_data.items():
+            key_lower = key.lower()
+            if any(inst_key in key_lower for inst_key in ['institution', 'university', 'company', 'organization']):
+                institutional.append(f"{key.replace('_', ' ').title()}: {value}")
+        
+        if institutional:
+            insights.append(f"Institutional context: {', '.join(institutional)}")
+        
+        # Look for temporal context
+        temporal = []
+        for key, value in flattened_data.items():
+            key_lower = key.lower()
+            if any(time_key in key_lower for time_key in ['year', 'semester', 'period', 'date', 'time']):
+                temporal.append(f"{key.replace('_', ' ').title()}: {value}")
+        
+        if temporal:
+            insights.append(f"Temporal context: {', '.join(temporal)}")
+        
+        # Look for environmental context
+        environmental = []
+        for key, value in flattened_data.items():
+            key_lower = key.lower()
+            if any(env_key in key_lower for env_key in ['location', 'residence', 'environment', 'setting']):
+                environmental.append(f"{key.replace('_', ' ').title()}: {value}")
+        
+        if environmental:
+            insights.append(f"Environmental context: {', '.join(environmental)}")
+        
+        return insights
+    
+    def _extract_general_insights(self, data: Dict[str, Any], query: str) -> List[str]:
+        """Extract general insights based on the query and data."""
+        insights = []
+        
+        # Flatten nested data for analysis
+        flattened_data = self._flatten_data_for_analysis(data)
+        
+        # Look for query-relevant fields
+        query_words = set(query.lower().split())
+        relevant_fields = []
+        
+        for key, value in flattened_data.items():
+            key_words = set(key.lower().replace('_', ' ').split())
+            if query_words & key_words:  # Intersection of sets
+                relevant_fields.append(f"{key.replace('_', ' ').title()}: {value}")
+        
+        if relevant_fields:
+            insights.append(f"Query-relevant data: {', '.join(relevant_fields[:5])}")
+        
+        # Provide data summary
+        total_fields = len(flattened_data)
+        numeric_fields = sum(1 for v in flattened_data.values() if isinstance(v, (int, float)))
+        text_fields = sum(1 for v in flattened_data.values() if isinstance(v, str))
+        
+        insights.append(f"Data summary: {total_fields} total fields ({numeric_fields} numeric, {text_fields} text)")
+        
+        return insights
+    
+    def _flatten_data_for_analysis(self, data: Dict[str, Any], prefix: str = "") -> Dict[str, Any]:
+        """Flatten nested data structure for easier analysis."""
+        flattened = {}
+        
+        for key, value in data.items():
+            full_key = f"{prefix}.{key}" if prefix else key
+            
+            if isinstance(value, dict):
+                flattened.update(self._flatten_data_for_analysis(value, full_key))
+            elif isinstance(value, list) and value and isinstance(value[0], dict):
+                # Handle list of objects - take first item
+                flattened.update(self._flatten_data_for_analysis(value[0], full_key))
+            else:
+                flattened[full_key] = value
+        
+        return flattened
+    
+    def _analyze_field_mappings_for_insights(self, request: AnalysisRequest, field_mappings: Dict[str, Any]) -> List[str]:
+        """Analyze field mappings to generate insights."""
+        insights = []
+        
+        mappings = field_mappings.get("field_mappings", {})
+        if mappings:
+            insights.append(f"Successfully mapped {len(mappings)} requested fields to available data")
+            
+            # List the mapped fields
+            mapped_field_names = list(mappings.keys())
+            if mapped_field_names:
+                insights.append(f"Mapped fields: {', '.join(mapped_field_names[:5])}")
+        
+        return insights
+    
+    def _analyze_synthesis_for_insights(self, request: AnalysisRequest, synthesis: Dict[str, Any]) -> List[str]:
+        """Analyze cross-resource synthesis to generate insights."""
+        insights = []
+        
+        total_resources = synthesis.get("total_resources", 0)
+        if total_resources > 1:
+            insights.append(f"Combined analysis across {total_resources} different data sources")
+        
+        return insights
+    
+    def _extract_desired_field_values(self, request: AnalysisRequest, response: Dict[str, Any]) -> Dict[str, str]:
+        """Extract actual values for desired fields like persona and context."""
+        extracted_values = {}
+        
+        if not request.desired_fields or not response.get("results"):
+            return extracted_values
+        
+        # Get the data for analysis
+        data_results = response["results"]
+        insights = response.get("insights", [])
+        
+        for field_name, field_description in request.desired_fields.items():
+            field_name_lower = field_name.lower()
+            
+            if field_name_lower == "persona":
+                extracted_values["persona"] = self._extract_persona_value(data_results, insights, field_description)
+            elif field_name_lower == "context":
+                extracted_values["context"] = self._extract_context_value(data_results, insights, field_description)
+            else:
+                # For other desired fields, try to extract relevant information
+                extracted_values[field_name] = self._extract_generic_field_value(
+                    data_results, insights, field_name, field_description
+                )
+        
+        return extracted_values
+    
+    def _extract_persona_value(self, data_results: List[Dict[str, Any]], insights: List[str], description: str) -> str:
+        """Extract persona value from data and insights."""
+        persona_parts = []
+        
+        # Extract persona information from data
+        if data_results:
+            persona_data = self._extract_persona_from_results(data_results)
+            
+            for category, items in persona_data.items():
+                if items:
+                    if category == "Demographics":
+                        persona_parts.append(f"Demographics: {', '.join(items)}")
+                    elif category == "Performance":
+                        persona_parts.append(f"Performance: {', '.join(items[:3])}")  # Limit to top 3
+                    elif category == "Interests & Goals":
+                        persona_parts.append(f"Goals & Interests: {', '.join(items[:3])}")
+                    elif category == "Behavioral Patterns":
+                        persona_parts.append(f"Behavior: {', '.join(items[:2])}")  # Limit to top 2
+        
+        # Add relevant insights
+        persona_insights = [insight for insight in insights if any(
+            keyword in insight.lower() for keyword in [
+                'demographics', 'age', 'gender', 'role', 'occupation', 'goals', 'interests',
+                'behavior', 'personality', 'characteristics', 'traits'
+            ]
+        )]
+        
+        if persona_insights:
+            persona_parts.extend(persona_insights[:3])  # Add top 3 relevant insights
+        
+        if persona_parts:
+            return "; ".join(persona_parts)
+        else:
+            return "Unable to extract detailed persona information from available data"
+    
+    def _extract_context_value(self, data_results: List[Dict[str, Any]], insights: List[str], description: str) -> str:
+        """Extract context value from data and insights."""
+        context_parts = []
+        
+        # Extract context information from data
+        if data_results:
+            context_data = self._extract_context_from_results(data_results)
+            
+            for category, items in context_data.items():
+                if items:
+                    context_parts.append(f"{category}: {', '.join(items[:2])}")  # Limit to top 2 per category
+        
+        # Add relevant insights
+        context_insights = [insight for insight in insights if any(
+            keyword in insight.lower() for keyword in [
+                'institutional', 'temporal', 'environmental', 'academic', 'professional',
+                'context', 'background', 'setting', 'environment'
+            ]
+        )]
+        
+        if context_insights:
+            context_parts.extend(context_insights[:2])  # Add top 2 relevant insights
+        
+        if context_parts:
+            return "; ".join(context_parts)
+        else:
+            return "Limited contextual information available from current data"
+    
+    def _extract_generic_field_value(self, data_results: List[Dict[str, Any]], insights: List[str], 
+                                    field_name: str, description: str) -> str:
+        """Extract value for a generic desired field."""
+        # Look for insights that mention the field name or related keywords
+        field_keywords = field_name.lower().split('_') + description.lower().split()
+        
+        relevant_insights = []
+        for insight in insights:
+            insight_lower = insight.lower()
+            if any(keyword in insight_lower for keyword in field_keywords):
+                relevant_insights.append(insight)
+        
+        if relevant_insights:
+            return "; ".join(relevant_insights[:3])  # Top 3 relevant insights
+        
+        # If no insights found, try to extract from data structure
+        if data_results:
+            flattened_data = self._flatten_data_for_analysis(data_results[0])
+            
+            # Look for fields that match the desired field name
+            matching_values = []
+            for key, value in flattened_data.items():
+                if any(keyword in key.lower() for keyword in field_keywords):
+                    matching_values.append(f"{key.replace('_', ' ').title()}: {value}")
+            
+            if matching_values:
+                return "; ".join(matching_values[:3])
+        
+        return f"Unable to extract {field_name} information from available data"
+    
     def _generate_analysis_summary(self, request: AnalysisRequest, response: Dict[str, Any]) -> str:
         """Generate comprehensive analysis summary."""
+        
+        # Check if this is a persona/context query
+        query_lower = request.query.lower()
+        is_persona_query = any(term in query_lower for term in ['persona', 'profile', 'characteristics', 'traits'])
+        is_context_query = any(term in query_lower for term in ['context', 'background', 'environment', 'situation'])
+        
+        if is_persona_query or is_context_query:
+            return self._generate_persona_context_summary(request, response)
+        else:
+            return self._generate_general_analysis_summary(request, response)
+    
+    def _generate_persona_context_summary(self, request: AnalysisRequest, response: Dict[str, Any]) -> str:
+        """Generate persona and context specific analysis summary."""
+        
+        # Extract user identifier from query if present
+        user_identifier = self._extract_user_identifier(request.query)
+        
+        # Analyze the data for persona and context
+        if response["results"]:
+            persona_data = self._extract_persona_from_results(response["results"])
+            context_data = self._extract_context_from_results(response["results"])
+            
+            # Build comprehensive persona summary
+            persona_parts = []
+            
+            if user_identifier:
+                persona_parts.append(f"**User Profile: {user_identifier}**")
+            else:
+                persona_parts.append("**User Profile Analysis:**")
+            
+            persona_parts.append("")
+            
+            # Add persona information
+            if persona_data:
+                for category, items in persona_data.items():
+                    if items:
+                        persona_parts.append(f"**{category}:**")
+                        for item in items:
+                            persona_parts.append(f"- {item}")
+                        persona_parts.append("")
+            
+            # Add context information
+            if context_data:
+                persona_parts.append("**Context:**")
+                for category, items in context_data.items():
+                    if items:
+                        persona_parts.append(f"- {category}: {', '.join(items)}")
+                persona_parts.append("")
+            
+            # Add insights if available
+            if response.get("insights"):
+                persona_parts.append("**Key Insights:**")
+                for insight in response["insights"]:
+                    persona_parts.append(f"• {insight}")
+            
+            return "\n".join(persona_parts)
+        
+        else:
+            # Fallback to insights if no results
+            if response.get("insights"):
+                summary_parts = []
+                if user_identifier:
+                    summary_parts.append(f"**Analysis for {user_identifier}:**")
+                else:
+                    summary_parts.append("**User Analysis:**")
+                summary_parts.append("")
+                
+                for insight in response["insights"]:
+                    summary_parts.append(f"• {insight}")
+                
+                return "\n".join(summary_parts)
+            
+            return "Unable to generate comprehensive persona and context analysis from available data."
+    
+    def _generate_general_analysis_summary(self, request: AnalysisRequest, response: Dict[str, Any]) -> str:
+        """Generate general analysis summary."""
         summary_parts = [
-            f"Analysis of query: '{request.query}'",
+            f"**Analysis Results for:** {request.query}",
             ""
         ]
         
         if response["sources_used"]:
-            summary_parts.append(f"Data Sources: {', '.join(response['sources_used'])}")
+            summary_parts.append(f"**Data Sources:** {', '.join(response['sources_used'])}")
         
         if response["results"]:
-            summary_parts.append(f"Retrieved {len(response['results'])} records")
+            summary_parts.append(f"**Records Analyzed:** {len(response['results'])}")
         
         if response.get("field_mappings"):
-            summary_parts.append("Field mapping completed successfully")
+            summary_parts.append("**Field Mapping:** Completed successfully")
         
         if response.get("cross_resource_synthesis"):
-            summary_parts.append("Cross-resource data synthesis performed")
+            summary_parts.append("**Cross-Resource Analysis:** Performed")
         
         if response.get("visualizations"):
-            summary_parts.append(f"Generated {len(response['visualizations'])} visualization suggestions")
+            summary_parts.append(f"**Visualizations:** {len(response['visualizations'])} suggestions generated")
         
         summary_parts.extend([
             "",
-            "Key Insights:",
-            *[f"• {insight}" for insight in response.get("insights", [])]
+            "**Key Insights:**"
         ])
         
+        for insight in response.get("insights", []):
+            summary_parts.append(f"• {insight}")
+        
         return "\n".join(summary_parts)
+    
+    def _extract_user_identifier(self, query: str) -> str:
+        """Extract user identifier from query."""
+        import re
+        
+        # Look for patterns like "student_id: 'STU-001'" or "customer CUST-001"
+        patterns = [
+            r"student_id[:\s]+['\"]?([A-Z0-9-]+)['\"]?",
+            r"customer[_\s]+['\"]?([A-Z0-9-]+)['\"]?",
+            r"user[_\s]+['\"]?([A-Z0-9-]+)['\"]?",
+            r"id[:\s]+['\"]?([A-Z0-9-]+)['\"]?"
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, query, re.IGNORECASE)
+            if match:
+                return match.group(1)
+        
+        return ""
+    
+    def _extract_persona_from_results(self, results: List[Dict[str, Any]]) -> Dict[str, List[str]]:
+        """Extract persona information from results."""
+        persona_data = {
+            "Demographics": [],
+            "Performance": [],
+            "Interests & Goals": [],
+            "Behavioral Patterns": []
+        }
+        
+        for result in results[:3]:  # Analyze first 3 records
+            flattened = self._flatten_data_for_analysis(result)
+            
+            for key, value in flattened.items():
+                key_lower = key.lower()
+                
+                # Demographics
+                if any(demo_key in key_lower for demo_key in ['age', 'gender', 'program', 'occupation', 'role', 'year_level']):
+                    persona_data["Demographics"].append(f"{key.replace('_', ' ').replace('.', ' ').title()}: {value}")
+                
+                # Performance metrics
+                elif any(perf_key in key_lower for perf_key in ['gpa', 'grade', 'score', 'rating', 'performance']):
+                    if isinstance(value, (int, float)):
+                        persona_data["Performance"].append(f"{key.replace('_', ' ').replace('.', ' ').title()}: {value}")
+                
+                # Interests and goals
+                elif any(interest_key in key_lower for interest_key in ['interest', 'goal', 'aspiration', 'career']):
+                    if isinstance(value, list):
+                        persona_data["Interests & Goals"].extend([str(v) for v in value])
+                    else:
+                        persona_data["Interests & Goals"].append(str(value))
+                
+                # Behavioral patterns
+                elif any(behavior_key in key_lower for behavior_key in ['status', 'frequency', 'usage', 'participation', 'residence']):
+                    persona_data["Behavioral Patterns"].append(f"{key.replace('_', ' ').replace('.', ' ').title()}: {value}")
+        
+        # Remove duplicates and limit items
+        for category in persona_data:
+            persona_data[category] = list(set(persona_data[category]))[:5]
+        
+        return persona_data
+    
+    def _extract_context_from_results(self, results: List[Dict[str, Any]]) -> Dict[str, List[str]]:
+        """Extract context information from results."""
+        context_data = {
+            "Institutional": [],
+            "Temporal": [],
+            "Environmental": [],
+            "Academic/Professional": []
+        }
+        
+        for result in results[:3]:  # Analyze first 3 records
+            flattened = self._flatten_data_for_analysis(result)
+            
+            for key, value in flattened.items():
+                key_lower = key.lower()
+                
+                # Institutional context
+                if any(inst_key in key_lower for inst_key in ['institution', 'university', 'company', 'organization']):
+                    context_data["Institutional"].append(f"{key.replace('_', ' ').replace('.', ' ').title()}: {value}")
+                
+                # Temporal context
+                elif any(time_key in key_lower for time_key in ['year', 'semester', 'period', 'date', 'academic_year']):
+                    context_data["Temporal"].append(f"{key.replace('_', ' ').replace('.', ' ').title()}: {value}")
+                
+                # Environmental context
+                elif any(env_key in key_lower for env_key in ['location', 'residence', 'environment', 'setting']):
+                    context_data["Environmental"].append(f"{key.replace('_', ' ').replace('.', ' ').title()}: {value}")
+                
+                # Academic/Professional context
+                elif any(acad_key in key_lower for acad_key in ['course', 'class', 'department', 'program', 'credit']):
+                    context_data["Academic/Professional"].append(f"{key.replace('_', ' ').replace('.', ' ').title()}: {value}")
+        
+        # Remove duplicates and limit items
+        for category in context_data:
+            context_data[category] = list(set(context_data[category]))[:5]
+        
+        return context_data
     
     # Tool wrapper methods for the agent
     def _tool_resource_discovery(self, user_id: str, client_id: str, **kwargs) -> Dict[str, Any]:

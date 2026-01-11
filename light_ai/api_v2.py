@@ -409,7 +409,7 @@ async def validate_request_security(
     user_context = {
         "authenticated": True,
         "headers": safe_headers,
-        "ip_address": get_remote_address(request)
+        "ip_address": get_client_ip(request)
     }
     
     return user_context

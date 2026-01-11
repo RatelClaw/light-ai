@@ -1,0 +1,55 @@
+{
+  "education_analytics": {
+    "institution_id": "EDU-001",
+    "institution_name": "Metropolitan University",
+    "academic_year": "2023-2024",
+    "semester": "Spring 2024",
+    "student_demographics": [
+      {
+        "student_id": "STU-004",
+        "name": "Sarah Williams",
+        "program": "Psychology",
+        "year_level": "Junior",
+        "age": 32,
+        "gender": "Female",
+        "enrollment_status": "Part-time",
+        "gpa": 3.55,
+        "credit_hours": 9,
+        "financial_aid": true,
+        "work_study": false,
+        "residence": "Off-campus",
+        "family_status": "Married with 2 children",
+        "employment": "Part-time nurse",
+        "interests": [
+          "Child Psychology",
+          "Mental Health",
+          "Community Service"
+        ],
+        "career_goals": "Licensed Clinical Psychologist"
+      }
+    ],
+    "course_performance": [
+      {
+        "course_id": "PSY-301",
+        "course_name": "Developmental Psychology",
+        "grade": "A",
+        "credits": 3,
+        "difficulty_rating": 3.5,
+        "workload_hours_per_week": 8
+      },
+      {
+        "course_id": "PSY-350",
+        "course_name": "Research Methods",
+        "grade": "B+",
+        "credits": 3,
+        "difficulty_rating": 4.0,
+        "workload_hours_per_week": 10
+      }
+    ],
+    "life_balance": {
+      "study_schedule": "Evenings and weekends",
+      "childcare_needs": true,
+      "online_course_preference": true
+    }
+  }
+}

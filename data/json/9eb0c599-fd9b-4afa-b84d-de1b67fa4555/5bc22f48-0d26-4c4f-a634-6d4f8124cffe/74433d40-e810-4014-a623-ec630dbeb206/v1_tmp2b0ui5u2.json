@@ -1,0 +1,63 @@
+{
+  "education_analytics": {
+    "institution_id": "EDU-001",
+    "institution_name": "Metropolitan University",
+    "academic_year": "2023-2024",
+    "semester": "Spring 2024",
+    "student_demographics": [
+      {
+        "student_id": "STU-001",
+        "program": "Computer Science",
+        "year_level": "Junior",
+        "age": 21,
+        "gender": "Female",
+        "enrollment_status": "Full-time",
+        "gpa": 3.75,
+        "credit_hours": 15,
+        "financial_aid": true,
+        "work_study": false,
+        "residence": "On-campus"
+      }
+    ],
+    "course_performance": [
+      {
+        "course_id": "CS-301",
+        "course_name": "Data Structures and Algorithms",
+        "instructor": "Dr. Smith",
+        "enrollment": 85,
+        "completion_rate": 0.94,
+        "average_grade": 3.2,
+        "grade_distribution": {
+          "a": 0.25,
+          "b": 0.35,
+          "c": 0.28,
+          "d": 0.08,
+          "f": 0.04
+        },
+        "student_satisfaction": 4.1,
+        "difficulty_rating": 4.3,
+        "workload_hours_per_week": 12.5
+      }
+    ],
+    "learning_outcomes": {
+      "critical_thinking": {
+        "pre_assessment": 3.2,
+        "post_assessment": 3.8,
+        "improvement": 0.6,
+        "benchmark": 3.5
+      },
+      "communication_skills": {
+        "pre_assessment": 3.5,
+        "post_assessment": 4.1,
+        "improvement": 0.6,
+        "benchmark": 4.0
+      },
+      "technical_proficiency": {
+        "pre_assessment": 2.8,
+        "post_assessment": 3.9,
+        "improvement": 1.1,
+        "benchmark": 3.7
+      }
+    }
+  }
+}

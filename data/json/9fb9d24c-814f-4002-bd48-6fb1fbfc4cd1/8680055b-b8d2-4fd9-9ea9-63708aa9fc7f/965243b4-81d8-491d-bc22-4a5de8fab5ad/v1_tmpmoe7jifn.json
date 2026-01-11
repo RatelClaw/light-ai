@@ -1,0 +1,61 @@
+{
+  "education_analytics": {
+    "institution_id": "EDU-001",
+    "institution_name": "Metropolitan University",
+    "academic_year": "2023-2024",
+    "semester": "Spring 2024",
+    "student_demographics": [
+      {
+        "student_id": "STU-001",
+        "name": "Alice Chen",
+        "program": "Computer Science",
+        "year_level": "Senior",
+        "age": 22,
+        "gender": "Female",
+        "enrollment_status": "Full-time",
+        "gpa": 3.92,
+        "credit_hours": 18,
+        "financial_aid": true,
+        "work_study": true,
+        "residence": "Off-campus",
+        "interests": [
+          "Machine Learning",
+          "Web Development",
+          "Cybersecurity"
+        ],
+        "career_goals": "Software Engineer at FAANG company"
+      }
+    ],
+    "course_performance": [
+      {
+        "course_id": "CS-401",
+        "course_name": "Advanced Algorithms",
+        "grade": "A",
+        "credits": 4,
+        "difficulty_rating": 4.8,
+        "workload_hours_per_week": 15
+      },
+      {
+        "course_id": "CS-450",
+        "course_name": "Machine Learning",
+        "grade": "A-",
+        "credits": 3,
+        "difficulty_rating": 4.5,
+        "workload_hours_per_week": 12
+      }
+    ],
+    "extracurricular": {
+      "activities": [
+        "Programming Club President",
+        "Hackathon Winner",
+        "Research Assistant"
+      ],
+      "leadership_roles": [
+        "Student Government Tech Committee"
+      ],
+      "internships": [
+        "Google Summer Intern 2023"
+      ]
+    }
+  }
+}

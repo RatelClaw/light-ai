@@ -47,6 +47,8 @@ class InsightType(Enum):
     SUMMARY = "summary"
     COMPARISON = "comparison"
     RECOMMENDATION = "recommendation"
+    PERSONA = "persona"
+    STRUCTURE = "structure"
 
 
 @dataclass
@@ -393,14 +395,18 @@ class AIDataAnalyst:
                     chunk_count=resource.chunk_count
                 )
                 
-                # Get schema information for structured data
+                # Get schema information and sample data based on resource type
                 if resource.resource_type == ResourceType.STRUCTURED:
                     schema_info = self.metadata_registry.get_schema_info(resource.resource_id)
                     if schema_info:
                         data_source.schema_info = json.loads(schema_info.schema_json)
                     
-                    # Get sample data
+                    # Get sample data from structured tables
                     data_source.sample_data = self._get_sample_data(resource, limit=5)
+                
+                elif resource.resource_type == ResourceType.JSON:
+                    # Get sample data from JSON files
+                    data_source.sample_data = self._get_json_sample_data(resource, limit=5)
                 
                 data_sources.append(data_source)
                 
@@ -429,12 +435,41 @@ class AIDataAnalyst:
             logger.warning(f"Failed to get sample data for {resource.resource_id}: {e}")
             return []
     
+    def _get_json_sample_data(self, resource: ResourceMetadata, limit: int = 5) -> List[Dict[str, Any]]:
+        """Get sample data from a JSON resource."""
+        try:
+            if resource.resource_type != ResourceType.JSON:
+                return []
+            
+            # Use the data retrieval engine to get JSON data
+            from ..data_retrieval_engine import get_retrieval_engine
+            retrieval_engine = get_retrieval_engine()
+            
+            # Get the JSON data
+            result = retrieval_engine.get_json_data(resource)
+            
+            if result.success and result.data:
+                # If the data is a single object, wrap it in a list
+                if isinstance(result.data, dict):
+                    return [result.data]
+                elif isinstance(result.data, list):
+                    return result.data[:limit]  # Return up to limit items
+                else:
+                    return [{"data": result.data}]  # Wrap other types
+            
+            return []
+            
+        except Exception as e:
+            logger.warning(f"Failed to get JSON sample data for {resource.resource_id}: {e}")
+            return []
+    
     def _execute_cross_format_analysis(self, question: str, data_sources: List[DataSource],
                                      client_id: str, user_id: str, access_level: AccessLevel,
                                      analysis_type: AnalysisType) -> Dict[str, Any]:
         """Execute analysis across multiple data formats."""
         results = {
             "structured_results": [],
+            "json_results": [],
             "unstructured_results": [],
             "cross_format_insights": []
         }
@@ -447,6 +482,13 @@ class AIDataAnalyst:
                     question, structured_sources, client_id, user_id, access_level
                 )
             
+            # Analyze JSON data sources
+            json_sources = [ds for ds in data_sources if ds.resource_type == ResourceType.JSON]
+            if json_sources:
+                results["json_results"] = self._analyze_json_data(
+                    question, json_sources, client_id, user_id, access_level
+                )
+            
             # Analyze unstructured data sources
             unstructured_sources = [ds for ds in data_sources if ds.resource_type == ResourceType.UNSTRUCTURED]
             if unstructured_sources:
@@ -454,10 +496,10 @@ class AIDataAnalyst:
                     question, unstructured_sources, client_id, user_id, access_level
                 )
             
-            # Generate cross-format insights if we have both types
-            if structured_sources and unstructured_sources:
+            # Generate cross-format insights if we have multiple types
+            if len([s for s in [structured_sources, json_sources, unstructured_sources] if s]) > 1:
                 results["cross_format_insights"] = self._generate_cross_format_insights(
-                    question, results["structured_results"], results["unstructured_results"]
+                    question, results["structured_results"], results["json_results"], results["unstructured_results"]
                 )
             
             return results
@@ -494,6 +536,118 @@ class AIDataAnalyst:
                 continue
         
         return results
+    
+    def _analyze_json_data(self, question: str, data_sources: List[DataSource],
+                          client_id: str, user_id: str, access_level: AccessLevel) -> List[Dict[str, Any]]:
+        """Analyze JSON data sources by examining their content."""
+        results = []
+        
+        for data_source in data_sources:
+            try:
+                # Get the sample data which should contain the actual JSON content
+                if data_source.sample_data:
+                    # Analyze the JSON data content
+                    json_analysis = self._analyze_json_content(question, data_source.sample_data)
+                    
+                    results.append({
+                        "resource_id": data_source.resource_id,
+                        "filename": data_source.filename,
+                        "data_type": "json",
+                        "data": data_source.sample_data,
+                        "analysis": json_analysis,
+                        "row_count": len(data_source.sample_data) if isinstance(data_source.sample_data, list) else 1
+                    })
+                
+            except Exception as e:
+                logger.warning(f"Failed to analyze JSON data source {data_source.resource_id}: {e}")
+                continue
+        
+        return results
+    
+    def _analyze_json_content(self, question: str, json_data: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Analyze JSON content to extract relevant information based on the question."""
+        analysis = {
+            "relevant_fields": [],
+            "insights": [],
+            "field_summary": {}
+        }
+        
+        try:
+            # Flatten the JSON data to analyze all fields
+            all_fields = {}
+            for item in json_data:
+                flattened = self._flatten_json(item)
+                for key, value in flattened.items():
+                    if key not in all_fields:
+                        all_fields[key] = []
+                    all_fields[key].append(value)
+            
+            # Analyze fields based on the question
+            question_lower = question.lower()
+            
+            # Look for persona-related fields
+            if any(term in question_lower for term in ['persona', 'profile', 'characteristics', 'traits']):
+                persona_fields = [k for k in all_fields.keys() if any(
+                    persona_term in k.lower() for persona_term in [
+                        'persona', 'age', 'education', 'role', 'goals', 'motivations', 
+                        'skills', 'interests', 'personality', 'traits', 'characteristics'
+                    ]
+                )]
+                analysis["relevant_fields"].extend(persona_fields)
+                
+                # Generate persona insights
+                for field in persona_fields:
+                    values = all_fields[field]
+                    unique_values = list(set(str(v) for v in values if v is not None))
+                    if unique_values:
+                        analysis["insights"].append(f"{field.replace('_', ' ').title()}: {', '.join(unique_values[:3])}")
+            
+            # Look for context-related fields
+            if any(term in question_lower for term in ['context', 'background', 'environment', 'situation']):
+                context_fields = [k for k in all_fields.keys() if any(
+                    context_term in k.lower() for context_term in [
+                        'context', 'location', 'environment', 'background', 'setting',
+                        'company', 'organization', 'department', 'industry', 'experience'
+                    ]
+                )]
+                analysis["relevant_fields"].extend(context_fields)
+                
+                # Generate context insights
+                for field in context_fields:
+                    values = all_fields[field]
+                    unique_values = list(set(str(v) for v in values if v is not None))
+                    if unique_values:
+                        analysis["insights"].append(f"{field.replace('_', ' ').title()}: {', '.join(unique_values[:3])}")
+            
+            # Create field summary
+            for field, values in all_fields.items():
+                analysis["field_summary"][field] = {
+                    "type": type(values[0]).__name__ if values else "unknown",
+                    "sample_values": values[:3],
+                    "unique_count": len(set(str(v) for v in values if v is not None))
+                }
+            
+        except Exception as e:
+            logger.warning(f"Failed to analyze JSON content: {e}")
+        
+        return analysis
+    
+    def _flatten_json(self, data: Dict[str, Any], prefix: str = "") -> Dict[str, Any]:
+        """Flatten nested JSON structure for easier analysis."""
+        flattened = {}
+        
+        for key, value in data.items():
+            full_key = f"{prefix}.{key}" if prefix else key
+            
+            if isinstance(value, dict):
+                flattened.update(self._flatten_json(value, full_key))
+            elif isinstance(value, list) and value and isinstance(value[0], dict):
+                # Handle list of objects - take first item
+                flattened.update(self._flatten_json(value[0], full_key))
+            else:
+                flattened[full_key] = value
+        
+        return flattened
     
     def _analyze_unstructured_data(self, question: str, data_sources: List[DataSource],
                                  client_id: str, user_id: str, access_level: AccessLevel) -> List[Dict[str, Any]]:
@@ -610,6 +764,12 @@ class AIDataAnalyst:
                     analysis_results["structured_results"], analysis_type
                 ))
             
+            # Generate insights from JSON data
+            if analysis_results.get("json_results"):
+                insights.extend(self._generate_json_insights(
+                    analysis_results["json_results"], analysis_type
+                ))
+            
             # Generate insights from unstructured data
             if analysis_results.get("unstructured_results"):
                 insights.extend(self._generate_unstructured_insights(
@@ -688,6 +848,79 @@ class AIDataAnalyst:
                 
             except Exception as e:
                 logger.warning(f"Failed to generate structured insights for {result.get('filename', 'unknown')}: {e}")
+                continue
+        
+        return insights
+    
+    def _generate_json_insights(self, json_results: List[Dict[str, Any]],
+                               analysis_type: AnalysisType) -> List[Insight]:
+        """Generate insights from JSON data analysis."""
+        insights = []
+        
+        for result in json_results:
+            try:
+                if not result.get("data"):
+                    continue
+                
+                data = result["data"]
+                filename = result["filename"]
+                analysis = result.get("analysis", {})
+                
+                # Generate insights from the JSON analysis
+                if analysis.get("insights"):
+                    for insight_text in analysis["insights"]:
+                        insights.append(Insight(
+                            insight_type=InsightType.SUMMARY,
+                            title=f"Profile Analysis: {filename}",
+                            description=insight_text,
+                            confidence_score=0.8,
+                            supporting_data=data[:2],  # First 2 items
+                            source_citations=[filename]
+                        ))
+                
+                # Generate field-based insights
+                if analysis.get("field_summary"):
+                    field_count = len(analysis["field_summary"])
+                    relevant_fields = analysis.get("relevant_fields", [])
+                    
+                    if relevant_fields:
+                        insights.append(Insight(
+                            insight_type=InsightType.PATTERN,
+                            title=f"Relevant Fields Identified: {filename}",
+                            description=f"Found {len(relevant_fields)} relevant fields out of {field_count} total fields: {', '.join(relevant_fields[:5])}",
+                            confidence_score=0.9,
+                            supporting_data={"relevant_fields": relevant_fields[:10]},
+                            source_citations=[filename]
+                        ))
+                
+                # Generate data structure insights
+                if isinstance(data, list) and data:
+                    sample_item = data[0]
+                    if isinstance(sample_item, dict):
+                        nested_fields = [k for k, v in sample_item.items() if isinstance(v, dict)]
+                        if nested_fields:
+                            insights.append(Insight(
+                                insight_type=InsightType.STRUCTURE,
+                                title=f"Complex Data Structure: {filename}",
+                                description=f"Data contains nested structures in fields: {', '.join(nested_fields[:3])}",
+                                confidence_score=0.7,
+                                supporting_data={"nested_fields": nested_fields},
+                                source_citations=[filename]
+                            ))
+                
+                # Generate persona-specific insights if detected
+                if any(field for field in analysis.get("relevant_fields", []) if "persona" in field.lower()):
+                    insights.append(Insight(
+                        insight_type=InsightType.PERSONA,
+                        title=f"Persona Data Detected: {filename}",
+                        description="Rich persona information found including demographics, goals, and behavioral patterns",
+                        confidence_score=0.95,
+                        supporting_data=data[:1],  # First item only
+                        source_citations=[filename]
+                    ))
+                
+            except Exception as e:
+                logger.warning(f"Failed to generate JSON insights for {result.get('filename', 'unknown')}: {e}")
                 continue
         
         return insights

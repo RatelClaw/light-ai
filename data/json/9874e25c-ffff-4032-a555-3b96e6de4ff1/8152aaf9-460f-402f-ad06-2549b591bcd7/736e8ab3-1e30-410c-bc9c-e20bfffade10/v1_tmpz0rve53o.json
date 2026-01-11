@@ -1,0 +1,62 @@
+{
+  "banking_analytics": {
+    "customer_id": "CUST-003",
+    "account_type": "Business Banking",
+    "customer_demographics": {
+      "name": "Carlos Rodriguez",
+      "age": 38,
+      "income_bracket": "75000-100000",
+      "occupation": "Restaurant Owner",
+      "location": "Austin, TX",
+      "marital_status": "Married",
+      "dependents": 2,
+      "education": "Culinary Arts Degree",
+      "business_type": "Family Restaurant"
+    },
+    "account_portfolio": [
+      {
+        "product": "Business Checking",
+        "balance": 35000,
+        "active_since": "2019-08-01"
+      },
+      {
+        "product": "Business Savings",
+        "balance": 15000,
+        "active_since": "2019-08-01"
+      },
+      {
+        "product": "Business Line of Credit",
+        "limit": 50000,
+        "utilization": 0.4,
+        "active_since": "2020-02-15"
+      },
+      {
+        "product": "Equipment Loan",
+        "balance": -25000,
+        "rate": 5.5,
+        "active_since": "2021-05-01"
+      }
+    ],
+    "transaction_patterns": {
+      "monthly_transactions": 450,
+      "average_transaction_amount": 85,
+      "primary_categories": [
+        "Food Suppliers",
+        "Utilities",
+        "Payroll",
+        "Equipment"
+      ],
+      "seasonal_variations": true,
+      "cash_flow_challenges": [
+        "Summer slowdown",
+        "Holiday rush"
+      ]
+    },
+    "business_metrics": {
+      "monthly_revenue": 28000,
+      "employee_count": 8,
+      "years_in_business": 4,
+      "growth_rate": 0.15
+    }
+  }
+}

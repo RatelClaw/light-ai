@@ -1,0 +1,18 @@
+lsof -ti:8001 | xargs kill -9 2>/dev/null || true
+
+(light-ai) shashwatroy@Shashwats-MacBook-Air light_ai %
+Command
+lsof -ti:8000 | xargs kill -9 2>/dev/null || true
+
+(light-ai) shashwatroy@Shashwats-MacBook-Air light_ai %
+Now let me restart the servers:
+
+Background process
+
+
+
+
+source .venv/bin/activate && python start_servers.py
+
+
+(light-ai) shashwatroy@Shashwats-MacBook-Air light_ai % streamlit run streamlit_data_handler_ui.py

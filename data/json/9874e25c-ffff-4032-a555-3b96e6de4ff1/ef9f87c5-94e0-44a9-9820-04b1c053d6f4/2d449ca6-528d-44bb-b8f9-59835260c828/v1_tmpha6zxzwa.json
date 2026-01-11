@@ -1,0 +1,63 @@
+{
+  "banking_analytics": {
+    "customer_id": "CUST-002",
+    "account_type": "Premium Checking",
+    "customer_demographics": {
+      "name": "Emily Zhang",
+      "age": 28,
+      "income_bracket": "100000-150000",
+      "occupation": "Software Engineer",
+      "location": "San Francisco, CA",
+      "marital_status": "Single",
+      "dependents": 0,
+      "education": "BS Computer Science",
+      "net_worth": "180K"
+    },
+    "account_portfolio": [
+      {
+        "product": "Checking Account",
+        "balance": 25000,
+        "active_since": "2021-01-15"
+      },
+      {
+        "product": "Savings Account",
+        "balance": 75000,
+        "active_since": "2021-01-15"
+      },
+      {
+        "product": "401k Rollover IRA",
+        "balance": 80000,
+        "active_since": "2022-03-01"
+      },
+      {
+        "product": "Credit Card",
+        "limit": 15000,
+        "utilization": 0.12,
+        "active_since": "2021-01-15"
+      }
+    ],
+    "transaction_patterns": {
+      "monthly_transactions": 85,
+      "average_transaction_amount": 125,
+      "primary_categories": [
+        "Food & Dining",
+        "Technology",
+        "Transportation",
+        "Savings"
+      ],
+      "digital_banking_usage": 0.98,
+      "mobile_app_sessions_per_week": 12
+    },
+    "financial_goals": {
+      "short_term": [
+        "Emergency Fund",
+        "Vacation Savings"
+      ],
+      "long_term": [
+        "Home Purchase",
+        "Retirement Planning"
+      ],
+      "savings_rate": 0.35
+    }
+  }
+}

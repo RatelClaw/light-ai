@@ -1,0 +1,67 @@
+{
+  "banking_analytics": {
+    "customer_id": "CUST-001",
+    "account_type": "Private Banking",
+    "customer_demographics": {
+      "name": "Robert Anderson",
+      "age": 45,
+      "income_bracket": "500000+",
+      "occupation": "Investment Banker",
+      "location": "Manhattan, NY",
+      "marital_status": "Married",
+      "dependents": 3,
+      "education": "MBA from Wharton",
+      "net_worth": "2.5M"
+    },
+    "account_portfolio": [
+      {
+        "product": "Private Checking",
+        "balance": 150000,
+        "active_since": "2018-03-15"
+      },
+      {
+        "product": "Investment Account",
+        "balance": 850000,
+        "active_since": "2018-03-15"
+      },
+      {
+        "product": "Mortgage",
+        "balance": -650000,
+        "rate": 3.2,
+        "active_since": "2019-06-01"
+      },
+      {
+        "product": "Credit Card",
+        "limit": 100000,
+        "utilization": 0.08,
+        "active_since": "2018-03-15"
+      }
+    ],
+    "transaction_patterns": {
+      "monthly_transactions": 125,
+      "average_transaction_amount": 2500,
+      "primary_categories": [
+        "Investments",
+        "Luxury Goods",
+        "Travel",
+        "Education"
+      ],
+      "digital_banking_usage": 0.95,
+      "international_transactions": 15
+    },
+    "investment_profile": {
+      "risk_tolerance": "Aggressive",
+      "investment_goals": [
+        "Wealth Growth",
+        "Tax Optimization",
+        "Estate Planning"
+      ],
+      "portfolio_allocation": {
+        "stocks": 0.6,
+        "bonds": 0.2,
+        "real_estate": 0.15,
+        "cash": 0.05
+      }
+    }
+  }
+}
