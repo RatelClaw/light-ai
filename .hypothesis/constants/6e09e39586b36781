@@ -1,4 +1,0 @@
-# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/natural_language_processor.py
-# hypothesis_version: 6.148.9
-
-[0.0, 0.1, 0.3, 0.5, 1.0, 500, 1000, 1024, 3600, ', ', 'CONFIDENCE:', 'Columns:', 'EXPLANATION:', 'Instructions:', 'Response format:', 'SQL:', 'Sample data:', 'Sample results:', 'access', 'active_contexts', 'analytical', 'available', 'client_id', 'column', 'column_count', 'columns', 'confidence', 'content', 'context_ttl_seconds', 'created_at', 'data_type', 'description', 'explanation', 'filename', 'list', 'metadata_query', 'mixed_data', 'name', 'permission', 'query_type', 'question', 'resource_id', 'resources_used', 'role', 'row_count', 'show me', 'size_mb', 'sql', 'structured_data', 'syntax', 'system', 'table', 'type', 'unknown', 'unstructured_data', 'user', 'user_id', 'what data']

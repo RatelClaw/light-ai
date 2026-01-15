@@ -1,4 +1,0 @@
-# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_utils.py
-# hypothesis_version: 6.148.9
-
-[8192, '%Y%m%d_%H%M%S', '%Y%m%d_%H%M%S_%f', '*', '_', 'created_at', 'hash_md5', 'hash_sha256', 'json', 'md5', 'modified_at', 'raw', 'rb', 'sha1', 'sha256', 'sha512', 'size_bytes', 'structured', 'temp', 'trash', 'unstructured']

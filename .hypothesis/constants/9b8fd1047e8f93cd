@@ -1,4 +1,0 @@
-# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/version_manager.py
-# hypothesis_version: 6.148.9
-
-[100, 1000, 'clean', 'delete', 'description', 'export', 'first_operation', 'hard', 'json', 'last_operation', 'metadata_after', 'metadata_before', 'operation', 'operation_details', 'operations_by_type', 'operations_by_user', 'raw', 'restore', 'rollback', 'soft', 'structured', 'timestamp', 'total_operations', 'total_versions', 'transform', 'unstructured', 'update', 'upload', 'user_id', 'version_after']

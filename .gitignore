@@ -23,7 +23,10 @@ __pycache__/
 *.pyo
 *.pyd
 *.so
-
+.hypothesis/
+.kiro/
+.kiro/*
+.hypothesis/*
 # -------------------------
 # Distribution / packaging
 # -------------------------
@@ -38,6 +41,7 @@ dist/
 *.log
 *.jsonl
 logs/
+logs/*
 
 # -------------------------
 # Jupyter Notebook
@@ -68,6 +72,7 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+.kiro/
 
 # -------------------------
 # Coverage / testing

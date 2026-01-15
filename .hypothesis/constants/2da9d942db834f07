@@ -1,4 +1,0 @@
-# file: /Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/sub_layer_2/sql_query_engine.py
-# hypothesis_version: 6.148.9
-
-[0.5, 0.7, 100, 300, 1000, 10000, ')', ',', '-', '--', '.', '/\\*', '1=1', ';\\s*\\w', 'JOIN', 'LIMIT', 'SELECT *', 'WHERE', 'WHERE\\s+(\\w+)', '\\bALTER\\b', '\\bCREATE\\b', '\\bDELETE\\b', '\\bDROP\\b', '\\bEXECUTE\\b', '\\bEXEC\\b', '\\bINSERT\\b', '\\bTRUNCATE\\b', '\\bUPDATE\\b', '\\bWHERE\\b', '_', '_enhanced', 'a', 'cache_size', 'cache_ttl_seconds', 'in-memory', 'json_', 'json_data.', 'json_data\\.(\\w+)', 'parameters', 'resource_', 'sql', 'streaming', 'streaming_threshold', 'structured_data.']
