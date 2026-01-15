@@ -23,6 +23,8 @@ from ..logger import get_logger
 from .logging import get_activity_logger
 # Import the new data retrieval engine
 from ..data_retrieval_engine import get_retrieval_engine
+# Import conversation analyzer for intelligent field extraction
+from .conversation_analyzer import get_conversation_analyzer
 
 logger = get_logger(__name__)
 activity_logger = get_activity_logger()
@@ -242,6 +244,8 @@ class FieldExtractionTool:
         self.config = config or get_config()
         # Use the new data retrieval engine
         self.retrieval_engine = get_retrieval_engine()
+        # Use conversation analyzer for intelligent extraction
+        self.conversation_analyzer = get_conversation_analyzer()
         self._initialized = False
     
     def initialize(self) -> None:
@@ -366,6 +370,34 @@ class FieldExtractionTool:
         """Extract field information from actual data structure."""
         fields = {}
         
+        # First, try intelligent conversation analysis for persona/context fields
+        if self._looks_like_conversation(data):
+            logger.info("Detected conversational data - using intelligent analyzer")
+            persona_extraction, context_extraction = self.conversation_analyzer.analyze_data(data)
+            
+            if persona_extraction:
+                # Add persona as a derived field
+                fields["persona"] = {
+                    "type": "derived_text",
+                    "description": "Extracted persona characteristics from conversation",
+                    "nullable": False,
+                    "sample_value": self.conversation_analyzer.format_persona_for_output(persona_extraction)[:200],
+                    "confidence": persona_extraction.confidence_score,
+                    "extraction_method": "conversation_analysis"
+                }
+            
+            if context_extraction:
+                # Add context as a derived field
+                fields["context"] = {
+                    "type": "derived_text",
+                    "description": "Extracted contextual information from conversation",
+                    "nullable": False,
+                    "sample_value": self.conversation_analyzer.format_context_for_output(context_extraction)[:200],
+                    "confidence": context_extraction.confidence_score,
+                    "extraction_method": "conversation_analysis"
+                }
+        
+        # Also extract structural fields
         def extract_from_dict(d: Dict[str, Any], prefix: str = ""):
             for key, value in d.items():
                 field_name = f"{prefix}.{key}" if prefix else key
@@ -388,6 +420,25 @@ class FieldExtractionTool:
         
         extract_from_dict(data)
         return fields
+    
+    def _looks_like_conversation(self, data: Dict[str, Any]) -> bool:
+        """Check if data looks like conversational data"""
+        # Check for common conversation indicators
+        conversation_indicators = [
+            "messages", "conversation", "dialog", "dialogue", "chat",
+            "role", "content", "sender", "message", "text"
+        ]
+        
+        data_str = json.dumps(data).lower()
+        
+        # Check if multiple indicators are present
+        indicator_count = sum(1 for indicator in conversation_indicators if indicator in data_str)
+        
+        # Also check for role/content pattern
+        has_role_content = ("role" in data_str and "content" in data_str)
+        has_messages_array = "messages" in data_str and isinstance(data.get("messages"), list)
+        
+        return indicator_count >= 2 or has_role_content or has_messages_array
     
     def _analyze_structured_fields(self, resource: ResourceMetadata) -> Dict[str, Any]:
         """Analyze fields in a structured resource."""
@@ -421,10 +472,16 @@ class FieldExtractionTool:
             best_match = None
             best_score = 0.0
             
+            # Check for exact or semantic matches
             for available_name, available_info in available_fields.items():
                 score = self._calculate_field_similarity(
                     desired_name, desired_desc, available_name, available_info
                 )
+                
+                # Boost score for derived fields that match semantically
+                if available_info.get("extraction_method") == "conversation_analysis":
+                    if desired_name.lower() in available_name.lower() or available_name.lower() in desired_name.lower():
+                        score = max(score, 0.95)  # High confidence for conversation-derived fields
                 
                 if score > best_score and score > 0.3:  # Minimum similarity threshold
                     best_score = score
@@ -432,7 +489,8 @@ class FieldExtractionTool:
                         "available_field": available_name,
                         "similarity_score": score,
                         "field_info": available_info,
-                        "mapping_type": "direct" if score > 0.8 else "similar"
+                        "mapping_type": "direct" if score > 0.8 else "similar",
+                        "extraction_method": available_info.get("extraction_method", "structural")
                     }
             
             if best_match:

@@ -673,3 +673,320 @@ NameError: name 'get_remote_address' is not defined
 2026-01-11 13:09:00 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_a9b9b805_141b_424f_9054_a671451aff6a
 2026-01-11 13:09:00 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_a9b9b805_141b_424f_9054_a671451aff6a
 2026-01-11 13:19:21 - comprehensive_api_v2 - INFO - api_v2.py:315 - Shutting down Comprehensive API Layer v2
+2026-01-14 23:14:19 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-14 23:14:19 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-14 23:14:19 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-14 23:14:19 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:14:19 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:14:19 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.security_manager - INFO - security_manager.py:47 - Security manager initialized with all components
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.security_manager - INFO - security_manager.py:47 - Security manager initialized with all components
+2026-01-14 23:14:21 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-14 23:14:21 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-14 23:14:21 - comprehensive_api_v2 - INFO - api_v2.py:306 - Starting Comprehensive API Layer v2
+2026-01-14 23:16:19 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-14 23:16:19 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-14 23:16:19 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-14 23:16:19 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmp3zszv8k8.json (resource_id: 99a78937-0c7c-425c-9195-2263db0f75d7)
+2026-01-14 23:16:19 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmp3zszv8k8.json (json, 0.0MB)
+2026-01-14 23:16:19 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:356 - Duplicate check for hash 77af9761... (querying metadata registry)
+2026-01-14 23:16:19 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:392 - File upload completed: tmp3zszv8k8.json -> 99a78937-0c7c-425c-9195-2263db0f75d7
+2026-01-14 23:16:19 - light_ai.storage.storage_router - INFO - storage_router.py:59 - Initializing storage router...
+2026-01-14 23:16:19 - light_ai.storage.database_managers - INFO - database_managers.py:696 - Initializing all database managers...
+2026-01-14 23:16:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:16:19 - light_ai.storage.database_managers - INFO - database_managers.py:73 - DuckDB initialized at: data/duckdb/main.db
+2026-01-14 23:16:19 - light_ai.storage.database_managers - INFO - database_managers.py:305 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-14 23:16:19 - light_ai.storage.database_managers - INFO - database_managers.py:704 - All database managers initialized successfully
+2026-01-14 23:16:19 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:16:19 - light_ai.storage.storage_router - INFO - storage_router.py:63 - Storage router initialized successfully
+2026-01-14 23:16:19 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 99a78937-0c7c-425c-9195-2263db0f75d7
+2026-01-14 23:16:19 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 99a78937-0c7c-425c-9195-2263db0f75d7
+2026-01-14 23:16:19 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_99a78937_0c7c_425c_9195_2263db0f75d7
+2026-01-14 23:16:20 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_99a78937_0c7c_425c_9195_2263db0f75d7
+2026-01-14 23:37:16 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-14 23:37:16 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:16 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:16 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-14 23:37:37 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-14 23:37:37 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:37 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-14 23:37:37 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for temp_conversation.json (resource_id: ed1b10d9-85d1-4362-90f5-ff4ba52eb292)
+2026-01-14 23:37:37 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: temp_conversation.json (json, 0.0MB)
+2026-01-14 23:37:37 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:356 - Duplicate check for hash 2bb33c79... (querying metadata registry)
+2026-01-14 23:37:37 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:392 - File upload completed: temp_conversation.json -> ed1b10d9-85d1-4362-90f5-ff4ba52eb292
+2026-01-14 23:37:37 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-14 23:37:37 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-14 23:37:37 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-14 23:37:37 - light_ai.storage.storage_router - INFO - storage_router.py:59 - Initializing storage router...
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:696 - Initializing all database managers...
+2026-01-14 23:37:37 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:37 - light_ai.storage.database_managers - ERROR - database_managers.py:76 - Failed to initialize DuckDB: IO Error: Could not set lock on file "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/data/duckdb/main.db": Conflicting lock is held in /Users/shashwatroy/.local/share/uv/python/cpython-3.10.19-macos-aarch64-none/bin/python3.10 (PID 25765) by user shashwatroy. See also https://duckdb.org/docs/stable/connect/concurrency
+2026-01-14 23:37:37 - light_ai.storage.database_managers - ERROR - database_managers.py:707 - Failed to initialize database managers: IO Error: Could not set lock on file "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/data/duckdb/main.db": Conflicting lock is held in /Users/shashwatroy/.local/share/uv/python/cpython-3.10.19-macos-aarch64-none/bin/python3.10 (PID 25765) by user shashwatroy. See also https://duckdb.org/docs/stable/connect/concurrency
+2026-01-14 23:37:37 - universal_data_handler - ERROR - api.py:131 - Error in upload_file: IO Error: Could not set lock on file "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/data/duckdb/main.db": Conflicting lock is held in /Users/shashwatroy/.local/share/uv/python/cpython-3.10.19-macos-aarch64-none/bin/python3.10 (PID 25765) by user shashwatroy. See also https://duckdb.org/docs/stable/connect/concurrency
+Traceback (most recent call last):
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/api.py", line 216, in upload_file
+    self.storage_router.store_json_data(
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_router.py", line 145, in store_json_data
+    self.initialize()
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/storage_router.py", line 60, in initialize
+    self.db_managers.initialize_all()
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/database_managers.py", line 700, in initialize_all
+    self.duckdb.initialize()
+  File "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/light_ai/storage/database_managers.py", line 65, in initialize
+    self._connection = duckdb.connect(str(self.db_path))
+_duckdb.IOException: IO Error: Could not set lock on file "/Users/shashwatroy/Desktop/ns/New-CB/light_ai/data/duckdb/main.db": Conflicting lock is held in /Users/shashwatroy/.local/share/uv/python/cpython-3.10.19-macos-aarch64-none/bin/python3.10 (PID 25765) by user shashwatroy. See also https://duckdb.org/docs/stable/connect/concurrency
+2026-01-14 23:37:52 - comprehensive_api_v2 - INFO - api_v2.py:315 - Shutting down Comprehensive API Layer v2
+2026-01-14 23:37:59 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-14 23:37:59 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:37:59 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-14 23:37:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for temp_conversation.json (resource_id: 28d95252-452f-4c4a-b3de-156c48b3b8b7)
+2026-01-14 23:37:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: temp_conversation.json (json, 0.0MB)
+2026-01-14 23:37:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:356 - Duplicate check for hash 2bb33c79... (querying metadata registry)
+2026-01-14 23:37:59 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:392 - File upload completed: temp_conversation.json -> 28d95252-452f-4c4a-b3de-156c48b3b8b7
+2026-01-14 23:37:59 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-14 23:37:59 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-14 23:37:59 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-14 23:37:59 - light_ai.storage.storage_router - INFO - storage_router.py:59 - Initializing storage router...
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:696 - Initializing all database managers...
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:73 - DuckDB initialized at: data/duckdb/main.db
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:305 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:704 - All database managers initialized successfully
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:37:59 - light_ai.storage.storage_router - INFO - storage_router.py:63 - Storage router initialized successfully
+2026-01-14 23:37:59 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 28d95252-452f-4c4a-b3de-156c48b3b8b7
+2026-01-14 23:37:59 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 28d95252-452f-4c4a-b3de-156c48b3b8b7
+2026-01-14 23:37:59 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_28d95252_452f_4c4a_b3de_156c48b3b8b7
+2026-01-14 23:37:59 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_28d95252_452f_4c4a_b3de_156c48b3b8b7
+2026-01-14 23:56:43 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-14 23:56:43 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-14 23:56:43 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-14 23:56:43 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for temp_conversation.json (resource_id: 32eacbc4-f032-4094-96fd-be37faddd9f5)
+2026-01-14 23:56:43 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: temp_conversation.json (json, 0.0MB)
+2026-01-14 23:56:43 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:356 - Duplicate check for hash 2bb33c79... (querying metadata registry)
+2026-01-14 23:56:43 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:392 - File upload completed: temp_conversation.json -> 32eacbc4-f032-4094-96fd-be37faddd9f5
+2026-01-14 23:56:43 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-14 23:56:43 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-14 23:56:43 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-14 23:56:43 - light_ai.storage.storage_router - INFO - storage_router.py:59 - Initializing storage router...
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:696 - Initializing all database managers...
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:73 - DuckDB initialized at: data/duckdb/main.db
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:305 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:704 - All database managers initialized successfully
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-14 23:56:43 - light_ai.storage.storage_router - INFO - storage_router.py:63 - Storage router initialized successfully
+2026-01-14 23:56:43 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 32eacbc4-f032-4094-96fd-be37faddd9f5
+2026-01-14 23:56:43 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 32eacbc4-f032-4094-96fd-be37faddd9f5
+2026-01-14 23:56:43 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_32eacbc4_f032_4094_96fd_be37faddd9f5
+2026-01-14 23:56:43 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_32eacbc4_f032_4094_96fd_be37faddd9f5
+2026-01-14 23:58:12 - light_ai.agents.intelligent_content_analyzer - INFO - base.py:74 - Created OpenAI client for model: anthropic/claude-3.5-sonnet
+2026-01-14 23:58:12 - light_ai.agents.intelligent_content_analyzer - INFO - base.py:46 - Initialized intelligent_content_analyzer agent
+2026-01-14 23:58:13 - light_ai.agents.intelligent_content_analyzer - ERROR - base.py:126 - Agent execution failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-01-14 23:58:13 - light_ai.agents.intelligent_content_analyzer - ERROR - intelligent_content_analyzer.py:141 - LLM analysis failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-01-15 00:00:46 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-15 00:00:46 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-15 00:00:46 - light_ai.storage.directory_manager - INFO - directory_manager.py:54 - Creating directory structure at: .
+2026-01-15 00:00:46 - light_ai.storage.directory_manager - INFO - directory_manager.py:68 - Directory structure created successfully
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:00:46 - light_ai.security.simple_security - INFO - simple_security.py:38 - Simple security manager initialized
+2026-01-15 00:00:46 - universal_data_handler - INFO - api.py:126 - Universal Data Handler API initialized successfully
+2026-01-15 00:00:47 - light_ai.agents.intelligent_content_analyzer - INFO - base.py:74 - Created OpenAI client for model: openai/gpt-3.5-turbo
+2026-01-15 00:00:47 - light_ai.agents.intelligent_content_analyzer - INFO - base.py:46 - Initialized intelligent_content_analyzer agent
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.security_manager - INFO - security_manager.py:47 - Security manager initialized with all components
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.security_manager - INFO - security_manager.py:47 - Security manager initialized with all components
+2026-01-15 00:00:47 - light_ai.security.encryption - INFO - encryption.py:68 - Loaded existing master encryption key
+2026-01-15 00:00:47 - light_ai.security.user_manager - INFO - user_manager.py:106 - User management database initialized
+2026-01-15 00:00:47 - comprehensive_api_v2 - INFO - api_v2.py:306 - Starting Comprehensive API Layer v2
+2026-01-15 00:01:42 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-15 00:01:42 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-15 00:01:42 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-15 00:01:42 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpcm9tqvdk.json (resource_id: fbf41345-5e77-4a7f-a498-1fe7c646ff6b)
+2026-01-15 00:01:42 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpcm9tqvdk.json (json, 0.0MB)
+2026-01-15 00:01:42 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:356 - Duplicate check for hash 77af9761... (querying metadata registry)
+2026-01-15 00:01:42 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:392 - File upload completed: tmpcm9tqvdk.json -> fbf41345-5e77-4a7f-a498-1fe7c646ff6b
+2026-01-15 00:01:42 - light_ai.storage.storage_router - INFO - storage_router.py:59 - Initializing storage router...
+2026-01-15 00:01:42 - light_ai.storage.database_managers - INFO - database_managers.py:696 - Initializing all database managers...
+2026-01-15 00:01:42 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:01:42 - light_ai.storage.database_managers - INFO - database_managers.py:73 - DuckDB initialized at: data/duckdb/main.db
+2026-01-15 00:01:42 - light_ai.storage.database_managers - INFO - database_managers.py:305 - ChromaDB initialized at: data/unstructured/chroma_db
+2026-01-15 00:01:42 - light_ai.storage.database_managers - INFO - database_managers.py:704 - All database managers initialized successfully
+2026-01-15 00:01:42 - light_ai.storage.database_managers - INFO - database_managers.py:489 - SQLite metadata registry initialized at: metadata/registry.db
+2026-01-15 00:01:42 - light_ai.storage.storage_router - INFO - storage_router.py:63 - Storage router initialized successfully
+2026-01-15 00:01:42 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: fbf41345-5e77-4a7f-a498-1fe7c646ff6b
+2026-01-15 00:01:42 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource fbf41345-5e77-4a7f-a498-1fe7c646ff6b
+2026-01-15 00:01:42 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_fbf41345_5e77_4a7f_a498_1fe7c646ff6b
+2026-01-15 00:01:42 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_fbf41345_5e77_4a7f_a498_1fe7c646ff6b
+2026-01-15 00:01:47 - light_ai.agents.intelligent_content_analyzer - INFO - base.py:74 - Created OpenAI client for model: openai/gpt-3.5-turbo
+2026-01-15 00:01:47 - light_ai.agents.intelligent_content_analyzer - INFO - base.py:46 - Initialized intelligent_content_analyzer agent
+2026-01-15 00:01:47 - light_ai.agents.strands_tools - INFO - strands_tools.py:375 - Detected conversational data - using intelligent analyzer
+2026-01-15 00:01:48 - light_ai.agents.intelligent_content_analyzer - ERROR - base.py:126 - Agent execution failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-01-15 00:01:48 - light_ai.agents.intelligent_content_analyzer - ERROR - intelligent_content_analyzer.py:141 - LLM analysis failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-01-15 19:51:46 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:750 - Starting data cleaning for type: json
+2026-01-15 19:51:46 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:383 - Starting JSON data cleaning: dict
+2026-01-15 19:51:46 - light_ai.sub_layer_1.data_cleaning - INFO - data_cleaning.py:397 - JSON data cleaning completed: 0 operations
+2026-01-15 19:51:46 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:341 - Starting upload for tmpajeod4nx.json (resource_id: 514a3138-41af-43a1-89cc-84b002d7b8c4)
+2026-01-15 19:51:46 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:218 - File validation successful: tmpajeod4nx.json (json, 0.0MB)
+2026-01-15 19:51:46 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:356 - Duplicate check for hash 77af9761... (querying metadata registry)
+2026-01-15 19:51:46 - light_ai.sub_layer_1.file_upload - INFO - file_upload.py:392 - File upload completed: tmpajeod4nx.json -> 514a3138-41af-43a1-89cc-84b002d7b8c4
+2026-01-15 19:51:46 - light_ai.storage.metadata_registry - INFO - metadata_registry.py:98 - Created resource metadata: 514a3138-41af-43a1-89cc-84b002d7b8c4
+2026-01-15 19:51:46 - light_ai.storage.version_manager - INFO - version_manager.py:185 - Created version 1 for resource 514a3138-41af-43a1-89cc-84b002d7b8c4
+2026-01-15 19:51:47 - light_ai.storage.database_managers - INFO - database_managers.py:216 - Stored JSON data in table: json_data.json_514a3138_41af_43a1_89cc_84b002d7b8c4
+2026-01-15 19:51:47 - light_ai.storage.storage_router - INFO - storage_router.py:168 - Stored JSON data: json_514a3138_41af_43a1_89cc_84b002d7b8c4
+2026-01-15 19:51:56 - light_ai.agents.strands_tools - INFO - strands_tools.py:375 - Detected conversational data - using intelligent analyzer
+2026-01-15 19:51:56 - light_ai.agents.intelligent_content_analyzer - ERROR - base.py:126 - Agent execution failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}
+2026-01-15 19:51:56 - light_ai.agents.intelligent_content_analyzer - ERROR - intelligent_content_analyzer.py:141 - LLM analysis failed: Error code: 401 - {'error': {'message': 'User not found.', 'code': 401}}

@@ -13,6 +13,8 @@ from datetime import datetime
 
 # Import the new data retrieval engine
 from ..data_retrieval_engine import get_retrieval_engine
+# Import the conversation analyzer for intelligent persona/context extraction
+from .conversation_analyzer import get_conversation_analyzer
 
 logger = logging.getLogger(__name__)
 
@@ -37,11 +39,12 @@ class AnalysisResult:
     error: Optional[str] = None
 
 class EnhancedAnalysisAgent:
-    """Enhanced analysis agent with robust data retrieval"""
+    """Enhanced analysis agent with robust data retrieval and intelligent conversation analysis"""
     
     def __init__(self):
         self.retrieval_engine = get_retrieval_engine()
-        logger.info("Enhanced Analysis Agent initialized")
+        self.conversation_analyzer = get_conversation_analyzer()
+        logger.info("Enhanced Analysis Agent initialized with conversation analyzer")
     
     def analyze_user_data(self, request: AnalysisRequest) -> AnalysisResult:
         """Perform comprehensive analysis of user data"""
@@ -94,16 +97,41 @@ class EnhancedAnalysisAgent:
                 error="No JSON data available for analysis"
             )
         
-        # Perform pattern-based analysis
-        persona = self._extract_persona(combined_data)
-        context = self._extract_context(combined_data)
+        # Use intelligent conversation analyzer for persona and context extraction
+        persona_text = None
+        context_text = None
+        
+        # Try to analyze each resource with the conversation analyzer
+        for resource_id, resource_data in combined_data.items():
+            persona_extraction, context_extraction = self.conversation_analyzer.analyze_data(resource_data)
+            
+            if persona_extraction:
+                persona_text = self.conversation_analyzer.format_persona_for_output(persona_extraction)
+                logger.info(f"Extracted persona from resource {resource_id} with confidence {persona_extraction.confidence_score:.2f}")
+            
+            if context_extraction:
+                context_text = self.conversation_analyzer.format_context_for_output(context_extraction)
+                logger.info(f"Extracted context from resource {resource_id} with confidence {context_extraction.confidence_score:.2f}")
+            
+            # If we found good extractions, use them
+            if persona_text and context_text:
+                break
+        
+        # Fallback to pattern-based analysis if conversation analyzer didn't find anything
+        if not persona_text:
+            persona_text = self._extract_persona(combined_data)
+        
+        if not context_text:
+            context_text = self._extract_context(combined_data)
+        
+        # Generate insights and recommendations
         insights = self._generate_insights(combined_data)
         recommendations = self._generate_recommendations(combined_data, query)
         
         return AnalysisResult(
             success=True,
-            persona=persona,
-            context=context,
+            persona=persona_text,
+            context=context_text,
             insights=insights,
             recommendations=recommendations
         )

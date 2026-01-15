@@ -36,6 +36,8 @@ dist/
 # Logs
 # -------------------------
 *.log
+*.jsonl
+logs/
 
 # -------------------------
 # Jupyter Notebook
@@ -43,11 +45,15 @@ dist/
 .ipynb_checkpoints/
 
 # -------------------------
-# DuckDB
+# DuckDB & Database files
 # -------------------------
 *.duckdb
 *.db
 *.wal
+*.sqlite3
+data/duckdb/
+data/unstructured/chroma_db/
+metadata/
 
 # -------------------------
 # OS files
@@ -78,6 +84,11 @@ htmlcov/
 .env.local
 .env.dev
 .env.prod
+
+# -------------------------
+# Data directories
+# -------------------------
+data/json/
 
 # -------------------------
 # Misc

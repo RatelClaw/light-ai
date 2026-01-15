@@ -20,6 +20,7 @@ from .strands_tools import (
     DataSynthesisTool, CrossResourceSynthesisTool, VisualizationTool, ToolResult
 )
 from .logging import get_activity_logger
+from .intelligent_content_analyzer import get_content_analyzer
 from ..core.models import ResourceType, AccessLevel
 from light_ai.config import Config
 
@@ -138,6 +139,7 @@ Remember: You have specialized tools to help with each step of data analysis. Us
         self.data_synthesis = DataSynthesisTool(config)
         self.cross_resource_synthesis = CrossResourceSynthesisTool(config)
         self.visualization = VisualizationTool(config)
+        self.content_analyzer = get_content_analyzer(config)  # Intelligent content analyzer
         
         # Initialize activity logger
         self.activity_logger = get_activity_logger()
@@ -662,13 +664,49 @@ Remember: You have specialized tools to help with each step of data analysis. Us
         return insights
     
     def _extract_desired_field_values(self, request: AnalysisRequest, response: Dict[str, Any]) -> Dict[str, str]:
-        """Extract actual values for desired fields like persona and context."""
+        """Extract actual values for desired fields like persona and context using intelligent analysis."""
         extracted_values = {}
         
         if not request.desired_fields or not response.get("results"):
             return extracted_values
         
         # Get the data for analysis
+        data_results = response["results"]
+        
+        # Use intelligent content analyzer for semantic extraction
+        try:
+            # Run async analysis in sync context
+            import asyncio
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                # If loop is already running, create a task
+                analysis_result = asyncio.create_task(
+                    self.content_analyzer.analyze_content(data_results, request.desired_fields)
+                )
+                # Note: This won't block, result will be available later
+                # For now, fall back to pattern matching
+                self.logger.info("Async loop running, using pattern matching fallback")
+                return self._extract_with_pattern_matching(request, response)
+            else:
+                # Run the analysis
+                analysis_result = loop.run_until_complete(
+                    self.content_analyzer.analyze_content(data_results, request.desired_fields)
+                )
+                
+                if analysis_result.success:
+                    self.logger.info(f"Intelligent analysis succeeded with confidence {analysis_result.confidence_score:.2f}")
+                    return analysis_result.extracted_fields
+                else:
+                    self.logger.warning(f"Intelligent analysis failed: {analysis_result.error}, falling back to pattern matching")
+                    return self._extract_with_pattern_matching(request, response)
+                    
+        except Exception as e:
+            self.logger.error(f"Content analyzer error: {e}, falling back to pattern matching")
+            return self._extract_with_pattern_matching(request, response)
+    
+    def _extract_with_pattern_matching(self, request: AnalysisRequest, response: Dict[str, Any]) -> Dict[str, str]:
+        """Fallback pattern matching extraction (original implementation)"""
+        extracted_values = {}
         data_results = response["results"]
         insights = response.get("insights", [])
         
