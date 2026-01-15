@@ -19,6 +19,7 @@ ENV/
 # Python cache & compiled
 # -------------------------
 __pycache__/
+__pycache__/*
 *.py[cod]
 *.pyo
 *.pyd
