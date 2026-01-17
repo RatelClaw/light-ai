@@ -18,6 +18,8 @@ dependencies = [
     "fastapi>=0.104.0",
     "uvicorn[standard]>=0.24.0",
     "python-multipart>=0.0.6",  # For file uploads
+    "flask>=3.0.0",  # Simple API server
+    "flask-cors>=4.0.0",  # CORS support for Flask
     # File processing
     "openpyxl>=3.1.0",  # Excel files
     "PyPDF2>=3.0.0",    # PDF files
